@@ -21,10 +21,9 @@ public class SolicitudController {
         this.solicitudService = solicitudService;
     }
 
-   /* @RequestMapping
-    public List<Solicitud> listarSolicituds() throws Exception
-    {
-        return solicitudService.list();
+    @RequestMapping(method = RequestMethod.POST)
+    public Solicitud registrarUsuario(@RequestBody Solicitud solicitud) throws Exception {
+
+        return solicitudService.GuardarSolicitud(solicitud);
     }
-*/
 }

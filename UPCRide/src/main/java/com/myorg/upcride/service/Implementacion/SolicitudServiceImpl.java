@@ -17,28 +17,9 @@ public class SolicitudServiceImpl implements SolicitudService {
         this.solicitudRepository = solicitudRepository;
     }
 
-   /* @Override
-    public boolean insert(Solicitud t) throws Exception{
-        return solicitudRepository.insert(t);
-    }
 
     @Override
-    public boolean update(Solicitud t) throws Exception{
-        return solicitudRepository.update(t);
+    public Solicitud GuardarSolicitud(Solicitud s) throws Exception {
+        return solicitudRepository.save(s);
     }
-
-    @Override
-    public boolean delete(Solicitud t) throws Exception{
-        return solicitudRepository.delete(t);
-    }
-
-    @Override
-    public List<Solicitud> list() throws Exception{
-        return solicitudRepository.list();
-    }
-
-    @Override
-    public Solicitud listById(Solicitud t) throws Exception{
-        return solicitudRepository.listById(t);
-    }*/
 }
