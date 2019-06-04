@@ -1,0 +1,15 @@
+package com.myorg.upcride.repository;
+
+import com.myorg.upcride.model.Usuario;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+
+     /*@Query("SELECT u FROM Usuario WHERE codigo = ?1")
+     Usuario listarPorCodigoAlumno(String codigoAlumno) throws Exception;
+*/
+}
