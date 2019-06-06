@@ -26,7 +26,7 @@ public class Viaje implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "viaje_id")
-    private Integer viajeID;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "conductor_id")
@@ -35,23 +35,23 @@ public class Viaje implements Serializable {
    @Column (name = "descripcion", length = 500, nullable = false)
     private String descripcion;
 
-   @Column(name = "pntPartida", length = 60, nullable = false)
-    private String pntPartida;
+   @Column(name = "punto_partida", length = 60, nullable = false)
+    private String puntoPartida;
 
-  @Column(name = "pntDestino", length = 60, nullable = false)
-    private String pntDestino;
+  @Column(name = "punto_destino", length = 60, nullable = false)
+    private String puntoDestino;
 
-    @Column (name = "horaPartida", nullable = false)
+    @Column (name = "hora_partida", nullable = false)
     private String horaPartida;
 
-    @Column (name = "horaLlegada", nullable = false)
+    @Column (name = "hora_llegada", nullable = false)
     private String horaLlegada;
 
     @Column (name = "entrada_salida", nullable = false)
     private int entrada_salida;
 
-    @Column (name = "fechaViaje", nullable = false)
-    private String fechaViaje;
+    @Column (name = "fecha", nullable = false)
+    private String fecha;
 
    @Column (name = "dia", length = 20, nullable = false)
     private String dia;
@@ -59,7 +59,7 @@ public class Viaje implements Serializable {
     @Column (name = "estado", length = 60, nullable = true)
     private String estado;
 
-   @Column (name = "visualizacionHabilitada", nullable = false)
+   @Column (name = "visualizacion_habilitada", nullable = false)
     private int visualizacionHabilitada;
 
 

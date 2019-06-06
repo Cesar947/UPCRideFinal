@@ -24,7 +24,7 @@ public class ItinerarioId implements Serializable {
     private String dia;
 
     @ManyToOne
-    @JoinColumn(name = "codigoUsuario")
-    private Usuario codigoUsuario;
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
 }

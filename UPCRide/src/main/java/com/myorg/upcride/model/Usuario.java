@@ -28,14 +28,14 @@ public class Usuario implements Serializable {
     @Column(name= "usuario_id")
     private Integer id;
 
-    @Column(name = "codigoUsuarioUPC")
+    @Column(name = "codigo_upc")
     private String codigo;
 
     @Column(name = "email", length = 50, nullable = false)
     private String email;
 
-    @Column(name = "contrasena", length = 40, nullable = false)
-    private String contrasena;
+    @Column(name = "contraseña", length = 40, nullable = false)
+    private String contraseña;
 
     @Column(name = "nombres", length = 60, nullable = false)
     private String nombres;
@@ -46,8 +46,8 @@ public class Usuario implements Serializable {
    @Column(name = "ubicacion", length = 100, nullable = false)
     private String ubicacion;
 
-   @Column(name = "facebookID", length = 60, nullable = true)
-    private String facebookID;
+   @Column(name = "facebook_link", length = 60, nullable = true)
+    private String facebookLink;
 
     @Column(name = "telefono", length = 25, nullable = false)
     private String telefono;
@@ -58,7 +58,7 @@ public class Usuario implements Serializable {
     @Column(name = "rol")
     private char rol;
 
-    @Column(name = "licenciaConducir", length = 9, nullable = true)
+    @Column(name = "licencia_conducir", length = 9, nullable = true)
     private String licenciaConducir;
 
     @Column(name="sede", length = 20, nullable= false)

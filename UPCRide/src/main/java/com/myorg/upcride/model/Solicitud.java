@@ -41,14 +41,14 @@ public class Solicitud implements Serializable {
     @JoinColumn(name ="viaje_id")
     private Viaje viaje;
 
-    @Column(name = "mensajeSolicitud", length = 120, nullable = true)
+    @Column(name = "mensaje", length = 120, nullable = true)
     private String mensaje;
 
-    @Column(name="confirmacionConductor", length = 9, nullable = true)
+    @Column(name="confirmacion_conductor", length = 9, nullable = true)
     private boolean confirmacionConductor;
 
 
-   @Column(name="puntoRecojo", length = 30, nullable = true)
+   @Column(name="punto_recojo", length = 30, nullable = true)
     private String puntoRecojo;
 
 

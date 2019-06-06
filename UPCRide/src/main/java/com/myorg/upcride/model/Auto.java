@@ -30,7 +30,7 @@ public class Auto implements Serializable{
     @Column (name="placa", length = 50, nullable = false)
     private int placa;
 
-    @Column (name="polizaSoat", length = 50 , nullable = false )
+    @Column (name="poliza_soat", length = 50 , nullable = false )
     private int polizaSoat;
 
     @Column (name="marca", length = 50 , nullable = false )
@@ -39,11 +39,11 @@ public class Auto implements Serializable{
     @Column (name="modelo", length = 50 , nullable = false )
     private String modelo;
 
-    @Column (name="limitePersonas", length = 50 , nullable = false )
+    @Column (name="límite_personas", length = 50 , nullable = false )
     private int limitePersonas;
 
-    @Column (name="codigoUsuario", length = 50 , nullable = false )
-    private Usuario codigoUsuario;
+    @Column (name="codigo_usuario", length = 50 , nullable = false )
+    private Usuario usuario;
 
 
 }
