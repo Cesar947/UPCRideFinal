@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 
 @Embeddable
@@ -18,7 +19,7 @@ import java.io.Serializable;
 public class ItinerarioId implements Serializable {
 
     @Column (name="hora", length = 50, nullable = false)
-    private String hora;
+    private Timestamp hora;
 
     @Column (name="dia", length = 50 , nullable = false )
     private String dia;

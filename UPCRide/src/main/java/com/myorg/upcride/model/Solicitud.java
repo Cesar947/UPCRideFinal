@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +16,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- *
  * @author slayz
  */
 
@@ -26,7 +26,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 public class Solicitud implements Serializable {
 
-   private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,16 +38,19 @@ public class Solicitud implements Serializable {
     private Usuario cliente;
 
     @ManyToOne
-    @JoinColumn(name ="viaje_id")
+    @JoinColumn(name = "viaje_id")
     private Viaje viaje;
 
     @Column(name = "mensajeSolicitud", length = 120, nullable = true)
     private String mensaje;
 
-    @Column(name="confirmacion_conductor", length = 9, nullable = true)
+    @Column(name = "confirmacion_conductor", length = 9, nullable = true)
     private boolean confirmacionConductor;
 
-   @Column(name="punto_recojo", length = 30, nullable = true)
+    @Column(name = "punto_recojo", length = 30, nullable = true)
     private String puntoRecojo;
+
+    @Column(name = "fecha", nullable = false)
+    private Date fecha;
 
 }

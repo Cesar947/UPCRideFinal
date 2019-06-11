@@ -20,7 +20,7 @@ public class Itinerario implements Serializable{
     private ItinerarioId codigoItinerario;
 
     @Column (name="entrada_salida", length = 50 , nullable = false ) //E: Entrada - S: Salida
-    private char entrada_salida;
+    private int entrada_salida;
 
     @Column (name="punto_partida_latitud", length = 50 , nullable = false )
     private double puntoPartidaLatitud;
