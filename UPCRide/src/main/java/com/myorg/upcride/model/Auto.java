@@ -38,7 +38,7 @@ public class Auto implements Serializable{
     private int limitePersonas;
 
     @OneToOne
-    @Column (name="usuario_id", length = 50 , nullable = false )
+    @JoinColumn(name = "conductor_id")
     private Usuario conductor;
 
 }
