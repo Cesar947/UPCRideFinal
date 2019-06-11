@@ -59,4 +59,9 @@ public class ViajeController {
                 entrada_salida, fecha);
 
     }
+
+    @RequestMapping(path="update/{id}", method = RequestMethod.PUT)
+    public int updateViaje(@RequestBody String estado, @PathVariable("id") Integer id) throws Exception{
+        return viajeService.Update(estado, id);
+    }
 }

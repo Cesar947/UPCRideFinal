@@ -2,9 +2,12 @@ package com.myorg.upcride.repository;
 
 import com.myorg.upcride.model.Viaje;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
 
@@ -32,5 +35,8 @@ public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
     @Query("SELECT v FROM Viaje v WHERE v.fecha = ?6")
     List<Viaje> ListarPorFecha(Date fecha) throws Exception;
 
-
+    @Modifying
+    @Query("UPDATE Viaje v SET v.estado = :estado WHERE v.id = :id")
+    @Transactional
+    int Update(@Param("estado") String estado, @Param("id") Integer id) throws Exception;
 }
