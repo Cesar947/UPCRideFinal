@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97a17902-586f-44db-81c1-dea248489b0c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ViajeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ViajeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/ItinerarioId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/ItinerarioId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Viaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Viaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ReseñaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ReseñaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ViajeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ViajeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/ViajeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/ViajeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/ReseñaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/ReseñaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/ViajeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/ViajeService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -102,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/UsuarioController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
@@ -111,11 +101,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Solicitud.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+            <state relative-caret-position="17">
+              <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,7 +137,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Auto.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ReseñaRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/ReseñaService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.java" />
@@ -155,6 +147,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/ViajeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ViajeRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ViajeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java" />
       </list>
     </option>
   </component>
@@ -310,12 +303,12 @@
       <workItem from="1560279338270" duration="5637000" />
       <workItem from="1560286753969" duration="557000" />
       <workItem from="1560287717783" duration="1072000" />
-      <workItem from="1560290503723" duration="1114000" />
+      <workItem from="1560290503723" duration="1222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8380000" />
+    <option name="totallyTimeSpent" value="8488000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -389,16 +382,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -511,6 +494,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
