@@ -2,5 +2,9 @@ package com.myorg.upcride.service;
 
 import com.myorg.upcride.model.Reseña;
 
+import java.util.List;
+
 public interface ReseñaService{
+    Reseña PublicarReseña(Reseña r) throws Exception;
+    List<Reseña> ListaReseñasPorConductor (Integer conductorId);
 }

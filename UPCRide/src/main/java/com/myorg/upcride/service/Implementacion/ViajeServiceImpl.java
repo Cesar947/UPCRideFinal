@@ -39,24 +39,24 @@ public class ViajeServiceImpl implements ViajeService {
     }
 
     @Override
-    public List<Viaje> Filtrar(String puntoPartida, String puntoDestino, String horaPartida, String horaLlegada, char entrada_salida, String fecha) throws Exception {
+    public List<Viaje> Filtrar(String puntoPartida, String puntoDestino, String horaPartida, String horaLlegada, int entrada_salida, String fecha) throws Exception {
 
-        if (puntoPartida == null && puntoDestino == null && horaPartida == null && horaLlegada == null && entrada_salida == '\0') {
+        if (puntoPartida == null && puntoDestino == null && horaPartida == null && horaLlegada == null && entrada_salida == 0) {
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
             Date parsed = format.parse(fecha);
             java.sql.Date sql = new java.sql.Date(parsed.getTime());
 
             return viajeRepository.ListarPorFecha(sql);
-        } else if (puntoPartida == null && puntoDestino == null && entrada_salida == '\0' && fecha == null) {
+        } else if (puntoPartida == null && puntoDestino == null && entrada_salida == 0 && fecha == null) {
             return viajeRepository.ListarPorHoraInicioYHoraFin(horaPartida, horaLlegada);
-        } else if (horaPartida == null && horaLlegada == null && entrada_salida == '\0' && fecha == null) {
+        } else if (horaPartida == null && horaLlegada == null && entrada_salida == 0 && fecha == null) {
             return viajeRepository.ListarPorPuntoPartidaYPuntoDestino(puntoPartida, puntoDestino);
         } else if (puntoPartida == null && puntoDestino == null && fecha == null && horaPartida == null && horaLlegada == null) {
             return viajeRepository.ListarPorEntradaOSalida(entrada_salida);
 
-        } else if (entrada_salida == '\0' && fecha == null) {
+        } else if (entrada_salida == 0 && fecha == null) {
             return viajeRepository.ListarPorPuntoPartidaYPuntoDestinoYHoraInicioYHoraFin(puntoPartida, puntoDestino, horaPartida, horaLlegada);
-        } else if (entrada_salida == '\0') {
+        } else if (entrada_salida == 0) {
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
             Date parsed = format.parse(fecha);
             java.sql.Date sql = new java.sql.Date(parsed.getTime());

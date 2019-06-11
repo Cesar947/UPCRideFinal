@@ -47,7 +47,7 @@ public class ViajeController {
                                @RequestParam(value="puntoDestino", required = false) String puntoDestino,
                                @RequestParam(value="horaPartida", required = false)  String horaPartida,
                                @RequestParam(value="horaLlegada", required = false)  String horaLlegada,
-                               @RequestParam(value="entrada_salida", defaultValue = " ") char entrada_salida,
+                               @RequestParam(value="entrada_salida", defaultValue = "0") int entrada_salida,
                                @RequestParam(value="fecha", required = false) String fecha
                               ) throws Exception{
 

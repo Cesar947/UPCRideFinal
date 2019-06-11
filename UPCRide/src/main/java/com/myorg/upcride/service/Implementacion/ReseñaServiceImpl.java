@@ -17,29 +17,14 @@ public class ReseñaServiceImpl implements ReseñaService {
         this.reseñaRepository = reseñaRepository;
     }
 
-   /* @Override
-    public boolean insert(Reseña t) throws Exception{
-        return reseñaRepository.insert(t);
+    @Override
+    public Reseña PublicarReseña(Reseña r) throws Exception{
+        return reseñaRepository.save(r);
     }
 
-    @Override
-    public boolean update(Reseña t) throws Exception{
-        return reseñaRepository.update(t);
-    }
 
     @Override
-    public boolean delete(Reseña t) throws Exception{
-        return reseñaRepository.delete(t);
+    public List<Reseña> ListaReseñasPorConductor (Integer conductorId){
+        return reseñaRepository.ListaReseñasPorConductor(conductorId);
     }
-
-    @Override
-    public List<Reseña> list() throws Exception{
-        return reseñaRepository.list();
-    }
-
-    @Override
-    public Reseña listById(Reseña t) throws Exception{
-        return reseñaRepository.listById(t);
-    }
-*/
 }

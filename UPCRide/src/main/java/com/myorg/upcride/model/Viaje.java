@@ -62,7 +62,7 @@ public class Viaje implements Serializable {
     private Timestamp horaLlegada;
 
     @Column (name = "entrada_salida", nullable = false) //E: Entrada - S: Salida
-    private char entrada_salida;
+    private int entrada_salida;
 
     @Column (name = "fecha", nullable = false)
     private Date fecha;

@@ -1,5 +1,3 @@
-package com.myorg.upcride.controller;
-
 
 
 import com.myorg.upcride.model.Reseña;
@@ -21,11 +19,15 @@ public class ReseñaController {
         this.reseñaService = reseñaService;
     }
 
-/*
+
     @RequestMapping
-    public List<Reseña> listarReseñas() throws Exception {
-        return reseñaService.list();
+    public Reseña PublicarReseñas(Reseña r) throws Exception {
+        return reseñaService.PublicarReseña(r);
     }
-*/
+
+    @RequestMapping(path="/{conductorId}", method = RequestMethod.GET)
+    public List<Reseña> ListarResñasPorConductor(@PathVariable Integer conductorId) throws Exception{
+        return reseñaService.ListaReseñasPorConductor(conductorId);
+    }
 
 }
