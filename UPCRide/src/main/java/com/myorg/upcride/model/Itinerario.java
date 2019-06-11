@@ -19,22 +19,17 @@ public class Itinerario implements Serializable{
     @EmbeddedId
     private ItinerarioId codigoItinerario;
 
-    @Column (name="entrada_salida", length = 50 , nullable = false )
+    @Column (name="entrada_salida", length = 50 , nullable = false ) //E: Entrada - S: Salida
     private char entrada_salida;
 
-    @Column (name="ubicacion_partida", length = 50 , nullable = false )
-    private String ubicacionPartida;
+    @Column (name="punto_partida_latitud", length = 50 , nullable = false )
+    private double puntoPartidaLatitud;
 
-    @Column (name="ubicacion_destino", length = 50 , nullable = false )
-    private String ubicacionDestino;
+    @Column (name="punto_partida_longitud", length = 50 , nullable = false )
+    private double puntoPartidaLongitud;
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Usuario cliente;
-
-
-
-
-
 
 }

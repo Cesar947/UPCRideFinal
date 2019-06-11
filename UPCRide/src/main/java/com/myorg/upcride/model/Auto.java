@@ -6,12 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -42,8 +37,8 @@ public class Auto implements Serializable{
     @Column (name="limite_personas", length = 50 , nullable = false )
     private int limitePersonas;
 
-    @Column (name="codigo_usuario", length = 50 , nullable = false )
-    private Usuario codigoUsuario;
-
+    @OneToOne
+    @Column (name="usuario_id", length = 50 , nullable = false )
+    private Usuario conductor;
 
 }

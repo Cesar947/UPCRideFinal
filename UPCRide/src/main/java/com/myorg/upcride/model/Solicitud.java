@@ -47,10 +47,7 @@ public class Solicitud implements Serializable {
     @Column(name="confirmacion_conductor", length = 9, nullable = true)
     private boolean confirmacionConductor;
 
-
    @Column(name="punto_recojo", length = 30, nullable = true)
     private String puntoRecojo;
-
-
 
 }

@@ -27,7 +27,7 @@ public class Viaje implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "viaje_id")
-    private Integer viajeID;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "conductor_id")
@@ -36,11 +36,23 @@ public class Viaje implements Serializable {
    @Column (name = "descripcion", length = 500, nullable = false)
     private String descripcion;
 
-   @Column(name = "punto_partida", length = 60, nullable = false)
+   @Column(name = "punto_partida", length = 60, nullable = false) //Distrito partida
     private String puntoPartida;
 
-  @Column(name = "punto_destino", length = 60, nullable = false)
+  @Column(name = "punto_destino", length = 60, nullable = false) //Distrito destino
     private String puntoDestino;
+
+    @Column(name = "destino_latitud", length = 60, nullable = false)
+    private double puntoDestinoLatitud;
+
+    @Column(name = "destino_longitud", length = 60, nullable = false)
+    private double puntoDestintoLongitud;
+
+    @Column(name = "partida_latitud", length = 60, nullable = false)
+    private double puntoPartidaLatitud;
+
+    @Column(name = "partida_longitud", length = 60, nullable = false)
+    private double puntoPartidaLongitud;
 
     @Column (name = "hora_partida", nullable = false)
     private String horaPartida;
@@ -48,7 +60,7 @@ public class Viaje implements Serializable {
     @Column (name = "hora_llegada", nullable = false)
     private String horaLlegada;
 
-    @Column (name = "entrada_salida", nullable = false)
+    @Column (name = "entrada_salida", nullable = false) //E: Entrada - S: Salida
     private char entrada_salida;
 
     @Column (name = "fecha", nullable = false)
@@ -60,7 +72,7 @@ public class Viaje implements Serializable {
     @Column (name = "estado", length = 60, nullable = true)
     private String estado;
 
-   @Column (name = "visualizacion_habilitada", nullable = false)
+   @Column (name = "visualizacion_habilitada", nullable = false) //1: visible - 0: invisible
     private int visualizacionHabilitada;
 
 

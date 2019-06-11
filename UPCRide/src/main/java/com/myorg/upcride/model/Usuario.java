@@ -43,8 +43,11 @@ public class Usuario implements Serializable {
    @Column(name = "apellidos", length = 60, nullable = true)
     private String apellidos;
 
-   @Column(name = "ubicacion", length = 100, nullable = false)
-    private String ubicacion;
+   @Column(name = "ubicacionLatitud", length = 100, nullable = false)
+    private String ubicacionLatitud;
+
+ @Column(name = "ubicacionLongitud", length = 100, nullable = false)
+ private String ubicacionLongitud;
 
    @Column(name = "facebook_id", length = 60, nullable = true)
     private String facebook_id;
@@ -55,7 +58,7 @@ public class Usuario implements Serializable {
     @Column(name = "distrito", length = 100, nullable = false)
     private String distrito;
 
-    @Column(name = "rol")
+    @Column(name = "rol") //C: Conductor P: Pasajero
     private char rol;
 
     @Column(name = "licencia_conducir", length = 9, nullable = true)
@@ -63,7 +66,5 @@ public class Usuario implements Serializable {
 
     @Column(name="sede", length = 20, nullable= false)
     private String sede;
-
-
 
 }
