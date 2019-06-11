@@ -1,0 +1,63 @@
+    Modelos post
+
+    //Pasajero
+    {
+
+        "codigo": "u201711033",
+        "email": "u201711033@upc.edu.pe",
+        "contraseña": "adgasdqwerqwetdg",
+        "nombres": "José Sebastián",
+        "apellidos": "Pinillos Zentento",
+        "ubicacion": "asdgsdgsdgsdvsdsdg",
+        "telefono": "999123512",
+        "distrito": "Carabayllo",
+        "sede": "UPC San Miguel"
+    }
+
+    //Conductor
+
+    {
+
+            "codigo": "u201710947",
+            "email": "u201710947@upc.edu.pe",
+            "contraseña": "adgasdgasdg",
+            "nombres": "César Alejandro",
+            "apellidos": "Pizarro Llanos",
+            "ubicacion": "Casa",
+            "facebook_id": "www.facebook.com",
+            "telefono": "999999999",
+            "distrito": "Magdalena del Mar",
+            "licenciaConducir": "asc124",
+            "sede": "UPC San Miguel"
+        }
+
+        //Viaje
+
+        {
+                "viajeID": 1,
+                "conductor": {
+                    "id": 2,
+                    "codigo": "u201710947",
+                    "email": "u201710947@upc.edu.pe",
+                    "contraseña": "adgasdgasdg",
+                    "nombres": "César Alejandro",
+                    "apellidos": "Pizarro Llanos",
+                    "ubicacion": "Casa",
+                    "facebook_id": "www.facebook.com",
+                    "telefono": "999999999",
+                    "distrito": "Magdalena del Mar",
+                    "rol": "C",
+                    "licenciaConducir": "asc124",
+                    "sede": "UPC San Miguel"
+                },
+                "descripcion": "Viaje desde la UPC Monterrico hasta el Mercado Magdalena",
+                "puntoPartida": "UPC Monterrico",
+                "puntoDestino": "Mercado Magdalena",
+                "horaPartida": "17:00",
+                "horaLlegada": "18:30",
+                "entrada_salida": "S",
+                "fecha": "2019-06-10",
+                "dia": "Lunes",
+                "estado": "Disponible",
+                "visualizacionHabilitada": 1
+            }

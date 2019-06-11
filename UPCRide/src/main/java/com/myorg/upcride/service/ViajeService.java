@@ -1,0 +1,15 @@
+package com.myorg.upcride.service;
+
+
+import com.myorg.upcride.model.Viaje;
+
+import java.util.Date;
+import java.util.List;
+
+public interface ViajeService {
+
+    Viaje publicarViaje(Viaje v) throws Exception;
+    Viaje buscarViaje(Integer id) throws Exception;
+    List<Viaje> visualizarViajes() throws Exception;
+    public List<Viaje> Filtrar(String puntoPartida,String puntoDestino, String horaPartida, String horaLlegada, char entrada_salida, String fecha) throws Exception;
+}
