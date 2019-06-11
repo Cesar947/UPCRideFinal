@@ -11,25 +11,29 @@
         "ubicacion": "asdgsdgsdgsdvsdsdg",
         "telefono": "999123512",
         "distrito": "Carabayllo",
-        "sede": "UPC San Miguel"
+        "sede": "UPC San Miguel",
+        "ubicacionLongitud": "2.0",
+        "ubicacionLatitud":"6.0"
     }
 
     //Conductor
 
-    {
+   {
 
-            "codigo": "u201710947",
-            "email": "u201710947@upc.edu.pe",
-            "contraseña": "adgasdgasdg",
-            "nombres": "César Alejandro",
-            "apellidos": "Pizarro Llanos",
-            "ubicacion": "Casa",
-            "facebook_id": "www.facebook.com",
-            "telefono": "999999999",
-            "distrito": "Magdalena del Mar",
-            "licenciaConducir": "asc124",
-            "sede": "UPC San Miguel"
-        }
+              "codigo": "u201710947",
+              "email": "u201710947@upc.edu.pe",
+              "contraseña": "adgasdgasdg",
+              "nombres": "César Alejandro",
+              "apellidos": "Pizarro Llanos",
+              "ubicacion": "Casa",
+              "facebook_id": "www.facebook.com",
+              "telefono": "999999999",
+              "distrito": "Magdalena del Mar",
+              "licenciaConducir": "asc124",
+              "sede": "UPC San Miguel",
+              "ubicacionLongitud": "5.0",
+              "ubicacionLatitud":"6.0"
+          }
 
         //Viaje
 
