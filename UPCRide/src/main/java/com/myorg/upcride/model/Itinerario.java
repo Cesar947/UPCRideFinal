@@ -28,8 +28,4 @@ public class Itinerario implements Serializable{
     @Column (name="punto_partida_longitud", length = 50 , nullable = false )
     private double puntoPartidaLongitud;
 
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Usuario cliente;
-
 }
