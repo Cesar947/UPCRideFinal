@@ -38,6 +38,11 @@ const useStyles = makeStyles({
     Boton:{
      position: 'relative',
      left: '680px'
+    },
+    EstiloDeViajes: {
+      position: 'relative',
+      top: '70px',
+      left: '23%'
     }
   });
 
@@ -48,7 +53,7 @@ let listaViajes = props.viajes;
 
 
 return(
-<div>
+<Grid container className={classes.EstiloDeViajes}>
    { listaViajes.map(eViaje =>(
    <Card className={classes.card} key={eViaje.viajeID}>
       <CardContent>
@@ -83,7 +88,7 @@ return(
     </Card>
     ))
 }
-    </div>
+</Grid>
 )
 
 

@@ -19,7 +19,7 @@ let db = [
       horaPartida: "17:00",
       horaLlegada: "18:30",
       entrada_salida: "E",
-      fecha: "2019-06-10",
+      fecha: "2019-06-17",
       dia: "Lunes",
       limitePersonaes: 4
   },
@@ -36,10 +36,28 @@ let db = [
     horaPartida: "19:00",
     horaLlegada: "20:50",
     entrada_salida: "S",
-    fecha: "2019-06-10",
+    fecha: "2019-06-17",
     dia: "Lunes",
     limitePersonaes: 4
+  },
+  {
+    viajeID: 3,
+    usuario: {
+        codigo: "u201710070",
+        nombres: "Juanelv Alessandro",
+        apellidos: "Salgado Sanchez"
+    },
+    descripcion: "Viaje desde la UPC Monterrico hasta el Callao.",
+    puntoPartida: "UPC Monterrico",
+    puntoDestino: "Callao",
+    horaPartida: "19:00",
+    horaLlegada: "20:50",
+    entrada_salida: "S",
+    fecha: "2019-06-18",
+    dia: "Martes",
+    limitePersonaes: 4
   }
+  
   ]
 
 
