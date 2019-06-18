@@ -104,7 +104,7 @@ const useStyles = makeStyles({
 
 
 
-const Inicio = () => {
+const Inicio = (props) => {
   const classes = useStyles();
   return (
     <div>
@@ -173,7 +173,7 @@ const Inicio = () => {
       />
       </form>
       <form>
-        <Viajes />
+        <Viajes viajes={props.storeInicio}/>
       </form>
     </div>
   )

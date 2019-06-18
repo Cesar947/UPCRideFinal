@@ -5,15 +5,15 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 
-const db = [
+let db = [
     {
       viajeID: 1,
-      conductor: {
+      usuario: {
           codigo: "u201710947",
           nombres: "César Alejandro",
           apellidos: "Pizarro Llanos"
       },
-      descripcion: "Viaje desde la UPC Monterrico hasta el Mercado Magdalena",
+      descripcion: "Iré desde el Metro de la Av. Venezuela hasta la UPC Monterrico.",
       puntoPartida: "San Miguel",
       puntoDestino: "UPC Monterrico",
       horaPartida: "17:00",
@@ -25,7 +25,7 @@ const db = [
   },
   {
     viajeID: 2,
-    conductor: {
+    usuario: {
         codigo: "u201710070",
         nombres: "Juanelv Alessandro",
         apellidos: "Salgado Sanchez"
@@ -43,7 +43,7 @@ const db = [
   ]
 
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App store={db}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

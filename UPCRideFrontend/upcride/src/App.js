@@ -6,14 +6,14 @@ import './App.css';
 
 
 
-function App() {
+function App(props) {
  
   return (
     <div className="App">
       <header className="App-header">
          <div>
           
-          <Inicio />
+          <Inicio storeInicio={props.store} />
            
          </div>
       </header>

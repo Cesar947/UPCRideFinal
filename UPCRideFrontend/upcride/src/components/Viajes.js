@@ -36,26 +36,25 @@ const useStyles = makeStyles({
     }
   });
 
-const Viajes = () => {
+const Viajes = (props) => {
 
 const classes = useStyles();
+let listaViajes = props.viajes;
+
 
 return(
-
-    <Card className={classes.card}>
+<div>
+   { listaViajes.map(eViaje =>(
+   <Card className={classes.card} key={eViaje.viajeID}>
       <CardContent>
        
        <Grid item xs={6} className={classes.TextoIzquierda}>
         <Typography className={classes.conductor} color="textSecondary" >
-          Conductor:
-          <br/>
-          Juanelv Salgado
+          Conductor: {eViaje.usuario.nombres + " " + eViaje.usuario.apellidos}
         </Typography>
       
         <Typography className={classes.Anuncio} variant="h5" component="h2">
-          Saludos a todos. Iré desde el Metro de la Av. Venezuela hasta la UPC Monterrico.
-          <br/>
-          Espero poder darles un buen servicio. Los espero.
+         {eViaje.descripcion}
         </Typography>
         </Grid>
 
@@ -70,8 +69,9 @@ return(
         <Button variant="contained" color="primary"  className={classes.Boton} size="small">CONSULTAR</Button>
       </CardActions>
     </Card>
-
-
+    ))
+}
+    </div>
 )
 
 
