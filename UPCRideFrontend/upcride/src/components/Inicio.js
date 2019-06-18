@@ -92,12 +92,15 @@ const useStyles = makeStyles({
     flexWrap: 'wrap',
     position: 'absolute',
     top:'130px',
-    left: '10px'
+    left: '80px'
   },
 
   EncontrarViajeTexto:{
+    font: '15px roboto, sans-serif',
+    fontSize: '14 solid',
      position: 'relative',
-     left: '100px'
+     left: '100px',
+     top: '30px'
   }
 
 });

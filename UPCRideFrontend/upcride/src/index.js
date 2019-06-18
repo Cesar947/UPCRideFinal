@@ -13,7 +13,7 @@ let db = [
           nombres: "César Alejandro",
           apellidos: "Pizarro Llanos"
       },
-      descripcion: "Iré desde el Metro de la Av. Venezuela hasta la UPC Monterrico.",
+      descripcion: "Iré desde el Metro de la Av. Venezuela hasta la UPC Monterrico. Los espero.",
       puntoPartida: "San Miguel",
       puntoDestino: "UPC Monterrico",
       horaPartida: "17:00",
@@ -30,7 +30,7 @@ let db = [
         nombres: "Juanelv Alessandro",
         apellidos: "Salgado Sanchez"
     },
-    descripcion: "Viaje desde la UPC Monterrico hasta el Callao",
+    descripcion: "Viaje desde la UPC Monterrico hasta el Callao.",
     puntoPartida: "UPC Monterrico",
     puntoDestino: "Callao",
     horaPartida: "19:00",

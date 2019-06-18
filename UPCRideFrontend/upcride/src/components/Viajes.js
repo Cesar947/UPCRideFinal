@@ -10,8 +10,8 @@ const useStyles = makeStyles({
     card: {
       width: 800,
       position: 'relative',
-      
-      marginTop: 60
+      top: '97px',
+      marginTop: 30
     },
     
     conductor: {
@@ -21,10 +21,15 @@ const useStyles = makeStyles({
     },
    
    TextoIzquierda:{
+     position: 'relative',
     textAlign: 'left',
+    top: '0px',
     },
+
     TextoDerecha:{
-        TextAlign: 'right'
+      position: 'relative',  
+      top: '0px',
+      textAlign: 'right'
     },
    Anuncio:{
     
@@ -47,22 +52,29 @@ return(
    { listaViajes.map(eViaje =>(
    <Card className={classes.card} key={eViaje.viajeID}>
       <CardContent>
-       
-       <Grid item xs={6} className={classes.TextoIzquierda}>
-        <Typography className={classes.conductor} color="textSecondary" >
-          Conductor: {eViaje.usuario.nombres + " " + eViaje.usuario.apellidos}
-        </Typography>
+     <Grid container>
+      <Grid item xs={6} className={classes.TextoIzquierda}>
       
+      <Typography className={classes.conductor} color="textSecondary" >
+          Conductor: <br/>{eViaje.usuario.nombres + " " + eViaje.usuario.apellidos}
+        </Typography>
+      <Typography className={classes.Anuncio} variant="h5" component="h2">
+         {eViaje.puntoPartida + "  " + eViaje.horaPartida}
+         <br/>
+         {eViaje.puntoDestino + "  " + eViaje.horaLlegada}
+        </Typography>
+
+        </Grid>
+
+       <Grid item xs={6} className={classes.TextoIzquierda}>
+       <Typography className={classes.Anuncio} variant="h5" component="h2">
+         Dia: {eViaje.dia} <br/> Fecha: {eViaje.fecha}
+        </Typography>
         <Typography className={classes.Anuncio} variant="h5" component="h2">
          {eViaje.descripcion}
         </Typography>
         </Grid>
-
-        <Grid item xs={6} className={classes.TextoDerecha}>
-
-            
         </Grid>
-        
       </CardContent>
       
       <CardActions>
