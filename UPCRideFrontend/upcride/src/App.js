@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Inicio from './components/Inicio.js'
+//import IniciarViaje from './components/IniciarViaje';
 import './App.css';
 
 

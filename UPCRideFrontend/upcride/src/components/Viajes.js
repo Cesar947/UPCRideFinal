@@ -10,8 +10,8 @@ const useStyles = makeStyles({
     card: {
       width: 800,
       position: 'relative',
-      top: '97px',
-      marginTop: 30
+      top: '100px',
+      marginTop: 20
     },
     
     conductor: {

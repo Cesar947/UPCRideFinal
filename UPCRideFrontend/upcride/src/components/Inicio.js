@@ -1,25 +1,14 @@
 import React from 'react';
 import 'typeface-roboto';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
-import Toolbar from '@material-ui/core/Toolbar';
+
 import TextField from '@material-ui/core/TextField';
-import Logo from './Logo.png';
+
 import UPC from './UPC.png';
 import { makeStyles } from '@material-ui/styles';
 import Place from '@material-ui/icons/Place';
 import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt';
 import Viajes from './Viajes.js';
-//Secciones del Toolbar
-const sections = [
-  'Inicio',
-  'Mis viajes',
-  'Mis anuncios',
-  'Mis solicitudes',
-  'Mi itinerario',
-  'Mis reseñas'
-];
-
+import Cabecera from './Cabecera.js';
 
 const useStyles = makeStyles({
   root: {
@@ -40,38 +29,13 @@ const useStyles = makeStyles({
     left:54,
     top: 82
   },
-  toolbarSecondary: {
-   
-    position: 'absolute',
-    top: '50px',
-    left: '350px',
-    marginBottom: '10px solid',
-    borderBottom: '1px solid',
-   
-    border: '1px'
-  },
-  toolbarLink: {
-    
-    flexShrink: 0,
-    padding: 15
-  },
+  
  IconFlecha:{
   position: 'relative',
   left:10,
   top: 90
  },
-  Logo: {
-    height: '10vmin',
-    position: 'absolute',
-    top: '25px',
-    left: '35px'
-  },
-  TextoLogo: {
-    height: '10vmin',
-    position: 'absolute',
-    top: '15px',
-    left: '120px'
-  },
+  
   textField: {
     marginLeft: 50,
     marginRight: 30,
@@ -111,29 +75,7 @@ const Inicio = (props) => {
   const classes = useStyles();
   return (
     <div>
-   
-    <img src={Logo}  alt="logo" className={classes.Logo} />
-    <Typography variant="title" className={classes.TextoLogo}>
-         <h3>UPC Ride</h3>
-    </Typography>
-   <div>
-   <Toolbar component="nav" variant="dense"  className={classes.toolbarSecondary}>
-     
-      {sections.map(section => (
-            <Link
-              color="textPrimary"
-              noWrap
-              key={section}
-              variant="body2"
-              href="#"
-              className={classes.toolbarLink}
-            >
-              <h2>{section}</h2>
-            </Link>
-          ))} 
-   
-    </Toolbar>
-    </div>
+      <Cabecera/>
     <form className={classes.container} noValidate autoComplete="off">
     <h5 className={classes.EncontrarViajeTexto}>Encuentra tu viaje aquí:</h5>
     <Place className={classes.iconPartida}/>
