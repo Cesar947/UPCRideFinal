@@ -7,16 +7,16 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import UserRegister from './UserRegister';
-import '../App.css';
+import './Register.css';
 
-const useStyles = makeStyles(theme => ({
+const classes = makeStyles(theme => ({
   appBar: {
     position: 'relative',
   },
   layout: {
     width: 'auto',
     position: 'absolute',
-    left:670,
+    left: 670,
     top: 20,
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
@@ -66,21 +66,22 @@ function getStepContent(step) {
   }
 }
 
-const PassengerRegister = () =>{
-    const classes = useStyles();
-    const [activeStep, setActiveStep] = React.useState(0);
-  
-    const handleNext = () => {
-      setActiveStep(activeStep + 1);
-    };
+const[activeStep, setActiveStep] = React.useState(0);
 
-  
+const handleNext = () => {
+  setActiveStep(activeStep + 1);
+};
+
+class PassengerRegister extends React.Component {
+
+
+  render() {
     return (
       <div>
         <img src={process.env.PUBLIC_URL + '/images/card.jpg'} className="Fondo" alt="logo" />
         <CssBaseline />
         <main className={classes.layout}>
-            <div className={classes.paper}>
+          <div className={classes.paper}>
             <Typography component="h1" variant="h4" align="center" className={classes.title} >
               Registro Pasajero
             </Typography>
@@ -100,29 +101,30 @@ const PassengerRegister = () =>{
                     Bienvenido a UPC Ride
                   </Typography>
                   <Typography variant="subtitle1">
-                  Gracias por unirte a esta Comunidad
+                    Gracias por unirte a esta Comunidad
                   </Typography>
                 </React.Fragment>
               ) : (
-                <React.Fragment>
-                  {getStepContent(activeStep)}
-                  <div className={classes.buttons}>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={handleNext}
-                      className={classes.button}
-                    >
-                      Registrar
+                  <React.Fragment>
+                    {getStepContent(activeStep)}
+                    <div className={classes.buttons}>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={handleNext}
+                        className={classes.button}
+                      >
+                        Registrar
                     </Button>
-                  </div>
-                </React.Fragment>
-              )}
+                    </div>
+                  </React.Fragment>
+                )}
             </React.Fragment>
-            </div>
+          </div>
         </main>
       </div>
     );
   }
+}
 
-  export default PassengerRegister;
+export default PassengerRegister;
