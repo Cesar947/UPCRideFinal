@@ -6,10 +6,11 @@ import com.myorg.upcride.model.Viaje;
 import com.myorg.upcride.service.ViajeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 
-
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -46,10 +47,10 @@ public class ViajeController {
     @RequestMapping(path="/filtros", method = RequestMethod.GET)
     public List<Viaje> filtrar(@RequestParam(value = "puntoPartida" , required = false) String puntoPartida,
                                @RequestParam(value="puntoDestino", required = false) String puntoDestino,
-                               @RequestParam(value="horaPartida", required = false)  String horaPartida,
-                               @RequestParam(value="horaLlegada", required = false)  String horaLlegada,
-                               @RequestParam(value="entrada_salida", defaultValue = "0") int entrada_salida,
-                               @RequestParam(value="fecha", required = false) String fecha
+                               @RequestParam(value="horaPartida", required = false) Time horaPartida,
+                               @RequestParam(value="horaLlegada", required = false)  Time horaLlegada,
+                               @RequestParam(value="entrada_salida", defaultValue = "2") int entrada_salida,
+                               @RequestParam(value="fecha", required = false) @DateTimeFormat(pattern="yyyy-MM-dd") Date fecha
     ) throws Exception{
 
 

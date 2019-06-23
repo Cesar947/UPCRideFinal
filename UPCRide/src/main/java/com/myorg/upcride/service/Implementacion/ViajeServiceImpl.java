@@ -8,6 +8,7 @@ import com.myorg.upcride.service.ViajeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -45,33 +46,29 @@ public class ViajeServiceImpl implements ViajeService {
     }
 
     @Override
-    public List<Viaje> filtrar(String puntoPartida, String puntoDestino, String horaPartida, String horaLlegada, int entrada_salida, String fecha) throws Exception {
+    public List<Viaje> filtrar(String puntoPartida, String puntoDestino, Time horaPartida, Time horaLlegada, int entrada_salida, Date fecha) throws Exception {
 
-        if (puntoPartida == null && puntoDestino == null && horaPartida == null && horaLlegada == null && entrada_salida == 0) {
-            SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
-            Date parsed = format.parse(fecha);
-            java.sql.Date sql = new java.sql.Date(parsed.getTime());
-
-            return viajeRepository.listarPorFecha(sql);
-        } else if (puntoPartida == null && puntoDestino == null && entrada_salida == 0 && fecha == null) {
+        if (puntoPartida == null && puntoDestino == null && horaPartida == null && horaLlegada == null && entrada_salida == 2) {
+            return viajeRepository.listarPorFecha(fecha);
+        }
+        else if(puntoPartida == null && puntoDestino == null && horaPartida == null && entrada_salida == 2 && fecha == null){
+            return viajeRepository.listarPorHoraLlegada(horaLlegada);
+        }
+        else if (puntoPartida == null && puntoDestino == null && entrada_salida == 2 && fecha == null) {
             return viajeRepository.listarPorHoraInicioYHoraFin(horaPartida, horaLlegada);
-        } else if (horaPartida == null && horaLlegada == null && entrada_salida == 0 && fecha == null) {
+        } else if (horaPartida == null && horaLlegada == null && entrada_salida == 2 && fecha == null) {
             return viajeRepository.listarPorPuntoPartidaYPuntoDestino(puntoPartida, puntoDestino);
         } else if (puntoPartida == null && puntoDestino == null && fecha == null && horaPartida == null && horaLlegada == null) {
             return viajeRepository.listarPorEntradaOSalida(entrada_salida);
 
-        } else if (entrada_salida == 0 && fecha == null) {
+        }
+       else if (entrada_salida == 2 && fecha == null) {
             return viajeRepository.listarPorPuntoPartidaYPuntoDestinoYHoraInicioYHoraFin(puntoPartida, puntoDestino, horaPartida, horaLlegada);
-        } else if (entrada_salida == 0) {
-            SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
-            Date parsed = format.parse(fecha);
-            java.sql.Date sql = new java.sql.Date(parsed.getTime());
-            return viajeRepository.listarPorPuntoPartidaYPuntoDestinoYHoraInicioYHoraFinYFecha(puntoPartida, puntoDestino, horaPartida, horaLlegada, sql);
+        } else if (entrada_salida == 2) {
+
+            return viajeRepository.listarPorPuntoPartidaYPuntoDestinoYHoraInicioYHoraFinYFecha( horaPartida, horaLlegada, puntoPartida, puntoDestino, fecha);
         } else {
-            SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
-            Date parsed = format.parse(fecha);
-            java.sql.Date sql = new java.sql.Date(parsed.getTime());
-            return viajeRepository.listarPorTodosLosFiltros(horaPartida, horaLlegada, puntoPartida, puntoDestino, entrada_salida, sql);
+            return viajeRepository.listarPorTodosLosFiltros(horaPartida, horaLlegada, puntoPartida, puntoDestino, entrada_salida, fecha);
 
         }
 
