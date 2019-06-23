@@ -37,4 +37,6 @@ public class SolicitudServiceImpl implements SolicitudService {
     public List<Solicitud> listarSolicitudes() throws Exception{
         return solicitudRepository.findAll();
     }
+
+
 }

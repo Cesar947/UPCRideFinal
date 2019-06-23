@@ -2,6 +2,7 @@ package com.myorg.upcride.controller;
 
 
 import com.myorg.upcride.model.Solicitud;
+import com.myorg.upcride.model.Usuario;
 import com.myorg.upcride.model.Viaje;
 import com.myorg.upcride.service.ViajeService;
 
@@ -44,6 +45,19 @@ public class ViajeController {
         return viajeService.buscarViaje(id);
     }
 
+    @RequestMapping(path="/{viajeId}/listaPasajeros")
+    public List<Usuario> listarPasajerosRegistrados(@PathVariable Integer viajeId) throws Exception{
+        return viajeService.listarPasajerosDelViaje(viajeId);
+
+    }
+
+
+    @RequestMapping(path="/{viajeId}/solicitudesPendientes")
+    public List<Solicitud> listarSolicitudesPendientesDelViaje(@PathVariable Integer viajeId) throws Exception{
+        return viajeService.listarSolicitudesPendientesDelViaje(viajeId);
+    }
+
+
     @RequestMapping(path="/filtros", method = RequestMethod.GET)
     public List<Viaje> filtrar(@RequestParam(value = "puntoPartida" , required = false) String puntoPartida,
                                @RequestParam(value="puntoDestino", required = false) String puntoDestino,
@@ -71,6 +85,7 @@ public class ViajeController {
     public List<Viaje> listarViajePorSolicitudYPasajero(@PathVariable("solicitudId")int solicitudId, @PathVariable("id") int pasajeroId)throws Exception{
         return viajeService.listarPorSolicitudyPorPasajero(solicitudId, pasajeroId);
     }
+
 
 
 }

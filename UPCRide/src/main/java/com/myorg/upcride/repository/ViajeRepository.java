@@ -1,5 +1,7 @@
 package com.myorg.upcride.repository;
 
+import com.myorg.upcride.model.Solicitud;
+import com.myorg.upcride.model.Usuario;
 import com.myorg.upcride.model.Viaje;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -55,4 +57,10 @@ public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
     @Transactional
     Viaje actualizarNumeroDePasajeros(@Param("numero") int numPasajeros, @Param("id") Integer id) throws Exception;
 
+    @Query("SELECT u FROM Usuario u JOIN Solicitud s ON u.id = s.pasajero.id JOIN Viaje v ON v.id = s.viaje.id WHERE v.id = ?1 AND s.confirmacionConductor = 'Aceptada'")
+    List<Usuario> listarPasajerosDelViaje(Integer viajeId) throws Exception;
+
+
+    @Query("SELECT s FROM Solicitud s WHERE s.viaje.id = ?1 AND s.confirmacionConductor = 'Pendiente' ")
+    List<Solicitud> listarSolicitudesPendientesDelViaje(Integer viajeId) throws Exception;
 }

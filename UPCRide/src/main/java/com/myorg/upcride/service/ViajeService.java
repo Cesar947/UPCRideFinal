@@ -1,6 +1,8 @@
 package com.myorg.upcride.service;
 
 
+import com.myorg.upcride.model.Solicitud;
+import com.myorg.upcride.model.Usuario;
 import com.myorg.upcride.model.Viaje;
 
 import java.sql.Time;
@@ -16,6 +18,7 @@ public interface ViajeService {
     int actualizarEstado(String estado, int id) throws Exception;
     List<Viaje> listarPorSolicitudyPorPasajero(int solicitudId, int pasajeroId) throws Exception;
     Viaje actualizarNumeroDePasajeros(Integer id) throws Exception;
-
+    List<Usuario> listarPasajerosDelViaje(Integer viajeId) throws Exception;
+    List<Solicitud> listarSolicitudesPendientesDelViaje(Integer viajeId) throws Exception;
 
 }

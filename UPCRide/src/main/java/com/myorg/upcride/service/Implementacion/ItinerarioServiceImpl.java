@@ -17,6 +17,8 @@ public class ItinerarioServiceImpl implements ItinerarioService {
         this.itinerarioRepository = itinerarioRepository;
     }
 
-
+    public Itinerario ingresarItinerario(Itinerario i) throws Exception{
+        return itinerarioRepository.save(i);
+    }
 
 }

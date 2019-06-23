@@ -32,4 +32,8 @@ public class SolicitudController {
     {
         return solicitudService.listarSolicitudes();
     }
+
+
+
+
 }
