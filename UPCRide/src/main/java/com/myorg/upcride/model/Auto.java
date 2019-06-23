@@ -23,10 +23,10 @@ public class Auto implements Serializable{
     private Integer id;
 
     @Column (name="placa", length = 50, nullable = false)
-    private int placa;
+    private String placa;
 
     @Column (name="poliza_soat", length = 50 , nullable = false )
-    private int polizaSoat;
+    private String polizaSoat;
 
     @Column (name="marca", length = 50 , nullable = false )
     private String marca;

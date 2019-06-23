@@ -18,13 +18,13 @@ public class ReseñaServiceImpl implements ReseñaService {
     }
 
     @Override
-    public Reseña PublicarReseña(Reseña r) throws Exception{
+    public Reseña publicarReseña(Reseña r) throws Exception{
         return reseñaRepository.save(r);
     }
 
 
     @Override
-    public List<Reseña> ListaReseñasPorConductor (Integer conductorId){
-        return reseñaRepository.ListaReseñasPorConductor(conductorId);
+    public List<Reseña> listarReseñasPorConductor (Integer conductorId){
+        return reseñaRepository.listarReseñasPorConductor(conductorId);
     }
 }

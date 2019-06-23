@@ -19,7 +19,7 @@ public class SolicitudServiceImpl implements SolicitudService {
 
 
     @Override
-    public Solicitud GuardarSolicitud(Solicitud s) throws Exception {
+    public Solicitud guardarSolicitud(Solicitud s) throws Exception {
         return solicitudRepository.save(s);
     }
 }

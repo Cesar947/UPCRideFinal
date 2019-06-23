@@ -1,6 +1,7 @@
 package com.myorg.upcride.controller;
 
 
+import com.myorg.upcride.model.Solicitud;
 import com.myorg.upcride.model.Viaje;
 import com.myorg.upcride.service.ViajeService;
 
@@ -43,16 +44,16 @@ public class ViajeController {
     }
 
     @RequestMapping(path="/filtros", method = RequestMethod.GET)
-    public List<Viaje> Filtrar(@RequestParam(value = "puntoPartida" , required = false) String puntoPartida,
+    public List<Viaje> filtrar(@RequestParam(value = "puntoPartida" , required = false) String puntoPartida,
                                @RequestParam(value="puntoDestino", required = false) String puntoDestino,
                                @RequestParam(value="horaPartida", required = false)  String horaPartida,
                                @RequestParam(value="horaLlegada", required = false)  String horaLlegada,
                                @RequestParam(value="entrada_salida", defaultValue = "0") int entrada_salida,
                                @RequestParam(value="fecha", required = false) String fecha
-                              ) throws Exception{
+    ) throws Exception{
 
 
-        return viajeService.Filtrar(puntoPartida,
+        return viajeService.filtrar(puntoPartida,
                 puntoDestino,
                 horaPartida,
                 horaLlegada,
@@ -61,7 +62,14 @@ public class ViajeController {
     }
 
     @RequestMapping(path="update/{id}", method = RequestMethod.PUT)
-    public int updateViaje(@RequestBody String estado, @PathVariable("id") Integer id) throws Exception{
-        return viajeService.Update(estado, id);
+    public int actualizarViaje(@RequestBody String estado, @PathVariable("id") Integer id) throws Exception{
+        return viajeService.actualizarEstado(estado, id);
     }
+
+    @RequestMapping(path="/{id}/{solicitudId}", method = RequestMethod.GET)
+    public List<Viaje> listarViajePorSolicitudYPasajero(@PathVariable("solicitudId")int solicitudId, @PathVariable("id") int pasajeroId)throws Exception{
+        return viajeService.listarPorSolicitudyPorPasajero(solicitudId, pasajeroId);
+    }
+
+
 }

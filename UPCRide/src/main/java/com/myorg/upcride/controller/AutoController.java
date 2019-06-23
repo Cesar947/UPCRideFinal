@@ -21,11 +21,7 @@ public class AutoController {
         this.autoService = autoService;
     }
 
-/*    @RequestMapping
-    public List<Auto> listarAutos() throws Exception
-    {
-        return autoService.list();
-    }*/
+
 
 }
 

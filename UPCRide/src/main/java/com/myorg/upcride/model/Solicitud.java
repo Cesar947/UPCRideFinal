@@ -34,23 +34,30 @@ public class Solicitud implements Serializable {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Usuario cliente;
+    @JoinColumn(name = "pasajero_id")
+    private Usuario pasajero;
 
     @ManyToOne
     @JoinColumn(name = "viaje_id")
     private Viaje viaje;
 
-    @Column(name = "mensajeSolicitud", length = 120, nullable = true)
+    @Column(name = "mensaje", length = 120, nullable = true)
     private String mensaje;
 
-    @Column(name = "confirmacion_conductor", length = 9, nullable = true)
-    private boolean confirmacionConductor;
+    @Column(name = "confirmacion_conductor", length = 9, nullable = false)
+    private String confirmacionConductor;
 
-    @Column(name = "punto_recojo", length = 30, nullable = true)
-    private String puntoRecojo;
+    @Column(name = "punto_encuentro", length = 30, nullable = false)
+    private String puntoEncuentro;
+
+    @Column(name = "encuentro_latitud", length = 30, nullable = false)
+    private String encuentroLatitud;
+
+    @Column(name = "encuentro_longitud", length = 30, nullable = false)
+    private String encuentroLongitud;
 
     @Column(name = "fecha", nullable = false)
     private Date fecha;
+
 
 }

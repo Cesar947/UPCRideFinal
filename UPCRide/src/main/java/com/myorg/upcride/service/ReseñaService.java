@@ -5,6 +5,6 @@ import com.myorg.upcride.model.Reseña;
 import java.util.List;
 
 public interface ReseñaService{
-    Reseña PublicarReseña(Reseña r) throws Exception;
-    List<Reseña> ListaReseñasPorConductor (Integer conductorId);
+    Reseña publicarReseña(Reseña r) throws Exception;
+    List<Reseña> listarReseñasPorConductor (Integer conductorId);
 }

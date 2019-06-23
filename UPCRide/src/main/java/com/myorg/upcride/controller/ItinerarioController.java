@@ -22,10 +22,5 @@ public class ItinerarioController {
         this.itinerarioService = itinerarioService;
     }
 
- /*   @RequestMapping
-    public List<Itinerario> listarItinerarios() throws Exception
-    {
-        return itinerarioService.list();
-    }*/
 
 }

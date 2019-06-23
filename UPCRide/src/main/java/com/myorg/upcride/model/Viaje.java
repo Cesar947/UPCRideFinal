@@ -34,26 +34,26 @@ public class Viaje implements Serializable {
     @JoinColumn(name = "conductor_id")
     private Usuario conductor;
 
-   @Column (name = "descripcion", length = 500, nullable = false)
+    @Column (name = "descripcion", length = 500, nullable = false)
     private String descripcion;
 
-   @Column(name = "punto_partida", length = 60, nullable = false) //Distrito partida
+    @Column(name = "punto_partida", length = 60, nullable = false) //Distrito partida
     private String puntoPartida;
 
-  @Column(name = "punto_destino", length = 60, nullable = false) //Distrito destino
+    @Column(name = "punto_destino", length = 60, nullable = false) //Distrito destino
     private String puntoDestino;
 
     @Column(name = "destino_latitud", length = 60, nullable = false)
-    private double puntoDestinoLatitud;
+    private double destinoLatitud;
 
     @Column(name = "destino_longitud", length = 60, nullable = false)
-    private double puntoDestintoLongitud;
+    private double destintoLongitud;
 
     @Column(name = "partida_latitud", length = 60, nullable = false)
-    private double puntoPartidaLatitud;
+    private double partidaLatitud;
 
     @Column(name = "partida_longitud", length = 60, nullable = false)
-    private double puntoPartidaLongitud;
+    private double partidaLongitud;
 
     @Column (name = "hora_partida", nullable = false)
     private Timestamp horaPartida;
@@ -67,16 +67,21 @@ public class Viaje implements Serializable {
     @Column (name = "fecha", nullable = false)
     private Date fecha;
 
-   @Column (name = "dia", length = 20, nullable = false)
+    @Column (name = "dia", length = 20, nullable = false)
     private String dia;
 
     @Column (name = "estado", length = 60, nullable = true)
     private String estado;
 
-   @Column (name = "visualizacion_habilitada", nullable = false) //1: visible - 0: invisible
+    @Column (name = "visualizacion_habilitada", nullable = false) //1: visible - 0: invisible
     private int visualizacionHabilitada;
 
+    @Column(name = "numero_pasajeros", nullable = true)
+    private int numeroPasajeros;
 
+
+    @Column(name = "limite_pasajeros", nullable = false)
+    private int limitePasajeros;
 
 
 }

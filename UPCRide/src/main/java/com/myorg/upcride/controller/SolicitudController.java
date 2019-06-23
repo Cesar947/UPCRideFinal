@@ -24,6 +24,6 @@ public class SolicitudController {
     @RequestMapping(method = RequestMethod.POST)
     public Solicitud registrarUsuario(@RequestBody Solicitud solicitud) throws Exception {
 
-        return solicitudService.GuardarSolicitud(solicitud);
+        return solicitudService.guardarSolicitud(solicitud);
     }
 }

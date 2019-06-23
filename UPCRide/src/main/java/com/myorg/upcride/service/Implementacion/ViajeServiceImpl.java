@@ -39,40 +39,44 @@ public class ViajeServiceImpl implements ViajeService {
     }
 
     @Override
-    public List<Viaje> Filtrar(String puntoPartida, String puntoDestino, String horaPartida, String horaLlegada, int entrada_salida, String fecha) throws Exception {
+    public List<Viaje> filtrar(String puntoPartida, String puntoDestino, String horaPartida, String horaLlegada, int entrada_salida, String fecha) throws Exception {
 
         if (puntoPartida == null && puntoDestino == null && horaPartida == null && horaLlegada == null && entrada_salida == 0) {
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
             Date parsed = format.parse(fecha);
             java.sql.Date sql = new java.sql.Date(parsed.getTime());
 
-            return viajeRepository.ListarPorFecha(sql);
+            return viajeRepository.listarPorFecha(sql);
         } else if (puntoPartida == null && puntoDestino == null && entrada_salida == 0 && fecha == null) {
-            return viajeRepository.ListarPorHoraInicioYHoraFin(horaPartida, horaLlegada);
+            return viajeRepository.listarPorHoraInicioYHoraFin(horaPartida, horaLlegada);
         } else if (horaPartida == null && horaLlegada == null && entrada_salida == 0 && fecha == null) {
-            return viajeRepository.ListarPorPuntoPartidaYPuntoDestino(puntoPartida, puntoDestino);
+            return viajeRepository.listarPorPuntoPartidaYPuntoDestino(puntoPartida, puntoDestino);
         } else if (puntoPartida == null && puntoDestino == null && fecha == null && horaPartida == null && horaLlegada == null) {
-            return viajeRepository.ListarPorEntradaOSalida(entrada_salida);
+            return viajeRepository.listarPorEntradaOSalida(entrada_salida);
 
         } else if (entrada_salida == 0 && fecha == null) {
-            return viajeRepository.ListarPorPuntoPartidaYPuntoDestinoYHoraInicioYHoraFin(puntoPartida, puntoDestino, horaPartida, horaLlegada);
+            return viajeRepository.listarPorPuntoPartidaYPuntoDestinoYHoraInicioYHoraFin(puntoPartida, puntoDestino, horaPartida, horaLlegada);
         } else if (entrada_salida == 0) {
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
             Date parsed = format.parse(fecha);
             java.sql.Date sql = new java.sql.Date(parsed.getTime());
-            return viajeRepository.ListarPorPuntoPartidaYPuntoDestinoYHoraInicioYHoraFinYFecha(puntoPartida, puntoDestino, horaPartida, horaLlegada, sql);
+            return viajeRepository.listarPorPuntoPartidaYPuntoDestinoYHoraInicioYHoraFinYFecha(puntoPartida, puntoDestino, horaPartida, horaLlegada, sql);
         } else {
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
             Date parsed = format.parse(fecha);
             java.sql.Date sql = new java.sql.Date(parsed.getTime());
-            return viajeRepository.ListarPorTodosLosFiltros(horaPartida, horaLlegada, puntoPartida, puntoDestino, entrada_salida, sql);
+            return viajeRepository.listarPorTodosLosFiltros(horaPartida, horaLlegada, puntoPartida, puntoDestino, entrada_salida, sql);
 
         }
 
     }
     @Override
-    public int Update(String estado, int id) throws Exception{
-        return viajeRepository.Update(estado, id);
+    public int actualizarEstado(String estado, int id) throws Exception{
+        return viajeRepository.actualizarEstado(estado, id);
+    }
+    @Override
+    public List<Viaje> listarPorSolicitudyPorPasajero(int solicitudId, int pasajeroId) throws Exception{
+        return viajeRepository.listarPorSolicitudyPorPasajero(solicitudId, pasajeroId);
     }
 }
 

@@ -21,13 +21,13 @@ public class ReseñaController {
 
 
     @RequestMapping
-    public Reseña PublicarReseñas(Reseña r) throws Exception {
-        return reseñaService.PublicarReseña(r);
+    public Reseña publicarReseñas(Reseña r) throws Exception {
+        return reseñaService.publicarReseña(r);
     }
 
     @RequestMapping(path="/{conductorId}", method = RequestMethod.GET)
-    public List<Reseña> ListarResñasPorConductor(@PathVariable Integer conductorId) throws Exception{
-        return reseñaService.ListaReseñasPorConductor(conductorId);
+    public List<Reseña> listarResñasPorConductor(@PathVariable Integer conductorId) throws Exception{
+        return reseñaService.listarReseñasPorConductor(conductorId);
     }
 
 }
