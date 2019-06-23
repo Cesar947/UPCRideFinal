@@ -16,32 +16,7 @@ public class ItinerarioServiceImpl implements ItinerarioService {
     public ItinerarioServiceImpl(ItinerarioRepository itinerarioRepository){
         this.itinerarioRepository = itinerarioRepository;
     }
-/*
 
-    @Override
-    public boolean insert(Itinerario t) throws Exception{
-        return itinerarioRepository.insert(t);
-    }
 
-    @Override
-    public boolean update(Itinerario t) throws Exception{
-        return itinerarioRepository.update(t);
-    }
-
-    @Override
-    public boolean delete(Itinerario t) throws Exception{
-        return itinerarioRepository.delete(t);
-    }
-
-    @Override
-    public List<Itinerario> list() throws Exception{
-        return itinerarioRepository.list();
-    }
-
-    @Override
-    public Itinerario listById(Itinerario t) throws Exception{
-        return itinerarioRepository.listById(t);
-    }
-*/
 
 }

@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.sql.Timestamp;
+import java.sql.Time;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -56,10 +56,10 @@ public class Viaje implements Serializable {
     private double partidaLongitud;
 
     @Column (name = "hora_partida", nullable = false)
-    private Timestamp horaPartida;
+    private Time horaPartida;
 
     @Column (name = "hora_llegada", nullable = false)
-    private Timestamp horaLlegada;
+    private Time horaLlegada;
 
     @Column (name = "entrada_salida", nullable = false) //E: Entrada - S: Salida
     private int entrada_salida;

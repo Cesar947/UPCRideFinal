@@ -42,4 +42,13 @@ public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
 
     @Query("SELECT v FROM Viaje v JOIN Solicitud s JOIN Usuario u WHERE s.id = ?1 AND u.id = ?2")
     List<Viaje> listarPorSolicitudyPorPasajero(int solicitudId, int pasajeroId) throws Exception;
+
+    @Query("SELECT COUNT(s.pasajero.id) FROM Viaje v JOIN Solicitud s where v.id = ?1 group by v.id")
+    int calcularNumerodePasajerosDelViaje(Integer viajeId) throws Exception;
+
+    @Modifying
+    @Query("UPDATE Viaje v SET v.numeroPasajeros = :numero WHERE v.id = :id")
+    @Transactional
+    Viaje actualizarNumeroDePasajeros(@Param("numero") int numPasajeros, @Param("id") Integer id) throws Exception;
+
 }

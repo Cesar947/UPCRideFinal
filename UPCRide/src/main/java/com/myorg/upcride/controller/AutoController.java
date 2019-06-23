@@ -22,6 +22,11 @@ public class AutoController {
     }
 
 
+    @RequestMapping(method = RequestMethod.POST)
+    public Auto guardarAuto(@RequestBody Auto a) throws Exception{
+        return autoService.guardarAuto(a);
+        }
+
 
 }
 

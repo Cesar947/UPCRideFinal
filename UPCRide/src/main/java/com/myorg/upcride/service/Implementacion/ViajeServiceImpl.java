@@ -1,6 +1,8 @@
 package com.myorg.upcride.service.Implementacion;
 
+import com.myorg.upcride.model.Auto;
 import com.myorg.upcride.model.Viaje;
+import com.myorg.upcride.repository.AutoRepository;
 import com.myorg.upcride.repository.ViajeRepository;
 import com.myorg.upcride.service.ViajeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,17 +16,21 @@ import java.util.List;
 public class ViajeServiceImpl implements ViajeService {
 
     ViajeRepository viajeRepository;
-
+    AutoRepository autoRepository;
     @Autowired
-    public ViajeServiceImpl(ViajeRepository viajeRepository) {
+    public ViajeServiceImpl(ViajeRepository viajeRepository, AutoRepository autoRepository) {
         this.viajeRepository = viajeRepository;
+        this.autoRepository = autoRepository;
     }
 
 
     @Override
     public Viaje publicarViaje(Viaje v) throws Exception {
-        v.setEstado("Disponible");
+        v.setEstado("Publicado");
         v.setVisualizacionHabilitada(1);
+        Auto auto = autoRepository.buscarAutoPorConductor(v.getConductor().getId());
+        v.setLimitePasajeros(auto.getLimitePersonas());
+        v.setNumeroPasajeros(0);
         return viajeRepository.save(v);
     }
 
@@ -78,5 +84,14 @@ public class ViajeServiceImpl implements ViajeService {
     public List<Viaje> listarPorSolicitudyPorPasajero(int solicitudId, int pasajeroId) throws Exception{
         return viajeRepository.listarPorSolicitudyPorPasajero(solicitudId, pasajeroId);
     }
+
+    @Override
+    public Viaje actualizarNumeroDePasajeros(Integer id) throws Exception{
+       int resultado = viajeRepository.calcularNumerodePasajerosDelViaje(id);
+       return viajeRepository.actualizarNumeroDePasajeros(resultado,id);
+    }
+
+
+
 }
 

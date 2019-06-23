@@ -17,28 +17,9 @@ public class AutoServiceImpl implements AutoService {
         this.autoRepository = autoRepository;
     }
 
- /*   @Override
-    public boolean insert(Auto t) throws Exception{
-        return autoRepository.insert(t);
+    @Override
+    public Auto guardarAuto(Auto auto) throws Exception{
+        return autoRepository.save(auto);
     }
 
-    @Override
-    public boolean update(Auto t) throws Exception{
-        return autoRepository.update(t);
-    }
-
-    @Override
-    public boolean delete(Auto t) throws Exception{
-        return autoRepository.delete(t);
-    }
-
-    @Override
-    public List<Auto> list() throws Exception{
-        return autoRepository.list();
-    }
-
-    @Override
-    public Auto listById(Auto t) throws Exception{
-        return autoRepository.listById(t);
-    }*/
 }

@@ -14,4 +14,7 @@ public interface ViajeService {
     List<Viaje> filtrar(String puntoPartida,String puntoDestino, String horaPartida, String horaLlegada, int entrada_salida, String fecha) throws Exception;
     int actualizarEstado(String estado, int id) throws Exception;
     List<Viaje> listarPorSolicitudyPorPasajero(int solicitudId, int pasajeroId) throws Exception;
+    Viaje actualizarNumeroDePasajeros(Integer id) throws Exception;
+
+
 }

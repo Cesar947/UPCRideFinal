@@ -26,4 +26,10 @@ public class SolicitudController {
 
         return solicitudService.guardarSolicitud(solicitud);
     }
+
+    @RequestMapping
+    public List<Solicitud> listarSolicitudes() throws Exception
+    {
+        return solicitudService.listarSolicitudes();
+    }
 }

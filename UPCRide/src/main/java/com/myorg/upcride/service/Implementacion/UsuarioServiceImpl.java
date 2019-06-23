@@ -6,6 +6,7 @@ import com.myorg.upcride.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Service
@@ -21,7 +22,27 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 
     @Override
-    public Usuario registrarUsuario(Usuario u) throws Exception {
+    public Usuario registrarUsuario(Usuario u){
+        List<Usuario> lista = usuarioRepository.findAll();
+       int c = 0;
+        try{
+            for(int i = 0; i < lista.size(); i++){
+            if(lista.get(i).getCodigo()== u.getCodigo() ||
+             lista.get(i).getNombres() == u.getNombres() ||
+             lista.get(i).getApellidos() == u.getApellidos() ){
+                c = 1;
+            }
+
+        }
+        if(u.getRol() == 'C') {
+
+        }
+       }catch(Exception ex){
+           if(c == 1){
+            throw ex;
+       }
+        }
+
         return usuarioRepository.save(u);
     }
 

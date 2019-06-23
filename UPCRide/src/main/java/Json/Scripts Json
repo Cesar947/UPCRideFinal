@@ -37,31 +37,35 @@
 
         //Viaje
 
-        {
-                "viajeID": 1,
-                "conductor": {
-                    "id": 2,
-                    "codigo": "u201710947",
-                    "email": "u201710947@upc.edu.pe",
-                    "contraseña": "adgasdgasdg",
-                    "nombres": "César Alejandro",
-                    "apellidos": "Pizarro Llanos",
-                    "ubicacion": "Casa",
-                    "facebook_id": "www.facebook.com",
-                    "telefono": "999999999",
-                    "distrito": "Magdalena del Mar",
-                    "rol": "C",
-                    "licenciaConducir": "asc124",
-                    "sede": "UPC San Miguel"
-                },
-                "descripcion": "Viaje desde la UPC Monterrico hasta el Mercado Magdalena",
-                "puntoPartida": "UPC Monterrico",
-                "puntoDestino": "Mercado Magdalena",
-                "horaPartida": "17:00",
-                "horaLlegada": "18:30",
-                "entrada_salida": "S",
-                "fecha": "2019-06-10",
-                "dia": "Lunes",
-                "estado": "Disponible",
-                "visualizacionHabilitada": 1
-            }
+       {
+
+               "conductor": {
+                   "id": 1,
+                   "codigo": "U201710061",
+                   "correoUPC": "U201710061@upc.edu.pe",
+                   "contraseña": "xdxdxd5000",
+                   "nombres": "Bryan Antony",
+                   "apellidos": "Miramira Morales",
+                   "ubicacionLatitud": "-11.9909776",
+                   "ubicacionLongitud": "-77.0713316",
+                   "facebook_id": "www.facebook.com",
+                   "telefono": "98720339",
+                   "distrito": "Los Olivos",
+                   "rol": "C",
+                   "licenciaConducir": "X01928374",
+                   "sede": "UPC San Miguel"
+               },
+               "descripcion": "Iré desde Izaguirre hasta la UPC San Miguel. Los espero",
+               "puntoPartida": "Av. Izaguirre",
+               "puntoDestino": "UPC San Miguel",
+               "destinoLatitud": -12.0768117,
+               "destintoLongitud": -77.0958753,
+               "partidaLatitud": -11.9909776,
+               "partidaLongitud": -77.0713316,
+               "horaPartida": "11:00:00",
+               "horaLlegada": "13:00:00",
+               "entrada_salida": 0,
+               "fecha": "2019-06-26",
+               "dia": "Miércoles"
+
+           }
