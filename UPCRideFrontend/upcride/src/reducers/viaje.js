@@ -1,7 +1,12 @@
-import {LISTAR_VIAJES} from "../actions/actionTypes";
+import {LISTAR_VIAJES, PUBLICAR_VIAJE} from "../actions/actionTypes";
 
 export default function viaje(state = {}, action) {
     switch (action.type) {
+        case PUBLICAR_VIAJE:
+            return Object.assign({}, state, {
+                 actionType: action.type,
+                 viaje: action.respuesta
+            });
         case LISTAR_VIAJES:
             return Object.assign({}, state, {
                 actionType: action.type,

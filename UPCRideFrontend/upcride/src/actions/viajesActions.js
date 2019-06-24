@@ -1,4 +1,4 @@
-import {LISTAR_VIAJES} from './actionTypes'
+import {LISTAR_VIAJES,PUBLICAR_VIAJE} from './actionTypes'
 
 export function fetchViajes() {
     return function (dispatch, getState) {
@@ -17,3 +17,30 @@ function setViajes(viajes) {
         viajes
     }
 }
+
+export function guardarViaje(viaje){
+     
+    return function (dispatch, getState){
+        fetch('http://localhost:5050/viajes', {
+          method: 'post',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(viaje)
+        })
+        .then(response => response.json())
+        .then(jsonData => {
+            dispatch(setGuardarViaje(jsonData))
+        })
+
+        }
+    }
+
+export function setGuardarViaje(DataViaje){
+return{
+    type: PUBLICAR_VIAJE,
+    DataViaje
+}
+}
+

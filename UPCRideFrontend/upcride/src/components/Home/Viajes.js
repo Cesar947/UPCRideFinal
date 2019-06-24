@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import './Home.css';
 import PropTypes from "prop-types";
+import { PostButton } from '../Button';
 
 
 
@@ -35,6 +36,7 @@ class Viajes extends React.Component {
     render() {
         return (
             <div>
+                <PostButton> PUBLICAR </PostButton>
                 <Card>
                     {this.state.trips.map((trip, index) => (
                         <CardContent key={index}>
