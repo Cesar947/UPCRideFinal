@@ -8,11 +8,16 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import './Home.css';
 import PropTypes from "prop-types";
+
 import { PostButton } from '../Button';
+import Table from '@material-ui/core/Table';
 
 
 
-class Viajes extends React.Component {
+
+
+
+class ViajesList extends React.Component {
 
     static propTypes = {
         trips: PropTypes.array.isRequired
@@ -36,31 +41,33 @@ class Viajes extends React.Component {
     render() {
         return (
             <div>
+
                 <PostButton> PUBLICAR </PostButton>
-                <Card>
+              
+                <Table responsive hover>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Account Name</th>
+                        <th>Balance</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+               
+
                     {this.state.trips.map((trip, index) => (
-                        <CardContent key={index}>
-                            <Typography className="Titulo" color="textSecondary" gutterBottom>
-                                {trip.descripcion}
-                            </Typography>
-                            <Typography variant="h5" component="h2">
-                                {trip.puntoPartida}
-                            </Typography>
-                            <Typography className="Pos" color="textSecondary">
-                                {trip.puntoDestino}
-                            </Typography>
-                            <Typography variant="body2" component="p">
-                                {trip.estado}
-                            </Typography>
-                        </CardContent>
+                        <tr key={index}>
+                            <td>{trip.descripcion}</td>
+                            <td>{trip.puntoPartida}</td>
+                            <td>{trip.puntoDestino}</td>
+                        </tr>
                     ))}
-                    <CardActions>
-                        <Button size="small">Solicitar</Button>
-                    </CardActions>
-                </Card>
+                    </tbody>
+                </Table>
             </div>
         );
     }
 }
 
-export default Viajes;
+export default ViajesList;

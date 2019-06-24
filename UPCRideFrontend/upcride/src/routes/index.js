@@ -7,8 +7,7 @@ import DriverRegister from '../components/Register/DriverRegister';
 import HomePage from './HomePage';
 
 
-const Routes = () => {
-    return (
+const Routes = () => (
         <Router>
             <Switch>
                 <Route exact path="/" component={Login} />
@@ -18,7 +17,6 @@ const Routes = () => {
                 <Route path="/home" component={HomePage} />
             </Switch>
         </Router>
-    );
-}
+);
 
 export default Routes;

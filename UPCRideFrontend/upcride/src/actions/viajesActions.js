@@ -1,12 +1,12 @@
 import {LISTAR_VIAJES,PUBLICAR_VIAJE} from './actionTypes'
 
-export function fetchViajes() {
+export function fetchViajesList() {
     return function (dispatch, getState) {
 
         fetch("http://localhost:5050/viajes")
             .then(response => response.json())
             .then(jsonData => {
-                dispatch(setViajes(jsonData._embedded.viajes))
+                dispatch(setViajes(jsonData))
             })
     };
 }
