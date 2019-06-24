@@ -1,1 +1,1 @@
-export const LISTAR_VIAJES = 'LISTAR_VIAJES'
+export const LISTAR_VIAJES = 'LISTAR_VIAJES';

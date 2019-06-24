@@ -1,12 +1,12 @@
 import React from 'react';
-import Viajes from './Viajes';
+import ViajesList from './Viajes';
 import './Home.css';
 import SearchBar from './SearchBar';
 import NavBar from './NavBar';
 import {connect} from "react-redux";
 
 
-import {fetchViajes} from '../../actions/viajesActions';
+import {fetchViajesList} from '../../actions/viajesActions';
 
 import {LISTAR_VIAJES} from '../../actions/actionTypes';
 
@@ -22,12 +22,12 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchViajes();
+    this.props.fetchViajesList();
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.actionType === LISTAR_VIAJES) {
-      this.setState({ listaviajes: nextProps.listaviajes })
+      this.setState({ listaviajes: nextProps.listaviajes });
     }
   }
 
@@ -37,7 +37,7 @@ class Home extends React.Component {
         <NavBar />
         <SearchBar />
         <div className="Viajes">
-          <Viajes trips={this.state.listaviajes} />
+          <ViajesList trips={this.state.listaviajes} />
         </div>
       </div>
 
@@ -53,7 +53,7 @@ const mapState = state => {
 };
 
 const mapDispatch = {
-  fetchViajes
+  fetchViajesList
 };
 
 export default connect(mapState, mapDispatch)(Home);
