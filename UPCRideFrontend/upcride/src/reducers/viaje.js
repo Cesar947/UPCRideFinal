@@ -5,7 +5,7 @@ export default function viaje(state = {}, action) {
         case PUBLICAR_VIAJE:
             return Object.assign({}, state, {
                  actionType: action.type,
-                 viaje: action.respuesta
+                 viaje: action.dataviaje
             });
         case LISTAR_VIAJES:
             return Object.assign({}, state, {

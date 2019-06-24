@@ -22,8 +22,8 @@ public class ItinerarioController {
         this.itinerarioService = itinerarioService;
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    /*@RequestMapping(method = RequestMethod.POST)
     public guardarItinerario(@RequestBody Itinerario i){
 
-    }
+    }*/
 }

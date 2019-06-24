@@ -1,5 +1,5 @@
 
-export const LISTAR_VIAJES = 'LISTAR_VIAJES'
+export const LISTAR_VIAJES = 'LISTAR_VIAJES';
 export const PUBLICAR_VIAJE = 'PUBLICAR_VIAJE'
 
 

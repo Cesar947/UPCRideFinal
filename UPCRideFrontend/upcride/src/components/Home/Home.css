@@ -1,4 +1,3 @@
-
 .Titulo{
     font-size: 14px;
 }
@@ -7,10 +6,12 @@
     margin-bottom: 12px;
 }
 
-.Card {
-    min-width: 275px;
-}
-
+.Form{
+    width: 500px;
+    position: relative;
+    left: 650px;
+    top: 50px;
+  }
 
 .Bullet {
     display: inline-block;
@@ -43,19 +44,22 @@
     color: #ffffff;
 }
 
-
-.Card{
-    widows: 200%;
-    display: flex;
-    flex-direction: column;
-}
+.Fondo{
+    width: 80%;
+    position: absolute;
+    top: 50px;
+    left: 120px;
+    -webkit-box-shadow: 0px 7px 79px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 7px 79px -23px rgba(0,0,0,0.75);
+  box-shadow: 0px 7px 79px -23px rgba(0,0,0,0.75);
+  }
 
 .CardContent{
     flex-grow: 2;
 
 }
 
-.CardGrid{
+.CardContainer{
     padding-top: 8px;
     padding-bottom: 8px;
     position: 'absolute';
@@ -65,8 +69,9 @@
 .Viajes{
     position: absolute;
     top: 250px;
-    width: 700px;
     left: 350px;
+    height: 500%;
+    width: 45%;
 }
 
 .HeroContent {

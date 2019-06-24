@@ -6,6 +6,7 @@ import NavBar from './NavBar';
 import {connect} from "react-redux";
 
 
+
 import {fetchViajesList} from '../../actions/viajesActions';
 
 import {LISTAR_VIAJES} from '../../actions/actionTypes';
@@ -36,7 +37,7 @@ class Home extends React.Component {
       <div>
         <NavBar />
         <SearchBar />
-        <div className="Viajes">
+        <div className="Viajes" xs="3">
           <ViajesList trips={this.state.listaviajes} />
         </div>
       </div>

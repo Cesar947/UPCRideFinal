@@ -41,30 +41,31 @@ class ViajesList extends React.Component {
     render() {
         return (
             <div>
-
-                <PostButton> PUBLICAR </PostButton>
-              
-                <Table responsive hover>
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Account Name</th>
-                        <th>Balance</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-               
-
+                <Grid>
                     {this.state.trips.map((trip, index) => (
-                        <tr key={index}>
-                            <td>{trip.descripcion}</td>
-                            <td>{trip.puntoPartida}</td>
-                            <td>{trip.puntoDestino}</td>
-                        </tr>
+                    <Grid key={index} xs={12} >
+                        <Card >
+                            <CardContent>
+
+                                <Typography className="Titulo" color="textSecondary" gutterBottom>
+                                    {trip.conductor.nombres}</Typography>
+                                <Typography variant="h5" component="h2">
+                                    {trip.puntoPartida}</Typography>
+                                <Typography variant="h5" component="h2">
+                                    {trip.puntoDestino}</Typography>
+                                <Typography className="Titulo" color="textSecondary" gutterBottom>
+                                    {trip.descripcion}</Typography>
+
+
+                            </CardContent>
+
+                            <CardActions>
+                                <Button size="small">Solicitar</Button>
+                            </CardActions>
+                        </Card>
+                        </Grid>
                     ))}
-                    </tbody>
-                </Table>
+                </Grid>
             </div>
         );
     }
