@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.sql.Time;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -34,10 +33,10 @@ public class ViajeController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST)
-    public Viaje publicarViaje(@RequestBody Viaje v) throws Exception {
+    @RequestMapping(path="/{conductorId}", method = RequestMethod.POST)
+    public Viaje publicarViaje( @PathVariable Integer conductorId, @RequestBody Viaje v) throws Exception {
 
-        return viajeService.publicarViaje(v);
+        return viajeService.publicarViaje(v, conductorId);
     }
 
     @RequestMapping(path="/{id}", method = RequestMethod.GET)
