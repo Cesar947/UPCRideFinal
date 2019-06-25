@@ -5,14 +5,15 @@ import com.myorg.upcride.model.Solicitud;
 import com.myorg.upcride.model.Usuario;
 import com.myorg.upcride.model.Viaje;
 import com.myorg.upcride.repository.AutoRepository;
-import com.myorg.upcride.repository.SolicitudRepository;
+
+import com.myorg.upcride.repository.UsuarioRepository;
 import com.myorg.upcride.repository.ViajeRepository;
 import com.myorg.upcride.service.ViajeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Time;
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
 import java.util.List;
 
@@ -21,22 +22,25 @@ public class ViajeServiceImpl implements ViajeService {
 
     ViajeRepository viajeRepository;
     AutoRepository autoRepository;
+    UsuarioRepository conductorRepository;
 
     @Autowired
-    public ViajeServiceImpl(ViajeRepository viajeRepository, AutoRepository autoRepository) {
+    public ViajeServiceImpl(ViajeRepository viajeRepository, AutoRepository autoRepository, UsuarioRepository conductorRepository) {
         this.viajeRepository = viajeRepository;
         this.autoRepository = autoRepository;
-
+        this.conductorRepository = conductorRepository;
     }
 
 
     @Override
-    public Viaje publicarViaje(Viaje v) throws Exception {
+    public Viaje publicarViaje(Viaje v, Integer conductorId) throws Exception {
         v.setEstado("Publicado");
         v.setVisualizacionHabilitada(1);
         Auto auto = autoRepository.buscarAutoPorConductor(v.getConductor().getId());
         v.setLimitePasajeros(auto.getLimitePersonas());
         v.setNumeroPasajeros(0);
+        Usuario conductor = conductorRepository.findById(conductorId).get();
+        v.setConductor(conductor);
         return viajeRepository.save(v);
     }
 

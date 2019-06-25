@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface ViajeService {
 
-    Viaje publicarViaje(Viaje v) throws Exception;
+    Viaje publicarViaje(Viaje v, Integer conductorId) throws Exception;
     Viaje buscarViaje(Integer id) throws Exception;
     List<Viaje> visualizarViajes() throws Exception;
     List<Viaje> filtrar(String puntoPartida, String puntoDestino, Time horaPartida, Time horaLlegada, int entrada_salida, Date fecha) throws Exception;
