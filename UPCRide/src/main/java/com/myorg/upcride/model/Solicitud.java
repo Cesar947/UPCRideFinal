@@ -51,10 +51,10 @@ public class Solicitud implements Serializable {
     private String puntoEncuentro;
 
     @Column(name = "encuentro_latitud", length = 30, nullable = false)
-    private String encuentroLatitud;
+    private double encuentroLatitud;
 
     @Column(name = "encuentro_longitud", length = 30, nullable = false)
-    private String encuentroLongitud;
+    private double encuentroLongitud;
 
     @Column(name = "fecha", nullable = false)
     private Date fecha;
