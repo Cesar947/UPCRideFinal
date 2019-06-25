@@ -22,8 +22,14 @@ public class Itinerario implements Serializable{
     @Column(name="itinerario_id")
     private Integer id;
 
-    @Column (name="entrada_salida", length = 50 , nullable = false ) //E: Entrada - S: Salida
+    @Column (name="entrada_salida" , nullable = false ) //E: Entrada - S: Salida
     private int entrada_salida;
+
+    @Column(name="punto_partida",length = 50 , nullable = false)
+    private String puntoPartida;
+
+    @Column(name="punto_destino",length = 50 , nullable = false)
+    private String puntoDestino;
 
     @Column (name="partida_latitud", length = 50 , nullable = false )
     private double partidaLatitud;
@@ -36,10 +42,6 @@ public class Itinerario implements Serializable{
 
     @Column (name="destino_longitud", length = 50 , nullable = false )
     private double destinoLongitud;
-
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Usuario cliente;
 
     @Column (name="hora", length = 50, nullable = false)
     private Time hora;
