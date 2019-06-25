@@ -1,14 +1,24 @@
 import React from 'react';
 import { PUBLICAR_VIAJE } from '../../actions/actionTypes';
 import { publicarViaje } from '../../actions/viajesActions';
+
 import TextField from '@material-ui/core/Button';
 import './Form.css';
+import Button from '@material-ui/core/Button';
+import { LoginTextField } from '../Text';
+import Grid from '@material-ui/core/Grid';
+import {connect} from "react-redux";
+import './Home.css';
+import {Redirect} from 'react-router-dom';
+
+
 
 
 class PostForm extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
+        let posted = false
         this.state = {
             conductor: '',
             descripcion: '',//llenar
@@ -18,206 +28,236 @@ class PostForm extends React.Component {
             destintoLongitud: '',
             partidaLatitud: '',
             partidaLongitud: '',
-            horaPartida: '',//llenar
-            horaLlegada: '',//llenar
-            entrada_salida: '',//llenar
-            fecha: '',//llenar
-            dia: '',//llenar
-            estado: '',
-            visualizacionHabilitada: '',
-            numeroPasajeros: '',
-            limitePasajeros: ''
-        }
-    }
-    /*handleChange(event){
-        let fieldName = event.target.name;
-        let fieldValue = event.target.value;
 
-        this.setState({...this.state, [fieldName]: fieldValue});
-    }*/
-    handleChange = name => event => {
-        setValues({ ...values, [name]: event.target.value });
-      };
+horaPartida: '',
+horaLlegada: '',
+entrada_salida: '',
+fecha: '',
+dia: '',
+estado: "Publicado",
+visualizacionHabilitada: 1,
+numeroPasajeros: 0,
+limitePasajeros: '',
+posted
+}
+}
+handleChange(event) {
+let fieldName = event.target.name;
+let fieldValue = event.target.value;
+
+this.setState({ ...this.state, [fieldName]: fieldValue });
+}
+
+
 
 
     handleSubmit() {
         this.props.publicarViaje(this.state);
     }
-    
+
     componentWillReceiveProps(nextProps) {
-        if(nextProps.actionType === PUBLICAR_VIAJE){
-           this.props.afterSubmit();
+        if (nextProps.actionType === PUBLICAR_VIAJE) {
+            this.setState({
+                posted: true})
+            }
         }
-    }
 
-    render(){
-      return(  
-        <form className="container" noValidate autoComplete="off">
-       <TextField
-        id="standard-with-placeholder"
-        label="With placeholder"
-        placeholder="Placeholder"
-        className="textField"
-        margin="normal"
-      />
-      <TextField
-        id="standard-name"
-        label="Name"
-        className="textField"
-        value=""
-        onChange={this.handleChange('name')}
-        margin="normal"
-      />
-      <TextField
-        id="standard-uncontrolled"
-        label="Uncontrolled"
-        defaultValue="foo"
-        className="textField"
-        margin="normal"
-      />
-      <TextField
-        required
-        id="standard-required"
-        label="Required"
-        defaultValue="Hello World"
-        className="textField"
-        margin="normal"
-      />
-      <TextField
-        error
-        id="standard-error"
-        label="Error"
-        defaultValue="Hello World"
-        className="textField"
-        margin="normal"
-      />
-      <TextField
-        disabled
-        id="standard-disabled"
-        label="Disabled"
-        defaultValue="Hello World"
-        className="textField"
-        margin="normal"
-      />
-      <TextField
-        id="standard-password-input"
-        label="Password"
-        className="textField"
-        type="password"
-        autoComplete="current-password"
-        margin="normal"
-      />
-      <TextField
-        id="standard-read-only-input"
-        label="Read Only"
-        defaultValue="Hello World"
-        className="textField"
-        margin="normal"
-        InputProps={{
-          readOnly: true,
-        }}
-      />
-      <TextField
-        id="standard-dense"
-        label="Dense"
-        className="textField"
-        margin="dense"
-      />
-      <TextField
-        id="standard-multiline-flexible"
-        label="Multiline"
-        multiline
-        rowsMax="4"
-        value=""
-        onChange={this.handleChange('multiline')}
-        className="textField"
-        margin="normal"
-      />
-      <TextField
-        id="standard-multiline-static"
-        label="Multiline"
-        multiline
-        rows="4"
-        defaultValue="Default Value"
-        className="textField"
-        margin="normal"
-      />
-      <TextField
-        id="standard-helperText"
-        label="Helper text"
-        defaultValue="Default Value"
-        className="textField"
-        helperText="Some important text"
-        margin="normal"
-      />
-     
-      <TextField
-        id="standard-textarea"
-        label="With placeholder multiline"
-        placeholder="Placeholder"
-        multiline
-        className="textField"
-        margin="normal"
-      />
-      <TextField
-        id="standard-number"
-        label="Number"
-        value={values.age}
-        onChange={this.handleChange('age')}
-        type="number"
-        className="textField"
-        InputLabelProps={{
-          shrink: true,
-        }}
-        margin="normal"
-      />
-      <TextField
-        id="standard-search"
-        label="Search field"
-        type="search"
-        className="textField"
-        margin="normal"
-      />
-      <TextField
-        id="standard-select-currency"
-        select
-        label="Select"
-        className="textField"
-        value=""
-        onChange={handleChange('currency')}
-        SelectProps={{
-          MenuProps: {
-            className: classes.menu,
-          },
-        }}
-        helperText="Please select your currency"
-        margin="normal"
-      >
-        XD
-      </TextField>
-     
-      <TextField
-        id="standard-full-width"
-        label="Label"
-        style={{ margin: 8 }}
-        placeholder="Descripción"
-        helperText=""
-        fullWidth
-        margin="normal"
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
-      <TextField
-        id="standard-bare"
-        className="textField"
-        defaultValue="Bare"
-        margin="normal"
-        inputProps={{ 'aria-label': 'bare' }}
-      />
-    </form>)
+    render() {
+        if(this.state.posted){
+            return <Redirect to="/home"/>
+          }
+        return (
+            <div>
+            <img src={process.env.PUBLIC_URL + '../images/card.jpg'} className="Fondo" alt="logo" />
+            <div className="Form">
+                <Grid container spacing={3}>
+                    <Grid item xs={12} sm={6}>
+                        <LoginTextField
+                            required
+                            id="conductor"
+                            name="conductor"
+                            label="Conductor"
+                            fullWidth
+                            value={this.state.conductor}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Grid item xs={12} sm={12}>
+                        <LoginTextField
+                            required
+                            id="descripcion"
+                            name="descripcion"
+                            label="Descripcion"
+                            fullWidth
+                            value={this.state.descripcion}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Grid item xs={12} sm={6}>
+                        <LoginTextField
+                            required
+                            id="destinoLatitud"
+                            name="destinoLatitud"
+                            label="Destino Latitud"
+                            fullWidth
+                            value={this.state.destinoLatitud}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Grid item xs={12} sm={6}>
+                        <LoginTextField
+                            required
+                            id="destintoLongitud"
+                            name="destintoLongitud"
+                            label="Destino Longitud"
+                            fullWidth
+                            value={this.state.destintoLongitud}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Grid item xs={12} sm={6}>
+                        <LoginTextField
+                            required
+                            id="partidaLatitud"
+                            name="partidaLatitud"
+                            label="Partida Latitud"
+                            fullWidth
+                            value={this.state.partidaLatitud}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Grid item xs={12} sm={6}>
+                        <LoginTextField
+                            required
+                            id="partidaLongitud"
+                            name="partidaLongitud"
+                            label="Partida Longitud"
+                            fullWidth
+                            value={this.state.partidaLongitud}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Grid item xs={12} sm={6}>
+                        <LoginTextField
+                            required
+                            id="horaPartida"
+                            name="horaPartida"
+                            label="Hora Partida"
+                            fullWidth
+                            value={this.state.horaPartida}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Grid item xs={12} sm={6}>
+                        <LoginTextField
+                            required
+                            id="horaLlegada"
+                            name="horaLlegada"
+                            label="Hora Llegada"
+                            fullWidth
+                            value={this.state.horaLlegada}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Grid item xs={12} sm={6}>
+                        <LoginTextField
+                            required
+                            id="entrada_salida"
+                            name="entrada_salida"
+                            label="Entrada o Salida"
+                            fullWidth
+                            value={this.state.entrada_salida}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Grid item xs={12} sm={6}>
+                        <LoginTextField
+                            required
+                            id="fecha"
+                            name="fecha"
+                            label="Fecha"
+                            fullWidth
+                            value={this.state.fecha}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Grid item xs={12} sm={6}>
+                        <LoginTextField
+                            required
+                            id="dia"
+                            name="dia"
+                            label="Dia"
+                            fullWidth
+                            value={this.state.dia}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Grid item xs={12} sm={6}>
+                        <LoginTextField
+                            required
+                            id="limitePasajeros"
+                            name="limitePasajeros"
+                            label="Limite de Pasajeros"
+                            fullWidth
+                            value={this.state.limitePasajeros}
+                            onChange={this.handleChange.bind(this)}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <br />
+                    <Button
+                        primary={true}
+                        onClick={this.handleSubmit}
+                    >
+                        Publicar
+                    </Button>
+                </Grid>
+            </div>
+            </div>
+        );
     }
-
 }
 
-export default PostForm;
+
+    
+
+const mapState = state => {
+    return {
+        account: state.viaje.viaje,
+        actionType: state.viaje.actionType
+
+    }
+};
+
+const mapDispatch = {
+    publicarViaje
+};
+
+
+
+
+
+
+export default connect(mapState, mapDispatch)(PostForm);

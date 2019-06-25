@@ -23,4 +23,9 @@ public class ItinerarioController {
     }
 
 
+   /*@RequestMapping(method = RequestMethod.POST)
+    public guardarItinerario(@RequestBody Itinerario i){
+
+    }*/
+
 }

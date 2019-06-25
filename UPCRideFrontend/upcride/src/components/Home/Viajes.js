@@ -1,11 +1,11 @@
 import React from 'react';
-/*import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';*/
+import Container from '@material-ui/core/Container';
 import './Home.css';
 import PropTypes from "prop-types";
 import PostForm from '../Home/PostForm.js';
@@ -42,29 +42,36 @@ class ViajesList extends React.Component {
         return (
             <div>
 
-                <PostButton> PUBLICAR </PostButton>
-                 <PostForm/>
-                <Table responsive hover>
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Account Name</th>
-                        <th>Balance</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
+             <Grid>
                
 
+
+              
+
                     {this.state.trips.map((trip, index) => (
-                        <tr key={index}>
-                            <td>{trip.descripcion}</td>
-                            <td>{trip.puntoPartida}</td>
-                            <td>{trip.puntoDestino}</td>
-                        </tr>
+                    <Grid key={index} xs={12} >
+                        <Card >
+                            <CardContent>
+
+                                <Typography className="Titulo" color="textSecondary" gutterBottom>
+                                    {trip.conductor.nombres}</Typography>
+                                <Typography variant="h5" component="h2">
+                                    {trip.puntoPartida}</Typography>
+                                <Typography variant="h5" component="h2">
+                                    {trip.puntoDestino}</Typography>
+                                <Typography className="Titulo" color="textSecondary" gutterBottom>
+                                    {trip.descripcion}</Typography>
+
+
+                            </CardContent>
+
+                            <CardActions>
+                                <Button size="small">Solicitar</Button>
+                            </CardActions>
+                        </Card>
+                        </Grid>
                     ))}
-                    </tbody>
-                </Table>
+                </Grid>
             </div>
         );
     }
