@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.sql.Time;
 
 import javax.persistence.*;
 
@@ -42,7 +42,7 @@ public class Itinerario implements Serializable{
     private Usuario cliente;
 
     @Column (name="hora", length = 50, nullable = false)
-    private Timestamp hora;
+    private Time hora;
 
     @Column (name="dia", length = 50 , nullable = false )
     private String dia;
