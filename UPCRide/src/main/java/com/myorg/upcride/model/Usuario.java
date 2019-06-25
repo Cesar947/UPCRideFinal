@@ -39,10 +39,10 @@ public class Usuario implements Serializable {
  private String apellidos;
 
  @Column(name = "ubicacion_latitud", length = 100, nullable = false)
- private String ubicacionLatitud;
+ private double ubicacionLatitud;
 
  @Column(name = "ubicacion_longitud", length = 100, nullable = false)
- private String ubicacionLongitud;
+ private double ubicacionLongitud;
 
  @Column(name = "facebook_id", length = 60, nullable = true)
  private String facebook_id;
