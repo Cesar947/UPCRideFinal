@@ -79,9 +79,9 @@ public class Viaje implements Serializable {
     @Column(name = "numero_pasajeros", nullable = true)
     private int numeroPasajeros;
 
-
     @Column(name = "limite_pasajeros", nullable = false)
     private int limitePasajeros;
 
-
+    @Column(name = "precio_base", nullable = false)
+    private double precioBase;
 }
