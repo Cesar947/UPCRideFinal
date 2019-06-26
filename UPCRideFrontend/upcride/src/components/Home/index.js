@@ -35,7 +35,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar/>
         <SearchBar />
         <div className="Viajes" xs="3">
           <ViajesList trips={this.state.listaviajes} />

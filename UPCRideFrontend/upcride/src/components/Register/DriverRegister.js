@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import FormUserDetails from './FormUserDetails';
-import FormPersonalDetails from './FormPersonalDetails';
+import FormDriver from './FormDriver';
 import Success from './Success';
 import './Register.css';
 
@@ -49,7 +48,7 @@ export class UserForm extends Component {
           <div>
             <img src={process.env.PUBLIC_URL + '../images/card.jpg'} className="Fondo" alt="logo" />
             <div className="Form">
-              <FormUserDetails
+              <FormDriver
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -62,7 +61,7 @@ export class UserForm extends Component {
           <div>
             <img src={process.env.PUBLIC_URL + '../images/card.jpg'} className="Fondo" alt="logo" />
             <div className="Form">
-              <FormPersonalDetails
+              <FormDriver
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange={this.handleChange}

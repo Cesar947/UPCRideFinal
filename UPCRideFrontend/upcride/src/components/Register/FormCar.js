@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import { LoginTextField } from '../Text';
 import Grid from '@material-ui/core/Grid';
 
-export class FormPersonalDetails extends Component {
+export class FormCar extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -19,20 +19,6 @@ export class FormPersonalDetails extends Component {
     return (
       <div>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
-          <LoginTextField
-             required
-             id="Licencia"
-             name="Licencia"
-             label="Licencia de Conducir"
-             fullWidth
-             autoComplete="licencia"
-             onChange={handleChange('licencia')}
-             defaultValue={values.licencia}
-             variant="outlined"
-          />
-          </Grid>
-          <br />
           <Grid item xs={12} sm={6}>
           <LoginTextField
             required
@@ -129,4 +115,4 @@ const styles = {
   }
 };
 
-export default FormPersonalDetails;
+export default FormCar;

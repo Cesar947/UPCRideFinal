@@ -46,17 +46,7 @@ class ViajesList extends React.Component {
         return (
             <div>
 
-                <GoogleMap 
-                                        origenLatitud={-12.067796}
-                                        origenLongitud={-77.135821}
-                                        destinoLongitud={-77.093636}
-                                        destinoLatitud={-12.076967} />
-
                 <Grid>
-
-
-
-
 
                     {this.state.trips.map((trip, index) => (
                         <Grid key={index} xs={12} >
@@ -72,12 +62,7 @@ class ViajesList extends React.Component {
                                     <Typography variant="h5" component="h2">
                                         {trip.puntoDestino}</Typography>
                                     <Typography className="Contenido" color="textSecondary" gutterBottom>
-                                        {trip.descripcion}</Typography>
-                                        <Typography className="Contenido" color="textSecondary" gutterBottom>
-                                        {trip.destinoLatitud}</Typography>
-                                        <Typography className="Contenido" color="textSecondary" gutterBottom>
-                                        {trip.partidaLatitud}</Typography>
-                                   
+                                        {trip.descripcion}</Typography>                  
                                 </CardContent>
 
                                 <CardActions>

@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import FormUserDetails from './FormUserDetails';
-import FormPersonalDetails from './FormPersonalDetails';
+import FormPassenger from './FormPassenger';
 import Success from './Success';
 import './Register.css';
 
 export class UserForm extends Component {
-  state = {
-    step: 1,
-    codigoUPC: '',
-    nombres: '',
-    apellidos: '',
-    correoupc: '',
-    contraseña: '',
-    sedeestudios: '',
-    telefono: ''
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      step: 1,
+      codigoUPC: '',
+      nombres: '',
+      apellidos: '',
+      correoupc: '',
+      contraseña: '',
+      sedeestudios: '',
+      telefono: ''
+    };
+}
 
   // Proceed to next step
   nextStep = () => {
@@ -32,16 +34,10 @@ export class UserForm extends Component {
     });
   };
 
-  // Handle fields change
-  handleChange = input => e => {
-    this.setState({ [input]: e.target.value });
-  };
+
 
   render() {
     const { step } = this.state;
-    const { codigoUPC, nombres, apellidos, correoupc, contraseña, sedeestudios, telefono } = this.state;
-    const values = { codigoUPC, nombres, apellidos, correoupc, contraseña, sedeestudios, telefono };
-
 
     switch (step) {
       case 1:
@@ -49,10 +45,8 @@ export class UserForm extends Component {
           <div>
             <img src={process.env.PUBLIC_URL + '../images/card.jpg'} className="Fondo" alt="logo" />
             <div className="Form">
-              <FormUserDetails
+              <FormPassenger
                 nextStep={this.nextStep}
-                handleChange={this.handleChange}
-                values={values}
               />
             </div>
           </div>

@@ -29,17 +29,17 @@ class PostForm extends React.Component {
             partidaLatitud: '',
             partidaLongitud: '',
 
-horaPartida: '',
-horaLlegada: '',
-entrada_salida: '',
-fecha: '',
-dia: '',
-estado: "Publicado",
-visualizacionHabilitada: 1,
-numeroPasajeros: 0,
-limitePasajeros: '',
-posted
-}
+            horaPartida: '',
+            horaLlegada: '',
+            entrada_salida: '',
+            fecha: '',
+            dia: '',
+            estado: "Publicado",
+            visualizacionHabilitada: 1,
+            numeroPasajeros: 0,
+            limitePasajeros: '',
+            posted
+    }
 }
 handleChange(event) {
 let fieldName = event.target.name;
@@ -245,7 +245,7 @@ this.setState({ ...this.state, [fieldName]: fieldValue });
 
 const mapState = state => {
     return {
-        account: state.viaje.viaje,
+        viaje: state.viaje.viaje,
         actionType: state.viaje.actionType
 
     }

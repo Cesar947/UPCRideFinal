@@ -109,5 +109,6 @@ public class ViajeServiceImpl implements ViajeService {
     public List<Solicitud> listarSolicitudesPendientesDelViaje(Integer viajeId) throws Exception{
        return viajeRepository.listarSolicitudesPendientesDelViaje(viajeId);
     }
+
 }
 

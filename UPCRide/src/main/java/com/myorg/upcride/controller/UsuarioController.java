@@ -28,6 +28,10 @@ public class UsuarioController {
         return usuarioService.visualizarUsuariosRegistrados();
     }
 
+    @RequestMapping(path="/prueba", method = RequestMethod.GET)
+    public Usuario pasajeroPrueba() throws Exception {
+        return usuarioService.pasajeroPrueba();
+    }
 
     @RequestMapping(path="/pasajero", method = RequestMethod.POST)
     public Usuario registrarUsuario(@RequestBody Usuario usuario) throws Exception {

@@ -56,5 +56,8 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioRepository.findAll();
     }
 
-
+    @Override
+    public Usuario pasajeroPrueba() throws Exception{
+        return usuarioRepository.pasajeroPrueba();
+    }
 }

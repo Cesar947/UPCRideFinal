@@ -10,14 +10,17 @@ class Login extends React.Component {
   constructor(props){
     super(props)
     let loggedIn = false
+    let registerIn = false
     this.state ={
       username: '',
       password:'',
-      loggedIn
+      loggedIn,
+      registerIn
     }
 
     this.onChange = this.onChange.bind(this)
     this.submitForm = this.submitForm.bind(this)
+    this.registrar = this.registrar.bind(this)
   }
 
   onChange(e){
@@ -25,6 +28,11 @@ class Login extends React.Component {
       [e.target.name]: e.target.value
     })
   }
+
+  registrar(){
+    this.setState({
+      registerIn: true})
+  }  
 
   submitForm(e){
     e.preventDefault()
@@ -39,6 +47,9 @@ class Login extends React.Component {
   render() {
     if(this.state.loggedIn){
       return <Redirect to="/home"/>
+    }
+    if(this.state.registerIn){
+      return <Redirect to="/SelectRol"/>
     }
     return (
       <div >
@@ -71,7 +82,7 @@ class Login extends React.Component {
             Iniciar Sesion
           </LoginButton>
           <a className='RegisterQ'>¿No te has registrado aún?</a>
-          <RegisterButton href="http://localhost:3000/SelectRol" variant="contained" className='RegisterButton'>
+          <RegisterButton onClick={this.registrar} variant="contained" className='RegisterButton'>
             Registrate
           </RegisterButton>
         </form>
