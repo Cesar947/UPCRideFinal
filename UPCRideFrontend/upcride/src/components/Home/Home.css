@@ -1,6 +1,10 @@
 .Titulo{
     font-size: 14px;
+    position: relative;
+    top: -33px;
+    left: 50px;
 }
+
 
 .Pos{
     margin-bottom: 12px;
@@ -71,7 +75,7 @@
     top: 250px;
     left: 350px;
     height: 500%;
-    width: 45%;
+    width: 60%;
 }
 
 .HeroContent {
@@ -137,4 +141,8 @@
     position: relative;
     left: 0px;
     top: 68px;
+}
+
+.Avatar{
+    background-color: red;
 }

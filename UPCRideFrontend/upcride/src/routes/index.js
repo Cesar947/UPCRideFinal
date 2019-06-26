@@ -6,6 +6,7 @@ import UserRegister from '../components/Register/UserRegister';
 import DriverRegister from '../components/Register/DriverRegister';
 import HomePage from './HomePage';
 import PostViajePage from './PostViajePage';
+import Solicitud from '../components/Solicitud/Solicitud';
 
 
 const Routes = () => (
@@ -17,6 +18,7 @@ const Routes = () => (
                 <Route path="/driver/register" component={DriverRegister} />
                 <Route path="/home" component={HomePage} />
                 <Route path="/post/viaje" component={PostViajePage} />
+                <Route path="/solicitar" component={Solicitud}/>
             </Switch>
         </Router>
 );
