@@ -109,18 +109,34 @@ public class ViajeServiceImpl implements ViajeService {
        return viajeRepository.listarSolicitudesPendientesDelViaje(viajeId);
     }
     @Override
-    public Solicitud solicitarViaje(Integer viajeId, Solicitud s) throws Exception{
+    public Solicitud solicitarViaje(Integer viajeId, Solicitud s) throws Exception {
         Viaje objViaje = viajeRepository.findById(viajeId).get();
         s.setViaje(objViaje);
-        Solicitud resultado;
+        int pasajerosRegistrados = viajeRepository.calcularNumerodePasajerosDelViaje(objViaje.getId()) + 1;
+        Solicitud resultado = new Solicitud();
+        if (pasajerosRegistrados <= objViaje.getLimitePasajeros()) {
         try {
-            resultado = solicitudRepository.save(s);
-            int pasajerosRegistrados = viajeRepository.calcularNumerodePasajerosDelViaje(objViaje.getId()) + 1;
-            viajeRepository.actualizarNumeroDePasajeros(pasajerosRegistrados, objViaje.getId());
-        }catch(Exception ex){
+
+
+
+                resultado = solicitudRepository.save(s);
+
+                viajeRepository.actualizarNumeroDePasajeros(pasajerosRegistrados, objViaje.getId());
+
+        }
+        catch (Exception ex)
+        {
             throw ex;
+        }
+
         }
         return resultado;
     }
+
+    @Override
+    public List<Viaje> listarViajesPorConductor(Integer conductorId) throws Exception{
+        return viajeRepository.listarViajesPorConductor(conductorId);
+    }
+
 }
 

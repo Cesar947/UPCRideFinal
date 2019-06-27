@@ -60,6 +60,8 @@ public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
     @Query("SELECT u FROM Usuario u JOIN Solicitud s ON u.id = s.pasajero.id JOIN Viaje v ON v.id = s.viaje.id WHERE v.id = ?1 AND s.confirmacionConductor = 'Aceptada'")
     List<Usuario> listarPasajerosDelViaje(Integer viajeId) throws Exception;
 
+    @Query("SELECT v FROM Viaje v JOIN Usuario u ON u.id = v.conductor.id WHERE u.id = ?1")
+    List<Viaje> listarViajesPorConductor(Integer conductorId) throws Exception;
 
     @Query("SELECT s FROM Solicitud s WHERE s.viaje.id = ?1 AND s.confirmacionConductor = 'Pendiente' ")
     List<Solicitud> listarSolicitudesPendientesDelViaje(Integer viajeId) throws Exception;

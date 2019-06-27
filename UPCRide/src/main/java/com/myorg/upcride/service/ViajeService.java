@@ -21,4 +21,5 @@ public interface ViajeService {
     List<Usuario> listarPasajerosDelViaje(Integer viajeId) throws Exception;
     List<Solicitud> listarSolicitudesPendientesDelViaje(Integer viajeId) throws Exception;
     Solicitud solicitarViaje(Integer viajeId, Solicitud s) throws Exception;
+    List<Viaje> listarViajesPorConductor(Integer conductor) throws Exception;
 }
