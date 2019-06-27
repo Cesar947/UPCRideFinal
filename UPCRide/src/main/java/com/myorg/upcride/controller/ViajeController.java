@@ -47,7 +47,6 @@ public class ViajeController {
     public Solicitud solictarViaje( @PathVariable Integer viajeId,  @RequestBody Solicitud s) throws Exception {
 
         return viajeService.solicitarViaje(viajeId, s);
-
     }
 
 

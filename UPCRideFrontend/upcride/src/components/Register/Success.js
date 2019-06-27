@@ -43,7 +43,7 @@ export class Success extends Component {
     this.setState({
       ready: true
     })
-    this.props.fetchUsuario;
+    this.props.fetchUsuario();
   }
 
   render() {

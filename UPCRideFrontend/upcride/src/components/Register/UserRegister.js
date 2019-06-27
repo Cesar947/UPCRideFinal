@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FormPassenger from './FormPassenger';
 import Success from './Success';
 import './Register.css';
+import {Redirect} from 'react-router-dom'
 
 
 export class UserForm extends Component {
@@ -13,15 +14,6 @@ export class UserForm extends Component {
     };
 }
 
-componentDidMount() {
-  this.props.fetchUsuario();
-}
-
-componentWillReceiveProps(nextProps) {
-  if (nextProps.actionType === LISTAR_USUARIO) {
-    this.setState({ listausuarios: nextProps.listausuarios });
-  }
-}
   // Proceed to next step
   nextStep = () => {
     const { step } = this.state;
@@ -57,12 +49,7 @@ componentWillReceiveProps(nextProps) {
         );
       case 2:
         return (
-          <div>
-            <img src={process.env.PUBLIC_URL + '../images/card.jpg'} className="Fondo" alt="logo" />
-            <div className="Form">
-              <Success />
-            </div>
-          </div>
+          <Redirect to ="/register/success"/>
         );
     }
   }

@@ -1,11 +1,11 @@
 import React from 'react';
-import PostForm from "../components/Viaje/PostForm"
+import Posteo from "../components/Viaje/Posteo"
 
 class PostViajePage extends React.Component{
 
     render() {
         return(
-            <PostForm />
+            <Posteo/>
         );
     }
 

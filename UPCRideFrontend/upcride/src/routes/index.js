@@ -8,6 +8,8 @@ import HomePage from './HomePage';
 import PostViajePage from './PostViajePage';
 import RequestPage from './RequestPage';
 import NavBar from '../components/Home/NavBar';
+import SuccessPage from '../components/Register/SuccessPage';
+import ListaViajes from '../components/User/ListaViajes';
 
 
 const Routes = () => (
@@ -21,6 +23,8 @@ const Routes = () => (
                 <Route path="/post/viaje" component={PostViajePage} />
                 <Route path="/solicitar" component={RequestPage}/>
                 <Route path="/navbar" component={NavBar}/>
+                <Route path="/register/success" component={SuccessPage}/>
+                <Route path = "/user/misViajes" component={ListaViajes}/>
             </Switch>
         </Router>
 );

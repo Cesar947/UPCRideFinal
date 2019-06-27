@@ -1,4 +1,4 @@
-import { LISTAR_VIAJES, PUBLICAR_VIAJE } from './actionTypes'
+import { LISTAR_VIAJES, PUBLICAR_VIAJE, VIAJES_USUARIO } from './actionTypes'
 
 export function fetchViajesList() {
     return function (dispatch, getState) {
@@ -41,6 +41,25 @@ export function setGuardarViaje(dataviaje) {
     return {
         type: PUBLICAR_VIAJE,
         dataviaje
+    }
+}
+
+export function viajesXUsuario(usuarioId) {
+
+    return function (dispatch, getState) {
+        fetch("http://localhost:5050/viajes/conductor/" + usuarioId)
+            .then(response => response.json())
+            .then(jsonData => {
+                dispatch(setViajesUsuario(jsonData))
+            })
+
+    }
+}
+
+export function setViajesUsuario(viajesUsuario) {
+    return {
+        type: VIAJES_USUARIO,
+        viajesUsuario
     }
 }
 
