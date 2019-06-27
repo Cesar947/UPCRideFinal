@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import './Home.css';
 import PropTypes from "prop-types";
-import PostForm from '../Home/PostForm.js';
+import PostForm from '../Viaje/PostForm.js/index.js';
 import { PostButton } from '../Button';
 import Table from '@material-ui/core/Table';
 import CardHeader from '@material-ui/core/CardHeader';

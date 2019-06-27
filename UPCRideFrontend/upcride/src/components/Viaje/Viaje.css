@@ -1,0 +1,153 @@
+.User{
+    position: relative;
+    left: 1170px;
+}
+
+.Titulo{
+    font-size: 14px;
+    position: relative;
+    top: -33px;
+    left: 50px;
+}
+
+
+.Pos{
+    margin-bottom: 12px;
+}
+
+.Form{
+    width: 500px;
+    position: relative;
+    left: 650px;
+    top: 50px;
+  }
+
+.Bullet {
+    display: inline-block;
+    margin: 0 2px;
+    transform: scale(0.8);
+}
+
+.NavBar {
+    background: #0388a6;
+    height: 30px;
+}
+
+.Logo {
+    width: 120px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.ToolbarLink{
+    position: relative;
+    left: 730px;
+    top: 2px;
+    flex-shrink: 0;
+    padding: 10px;
+  }
+
+.Guias{
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.Fondo{
+    width: 80%;
+    position: absolute;
+    top: 50px;
+    left: 120px;
+    -webkit-box-shadow: 0px 7px 79px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 7px 79px -23px rgba(0,0,0,0.75);
+  box-shadow: 0px 7px 79px -23px rgba(0,0,0,0.75);
+  }
+
+.CardContent{
+    flex-grow: 2;
+
+}
+
+.CardContainer{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position: 'absolute';
+    left: 65px;
+}
+
+.Viajes{
+    position: absolute;
+    top: 250px;
+    left: 350px;
+    height: 500%;
+    width: 60%;
+}
+
+.HeroContent {
+    background-color: #ffffff;
+    padding: spacing(8, 0, 6);
+}
+
+.HeroButtons {
+    margin-top: spacing(4);
+}
+
+.IconFlecha {
+    position: relative;
+    left: 0px;
+    top: 70px;
+}
+
+.TextField {
+    margin-left: 60px;
+    margin-right: 30px;
+    width: 150;
+    position: relative;
+    top: 30px;
+
+}
+
+.FechaYHora{
+    margin-left: 30px;
+    width: 170px;
+    position: relative;
+    top: 46px;
+    left: 10px;
+    display: flex;
+    flex-direction: row;
+}
+ 
+.Contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 150%;
+    top: 75px;
+    left: 120px;
+}
+
+.EncontrarViajeTexto {
+    font: 15px roboto, sans-serif;
+    font-size: 14 solid;
+    position: relative;
+    left: 175px;
+    top: 0px;
+}
+
+.Iconu {
+    height: 40px;
+    position: relative;
+    left: 0px;
+    top: 62px;
+}
+
+.IconPartida {
+    margin: 1;
+    position: relative;
+    left: 0px;
+    top: 68px;
+}
+
+.Avatar{
+    background-color: red;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import PostForm from "../components/Home/PostForm"
+import PostForm from "../components/Viaje/PostForm"
 
 class PostViajePage extends React.Component{
 
