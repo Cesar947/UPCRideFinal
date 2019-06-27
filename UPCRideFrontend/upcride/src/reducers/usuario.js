@@ -15,7 +15,7 @@ export default function usuario(state = {}, action) {
         case LISTAR_USUARIO:
             return Object.assign({}, state, {
                 actionType: action.type,
-                usuario: action.usuario
+                usuarios: action.usuarios
             });
 
         default:
