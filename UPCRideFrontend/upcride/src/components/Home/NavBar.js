@@ -1,5 +1,6 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
+import Bar from '../../components/Home/Bar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import './Home.css';
@@ -7,7 +8,7 @@ import { LISTAR_USUARIO } from '../../actions/actionTypes';
 import {fetchUsuario} from '../../actions/usuariosActions';
 import {connect} from "react-redux";
 import Typography from '@material-ui/core/Typography';
-import Bar from './Bar';
+
 
 
 

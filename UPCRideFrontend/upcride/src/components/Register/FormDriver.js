@@ -7,6 +7,7 @@ import { REGISTRAR_CONDUCTOR } from '../../actions/actionTypes';
 import { registrarConductor } from '../../actions/usuariosActions';
 import {connect} from "react-redux";
 
+
 export class FormDriver extends Component {
   constructor(props){
     super(props);
@@ -28,6 +29,7 @@ export class FormDriver extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
 
   handleChange(event) {
     let fieldName = event.target.name;

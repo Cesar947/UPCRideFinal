@@ -6,7 +6,7 @@ import UserRegister from '../components/Register/UserRegister';
 import DriverRegister from '../components/Register/DriverRegister';
 import HomePage from './HomePage';
 import PostViajePage from './PostViajePage';
-import Solicitud from '../components/Solicitud/Solicitud';
+import RequestPage from './RequestPage';
 import NavBar from '../components/Home/NavBar';
 
 
@@ -19,7 +19,7 @@ const Routes = () => (
                 <Route path="/driver/register" component={DriverRegister} />
                 <Route path="/home" component={HomePage} />
                 <Route path="/post/viaje" component={PostViajePage} />
-                <Route path="/solicitar" component={Solicitud}/>
+                <Route path="/solicitar" component={RequestPage}/>
                 <Route path="/navbar" component={NavBar}/>
             </Switch>
         </Router>

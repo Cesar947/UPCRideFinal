@@ -1,7 +1,9 @@
 import React from 'react';
-import PropTypes from "prop-types";
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import PropTypes from "prop-types";
+
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import './Home.css';

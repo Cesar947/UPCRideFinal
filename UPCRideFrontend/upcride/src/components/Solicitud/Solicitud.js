@@ -1,14 +1,18 @@
 import React from 'react';
+import { SOLICITAR_VIAJE } from '../../actions/actionTypes';
+import { solicitarViaje } from '../../actions/solicitudActions';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
 import Grid from '@material-ui/core/Grid';
+import 'typeface-roboto';
+import NavBar from '../Home/NavBar';
 
-
-import Icon from '@material-ui/core/Icon';
 import GoogleMapMarker from '../GoogleMap/GoogleMapMarker';
 
 
@@ -19,15 +23,17 @@ import GoogleMapMarker from '../GoogleMap/GoogleMapMarker';
 const classes = makeStyles(theme => ({
     root: {
         padding: theme.spacing(3, 2),
-        width: "50%"
+        position: 'relative',
+        width: "50px"
     },
     container: {
         display: 'flex',
         flexWrap: 'wrap',
     },
     textField: {
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1),
+        marginLeft: 3,
+        marginRight: 3,
+        width: '800px'
     },
     dense: {
         marginTop: theme.spacing(2),
@@ -35,28 +41,101 @@ const classes = makeStyles(theme => ({
     menu: {
         width: 200,
     },
+    button:{
+        alignContent: 'center'
+    },
+    sendIcon:{
+       fontSize: '18px'
+    },
+     TextoIzquierda:{
+        position: 'relative',
+         
+        alignContent: 'left',
+
+     },
+    cardSolicitud: {
+        padding: theme.spacing(3, 2),
+        position: 'relative',
+        width: "50px"
+    }
 
 
 }));
 
 export default class Solicitud extends React.Component {
 
+
+    constructor(props){
+        super(props);
+       
+        let posted = false
+     this.state = {
+    
+    mensaje:'',
+    puntoEncuentro:'',
+    encuentroLatitud:'',
+    encuentroLongitud:'',
+    posted
+     }
+    
+     this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange(event) {
+        let fieldName = event.target.name;
+        let fieldValue = event.target.value;
+        this.setState({ ...this.state, [fieldName]: fieldValue });
+    }
+    handleSubmit(){
+        this.props.solicitarViaje(this.state);
+        this.setState({
+             posted:true
+        })
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.actionType === SOLICITAR_VIAJE) {
+            this.setState({
+                posted: true})
+            }
+        }
+
+
     render() {
+       if(this.state.posted){
+       // const { values, handleChange } = this.props;
+           alert("La solicitud ha sido realizada");
+       }
+       
+       
+       
         return (
+        <div>
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"></link>
+            <NavBar/>
             <Grid container>
 
-                <Grid item xs={6} className={classes.TextoIzquierda}>
+                <Grid item xs={6}>
                     <Paper
                         className={classes.root}
                     >
-                        <Typography variant="h3" component="h3">
+                        <Typography variant="h3" component="h3" gutterBottom>
                             Enviar solicitud
                 </Typography>
 
                         <GoogleMapMarker/>
-                        <Typography component="p">
+
+                        </Paper>
+                </Grid>
+        
+        
+        
+          <Grid item xs={6} sm={6}>
+          <Card className={classes.cardSolicitud}>
+                                <CardContent>
+           <Typography component="p">
                             Viaje #1394
-                 </Typography>
+                          </Typography>
                         <Typography component="p">
                             Fecha del viaje: 03/08/19
                  </Typography>
@@ -64,37 +143,57 @@ export default class Solicitud extends React.Component {
                         <Typography component="p">
                             Conductor: Juanelv Salgado
                  </Typography>
-
-                        <TextField
-                            id="outlined-textarea"
+                         
+                        <TextField 
+                            id="mensaje"
+                            name="mensaje"
                             label="Escribe un mensaje corto"
                             placeholder="Placeholder"
                             multiline
                             className={classes.textField}
                             margin="normal"
                             variant="outlined"
-                            value="¡Hola! Me encantaría poder formar parte de tu viaje ;)"
-
+                            value={this.state.mensaje}
+                            onChange = {this.handleChange.bind(this)}
                         />
 
+
+                      <TextField 
+                             id="puntoEncuentro"
+                             name="puntoEncuentro"
+                            label="Punto de encuentro"
+                            placeholder="Placeholder"
+                            multiline
+                            className={classes.textField}
+                            margin="normal"
+                            variant="outlined"
+                            onChange = {this.handleChange.bind(this)}
+
+                        /> 
                         <Typography component="p">
                             Punto de recojo
                 </Typography>
 
+                </CardContent>
+                <CardActions>
 
-
-
-                        <Button variant="contained" color="primary" className={classes.button}>
-                            Send
+                        <Button variant="contained" 
+                        color="primary"
+                         className={classes.button}
+                         onClick={this.handleSubmit}>
+                            Enviar solicitud
         {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
-                            <Icon className={classes.rightIcon}>send</Icon>
+                           <i class="material-icons">send</i>
                         </Button>
 
-
-
-                    </Paper>
+    
+                        </CardActions>
+                 </Card>
                 </Grid>
+                      
+                 
             </Grid>
+            </div>
         );
     }
 }

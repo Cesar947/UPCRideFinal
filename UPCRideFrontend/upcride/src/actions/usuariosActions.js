@@ -19,10 +19,10 @@ export function registrarPasajero(pasajero) {
     }
 }
 
-export function setGuardarPasajero(datapasajero) {
+export function setGuardarPasajero(dataPasajero) {
     return {
         type: REGISTRAR_PASAJERO,
-        datapasajero
+        dataPasajero
     }
 }
 

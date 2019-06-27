@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="983ceab5-f150-401c-a174-a3dd10f7966f" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/usuariosActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/usuariosActions.js" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/usuariosActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/usuariosActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/usuario.js" afterDir="false" />
+>>>>>>> 4980be6d87b1235146e0191f91f866763817311d
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -25,19 +35,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Json/Scripts Json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/UsuarioController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
+<<<<<<< HEAD
               <caret line="32" column="47" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+=======
+              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
             </state>
           </provider>
         </entry>
@@ -54,8 +59,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/UsuarioRepository.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="136">
               <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+=======
+            <state relative-caret-position="153">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
             </state>
           </provider>
         </entry>
@@ -82,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/UsuarioService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -96,11 +106,45 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ViajeRepository.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="411">
               <caret line="63" column="59" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="59" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="677">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Solicitud.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="60" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="60" />
+=======
+            <state relative-caret-position="714">
+              <caret line="63" column="59" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#159#1" expanded="true" />
+                <element signature="e#0#71#1" expanded="true" />
+                <element signature="e#0#69#1" expanded="true" />
+                <element signature="e#0#46#1" expanded="true" />
+                <element signature="e#0#117#1" expanded="true" />
+                <element signature="e#0#134#1" expanded="true" />
+                <element signature="e#0#48#1" expanded="true" />
+                <element signature="e#0#40#1" expanded="true" />
+                <element signature="e#0#54#1" expanded="true" />
+                <element signature="e#0#83#1" expanded="true" />
+                <element signature="e#0#87#1" expanded="true" />
+                <element signature="e#0#63#1" expanded="true" />
+                <element signature="e#0#155#1" expanded="true" />
+              </folding>
+>>>>>>> 4980be6d87b1235146e0191f91f866763817311d
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
             </state>
           </provider>
         </entry>
@@ -109,7 +153,11 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/UsuarioServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="867">
+<<<<<<< HEAD
               <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
+=======
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
             </state>
           </provider>
         </entry>
@@ -132,8 +180,13 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
+    <option name="x" value="396" />
+    <option name="y" value="17" />
+=======
     <option name="x" value="267" />
     <option name="y" value="61" />
+>>>>>>> 4980be6d87b1235146e0191f91f866763817311d
     <option name="width" value="1014" />
     <option name="height" value="788" />
   </component>
@@ -143,6 +196,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -242,7 +299,10 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -251,6 +311,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -285,18 +346,44 @@
       <updated>1561508459400</updated>
       <workItem from="1561508460937" duration="2977000" />
       <workItem from="1561556979331" duration="2873000" />
+<<<<<<< HEAD
+      <workItem from="1561571607517" duration="4230000" />
+      <workItem from="1561590485176" duration="1416000" />
+=======
       <workItem from="1561571607517" duration="5895000" />
+<<<<<<< HEAD
       <workItem from="1561600191704" duration="3215000" />
+=======
+>>>>>>> 4980be6d87b1235146e0191f91f866763817311d
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="14960000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="11496000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1337953" />
+=======
+    <option name="totallyTimeSpent" value="11745000" />
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26172465" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2579425" />
+>>>>>>> 4980be6d87b1235146e0191f91f866763817311d
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -313,9 +400,17 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Spring" order="8" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19312602" />
+=======
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" visible="true" weight="0.17768148" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19476268" />
+>>>>>>> 4980be6d87b1235146e0191f91f866763817311d
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.17768148" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
@@ -370,7 +465,11 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/UsuarioController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
+<<<<<<< HEAD
           <caret line="32" column="47" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+=======
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
         </state>
       </provider>
     </entry>
@@ -383,8 +482,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/UsuarioRepository.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="136">
           <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+=======
+        <state relative-caret-position="153">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
         </state>
       </provider>
     </entry>
@@ -405,7 +509,11 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/UsuarioService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
+<<<<<<< HEAD
           <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+=======
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
         </state>
       </provider>
     </entry>
@@ -419,14 +527,50 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/UsuarioServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
+<<<<<<< HEAD
           <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
+=======
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ViajeRepository.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="411">
           <caret line="63" column="59" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="59" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="677">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Solicitud.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="60" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="60" />
+=======
+        <state relative-caret-position="714">
+          <caret line="63" column="59" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#159#1" expanded="true" />
+            <element signature="e#0#71#1" expanded="true" />
+            <element signature="e#0#69#1" expanded="true" />
+            <element signature="e#0#46#1" expanded="true" />
+            <element signature="e#0#117#1" expanded="true" />
+            <element signature="e#0#134#1" expanded="true" />
+            <element signature="e#0#48#1" expanded="true" />
+            <element signature="e#0#40#1" expanded="true" />
+            <element signature="e#0#54#1" expanded="true" />
+            <element signature="e#0#83#1" expanded="true" />
+            <element signature="e#0#87#1" expanded="true" />
+            <element signature="e#0#63#1" expanded="true" />
+            <element signature="e#0#155#1" expanded="true" />
+          </folding>
+>>>>>>> 4980be6d87b1235146e0191f91f866763817311d
+>>>>>>> 87f57c8576b15eb14a14254dda3385aa1b4bde87
         </state>
       </provider>
     </entry>
