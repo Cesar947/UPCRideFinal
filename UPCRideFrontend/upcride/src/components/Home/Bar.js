@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Avatar from '@material-ui/core/Avatar';
+import './Home.css';
 
 class Bar extends React.Component {
 
@@ -31,12 +33,12 @@ class Bar extends React.Component {
         <AppBar position="relative">
           <Toolbar className="NavBar" >
             <img src={process.env.PUBLIC_URL + 'images/Logo.png'} alt="logo" className="Logo" />
-            {this.state.usuarios.map((usuario, index) => (
-                <div key={index}> 
                 <Typography className="Usuario">
-                    {usuario.nombres}
-                </Typography></div>
-            ))}
+                    {this.state.usuarios.nombres}
+                </Typography>
+                <Avatar aria-label="Recipe" className="User">
+                                        P
+                                     </Avatar>
           </Toolbar>
         </AppBar>
         </div>

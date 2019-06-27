@@ -2,8 +2,19 @@ import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import {Redirect} from 'react-router-dom';
+
 
 export class Success extends Component {
+  constructor(props){
+      super(props);
+      let ready = false;
+      this.state = {
+        ready
+      }
+      this.goHome = this.goHome.bind(this)
+  }
+
   continue = e => {
     e.preventDefault();
     // PROCESS FORM //
@@ -15,7 +26,17 @@ export class Success extends Component {
     this.props.prevStep();
   };
 
+  goHome(){
+    this.setState({
+      ready: true
+    })
+    this.props.afterSubmit();
+  }
+
   render() {
+    if(this.state.ready){
+      return <Redirect to = "/home"/>
+    }
     return (
       <div>
         <Grid container spacing={3}>
@@ -31,7 +52,7 @@ export class Success extends Component {
           </Grid>
           <Button
             primary={true}
-            href="http://localhost:3000/home"
+            onClick={this.goHome}
           >
             Ir al Home
           </Button>
