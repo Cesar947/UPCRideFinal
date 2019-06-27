@@ -48,7 +48,7 @@ class Bar extends React.Component {
         <AppBar position="relative">
           <Toolbar className="NavBar" >
             <img src={process.env.PUBLIC_URL + 'images/Logo.png'} alt="logo" className="Logo" />
-                <Button onClick = {this.misViajes}>
+            <Button className="MisViajes " onClick = {this.misViajes}>
                   Mis viajes
                 </Button>
                 <Typography className="Usuario">

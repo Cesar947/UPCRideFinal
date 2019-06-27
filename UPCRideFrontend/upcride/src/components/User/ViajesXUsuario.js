@@ -21,7 +21,7 @@ class ViajesXUsuario extends React.Component {
     }
 
     componentDidMount() {
-        this.props.viajesXUsuario(this.state.usuarios.id);
+        this.props.viajesXUsuario(1);
       }
 
     componentWillReceiveProps(nextProps) {
@@ -44,7 +44,7 @@ class ViajesXUsuario extends React.Component {
 
 const mapState = state => {
     return {
-        listaviajes: state.viaje.viajesUsuario,
+        listaviajes: state.viaje.viajes,
         actionType: state.viaje.actionType
     }
   };

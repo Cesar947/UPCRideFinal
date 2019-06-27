@@ -1,3 +1,14 @@
+.MisViajes{
+    position: relative;
+    left: 1000px;
+}
+
+.Postear{
+    position: relative;
+    left: 200px;
+    top: 200px;
+}
+
 .Usuario{
     position: relative;
     left:1150px;

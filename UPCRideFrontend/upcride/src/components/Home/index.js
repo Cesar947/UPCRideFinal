@@ -22,6 +22,7 @@ class Home extends React.Component {
       listaviajes: [],
       quierepost
     }
+    this.postear = this.postear.bind(this)
   }
 
   postear(){
@@ -50,7 +51,7 @@ class Home extends React.Component {
       <div>
         <NavBar/>
         <SearchBar />
-        <PostButton value="Publicar" onClick={this.postear}/>
+        <PostButton className = " Postear" onClick={this.postear}>Publicar</PostButton>
         <div className="Viajes" xs="3">
           <ViajesList trips={this.state.listaviajes} />
         </div>
