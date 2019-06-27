@@ -112,7 +112,7 @@ public class ViajeServiceImpl implements ViajeService {
     public Solicitud solicitarViaje(Integer viajeId, Solicitud s) throws Exception {
         Viaje objViaje = viajeRepository.findById(viajeId).get();
         s.setViaje(objViaje);
-        int pasajerosRegistrados = viajeRepository.calcularNumerodePasajerosDelViaje(objViaje.getId()) + 1;
+        int pasajerosRegistrados = objViaje.getNumeroPasajeros() + 1;
         Solicitud resultado = new Solicitud();
         if (pasajerosRegistrados <= objViaje.getLimitePasajeros()) {
         try {
