@@ -54,7 +54,7 @@ const mapState = state => {
 };
 
 const mapDispatch = {
-  fetchViajesList
+    fetchViajesList
 };
 
 export default connect(mapState, mapDispatch)(Home);

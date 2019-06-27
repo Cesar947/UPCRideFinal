@@ -8,22 +8,18 @@ import { LISTAR_USUARIO } from '../../actions/actionTypes';
 import {fetchUsuario} from '../../actions/usuariosActions';
 import {connect} from "react-redux";
 import Typography from '@material-ui/core/Typography';
+import Bar from './Bar';
 
-const sections = [
-  'Inicio',
-  'Mis viajes',
-  'Mis anuncios',
-  'Mis solicitudes',
-];
 
 
 class NavBar extends React.Component {
-
   constructor(props) {
     super(props);
+    console.log("bar: ", this.props)
     this.state = {
       listausuarios: []
     }
+    
   }
 
   componentDidMount() {
@@ -45,7 +41,7 @@ class NavBar extends React.Component {
 
 const mapState = state => {
   return {
-      listausuarios: state.usuario.usuario,
+      listausuarios: state.usuario.usuarios,
       actionType: state.usuario.actionType
   }
 };

@@ -7,7 +7,7 @@ class Viaje extends React.Component {
         return (
             <div>
 
-                <NavBar />
+            <NavBar />
                 <Card >
                     <CardContent>
                         <Avatar aria-label="Recipe" className="Avatar">
