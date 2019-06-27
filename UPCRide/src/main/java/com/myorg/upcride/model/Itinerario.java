@@ -22,8 +22,8 @@ public class Itinerario implements Serializable{
     @Column(name="itinerario_id")
     private Integer id;
 
-    @Column (name="entrada_salida" , nullable = false ) //E: Entrada - S: Salida
-    private int entrada_salida;
+    @Column (name = "entrada_salida", nullable = false) //E: Entrada - S: Salida
+    private int entradaSalida;
 
     @Column(name="punto_partida",length = 50 , nullable = false)
     private String puntoPartida;

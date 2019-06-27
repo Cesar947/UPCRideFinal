@@ -17,8 +17,8 @@ import java.util.List;
 @Repository
 public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
 
-    @Query("SELECT v FROM Viaje v WHERE v.horaPartida = ?1 and v.horaLlegada = ?2 AND v.puntoPartida = ?3 AND v.puntoDestino = ?4 AND v.entrada_salida= ?5 AND v.fecha = ?6")
-    List<Viaje> listarPorTodosLosFiltros(Time horaPartida, Time horaLlegada, String puntoPartida, String puntoDestino, int entrada_salida, Date fecha) throws Exception;
+    @Query("SELECT v FROM Viaje v WHERE v.horaPartida = ?1 and v.horaLlegada = ?2 AND v.puntoPartida = ?3 AND v.puntoDestino = ?4 AND v.entradaSalida= ?5 AND v.fecha = ?6")
+    List<Viaje> listarPorTodosLosFiltros(Time horaPartida, Time horaLlegada, String puntoPartida, String puntoDestino, int entradaSalida, Date fecha) throws Exception;
 
     @Query("SELECT v FROM Viaje v WHERE v.puntoPartida = ?1 AND v.puntoDestino = ?2")
     List<Viaje> listarPorPuntoPartidaYPuntoDestino(String puntoPartida,String puntoDestino) throws Exception;
@@ -35,8 +35,8 @@ public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
     @Query("SELECT v FROM Viaje v WHERE v.horaPartida = ?1 and v.horaLlegada = ?2 AND v.puntoPartida = ?3 AND v.puntoDestino = ?4 AND v.fecha = ?5")
     List<Viaje>listarPorPuntoPartidaYPuntoDestinoYHoraInicioYHoraFinYFecha( Time horaPartida, Time horaLlegada,String puntoPartida,String puntoDestino, Date fecha) throws Exception;
 
-    @Query("SELECT v FROM Viaje v WHERE v.entrada_salida= ?1")
-    List<Viaje> listarPorEntradaOSalida(int entrada_salida) throws Exception;
+    @Query("SELECT v FROM Viaje v WHERE v.entradaSalida= ?1")
+    List<Viaje> listarPorEntradaOSalida(int entradaSalida) throws Exception;
 
     @Query("SELECT v FROM Viaje v WHERE v.fecha = ?6")
     List<Viaje> listarPorFecha(Date fecha) throws Exception;
