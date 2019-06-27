@@ -44,3 +44,22 @@ export function setGuardarViaje(dataviaje) {
     }
 }
 
+export function viajesXUsuario(usuarioId) {
+
+    return function (dispatch, getState) {
+        fetch("http://localhost:5050/viajes/" + usuarioId)
+            .then(response => response.json())
+            .then(jsonData => {
+                dispatch(setViajes(jsonData))
+            })
+
+    }
+}
+
+export function setGuardarViaje(viajesUsuario) {
+    return {
+        type: VIAJES_USUARIO,
+        viajesUsuario
+    }
+}
+

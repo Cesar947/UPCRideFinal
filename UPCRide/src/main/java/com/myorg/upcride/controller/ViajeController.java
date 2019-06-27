@@ -33,11 +33,12 @@ public class ViajeController {
     }
 
 
-    @RequestMapping(path="/{conductorId}", method = RequestMethod.POST)
-    public Viaje publicarViaje( @PathVariable Integer conductorId, @RequestBody Viaje v) throws Exception {
+    @RequestMapping( method = RequestMethod.POST)
+    public Viaje publicarViaje(@RequestBody Viaje v) throws Exception {
 
-        return viajeService.publicarViaje(v, conductorId);
+        return viajeService.publicarViaje(v);
     }
+
 
     @RequestMapping(path="/{id}", method = RequestMethod.GET)
     public Viaje buscarViajePorId(@PathVariable Integer id) throws Exception{

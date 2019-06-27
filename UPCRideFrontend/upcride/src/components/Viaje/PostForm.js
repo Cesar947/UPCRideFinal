@@ -3,23 +3,27 @@ import { PUBLICAR_VIAJE } from '../../actions/actionTypes';
 import { publicarViaje } from '../../actions/viajesActions';
 
 import TextField from '@material-ui/core/Button';
-import './Form.css';
 import Button from '@material-ui/core/Button';
 import { LoginTextField } from '../Text';
 import Grid from '@material-ui/core/Grid';
 import { connect } from "react-redux";
 import './Viaje.css';
-import { Redirect } from 'react-router-dom';
-import { LISTAR_USUARIO } from '../../actions/actionTypes';
-import { fetchUsuario } from '../../actions/usuariosActions';
+import PropTypes from "prop-types";
+
 
 class PostForm extends React.Component {
+
+    static propTypes = {
+        usuarios: PropTypes.array.isRequired
+    };
+
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
+        let numeroPasajeros =  0;
         let posted = false
         this.state = {
-            listausuarios: [],
+            usuarios: [],
             descripcion: '',//llenar
             puntoPartida: '',//llenar
             puntoDestino: '',//llenar
@@ -38,15 +42,11 @@ class PostForm extends React.Component {
             numeroPasajeros: 0,
             limitePasajeros: 0,
             precioBase: 0.0, //lenar
-            posted
+            posted ,
         }
+        console.log("props: ", this.props.actionType)
     }
 
-
-
-    componentDidMount() {
-        this.props.fetchUsuario();
-    }
 
     handleChange(event) {
         let fieldName = event.target.name;
@@ -57,11 +57,12 @@ class PostForm extends React.Component {
 
     handleSubmit() {
         this.props.publicarViaje(this.state);
+        this.props.post()
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.actionType === LISTAR_USUARIO) {
-            this.setState({ listausuarios: nextProps.listausuarios });
+        if (nextProps.usuarios) {
+             this.setState({ usuarios: nextProps.usuarios })
         }
         if (nextProps.actionType === PUBLICAR_VIAJE) {
             this.setState({
@@ -71,14 +72,38 @@ class PostForm extends React.Component {
     }
 
     render() {
-        if (this.state.posted) {
-            return <Redirect to="/home" />
-        }
+       
         return (
             <div>
                 <img src={process.env.PUBLIC_URL + '../images/card.jpg'} className="Fondo" alt="logo" />
                 <div className="Form">
                     <Grid container spacing={3}>
+                    <Grid item xs={12} sm={6}>
+                            <LoginTextField
+                                required
+                                id="puntoPartida"
+                                name="puntoPartida"
+                                label="Punto Partida"
+                                fullWidth
+                                value={this.state.puntoPartida}
+                                onChange={this.handleChange.bind(this)}
+                                variant="outlined"
+                            />
+                        </Grid>
+                        <br />
+                        <Grid item xs={12} sm={6}>
+                            <LoginTextField
+                                required
+                                id="puntoDestino"
+                                name="puntoDestino"
+                                label="Punto Destino"
+                                fullWidth
+                                value={this.state.puntoDestino}
+                                onChange={this.handleChange.bind(this)}
+                                variant="outlined"
+                            />
+                        </Grid>
+                        <br />
                         <Grid item xs={12} sm={12}>
                             <LoginTextField
                                 required
@@ -249,21 +274,15 @@ class PostForm extends React.Component {
 }
 
 
-
-
 const mapState = state => {
     return {
         viaje: state.viaje.viaje,
-        actionType: state.viaje.actionType,
-
-        listausuarios: state.usuario.usuarios,
-        actionType: state.usuario.actionType
+        actionType: state.viaje.actionType
     }
 };
 
 const mapDispatch = {
-    publicarViaje,
-    fetchUsuario
+    publicarViaje
 };
 
 export default connect(mapState, mapDispatch)(PostForm);

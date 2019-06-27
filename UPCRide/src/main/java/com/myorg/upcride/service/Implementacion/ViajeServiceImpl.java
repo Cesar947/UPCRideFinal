@@ -33,20 +33,15 @@ public class ViajeServiceImpl implements ViajeService {
 
 
     @Override
-    public Viaje publicarViaje(Viaje v, Integer conductorId) throws Exception {
+    public Viaje publicarViaje(Viaje v) throws Exception {
         v.setEstado("Publicado");
-        Usuario conductor = conductorRepository.findById(conductorId).get();
-
-        v.setConductor(conductor);
         v.setVisualizacionHabilitada(1);
-        Auto auto = autoRepository.buscarAutoPorConductor(v.getConductor().getId());
-        v.setLimitePasajeros(auto.getLimitePersonas());
+        /*Auto auto = autoRepository.buscarAutoPorConductor(v.getConductor().getId());
+        v.setLimitePasajeros(auto.getLimitePersonas());*/
         v.setNumeroPasajeros(0);
-
-
-
         return viajeRepository.save(v);
     }
+
 
     @Override
     public Viaje buscarViaje(Integer id) throws Exception {
