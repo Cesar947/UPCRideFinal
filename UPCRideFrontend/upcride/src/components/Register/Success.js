@@ -3,6 +3,9 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import {Redirect} from 'react-router-dom';
+import {fetchUsuario} from '../../actions/usuariosActions';
+import { LISTAR_USUARIO } from '../../actions/actionTypes';
+import {connect} from "react-redux";
 
 
 export class Success extends Component {
@@ -13,6 +16,16 @@ export class Success extends Component {
         ready
       }
       this.goHome = this.goHome.bind(this)
+  }
+
+  componentDidMount() {
+    this.props.fetchUsuario();
+  }
+  
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.actionType === LISTAR_USUARIO) {
+      this.setState({ listausuarios: nextProps.listausuarios });
+    }
   }
 
   continue = e => {
@@ -30,7 +43,7 @@ export class Success extends Component {
     this.setState({
       ready: true
     })
-    this.props.afterSubmit();
+    this.props.fetchUsuario;
   }
 
   render() {
@@ -62,4 +75,16 @@ export class Success extends Component {
   }
 }
 
-export default Success;
+const mapState = state => {
+  return {
+      listausuarios: state.usuario.usuarios,
+      actionType: state.usuario.actionType
+  }
+};
+
+const mapDispatch = {
+    fetchUsuario
+};
+
+
+export default connect(mapState, mapDispatch)(Success);

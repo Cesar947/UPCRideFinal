@@ -3,6 +3,14 @@ import NavBar from '../Home/NavBar';
 import GoogleMap from '../GoogleMap/GoogleMap';
 
 class Viaje extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state={
+            listausuarios:[]
+        }
+    }
+    
     render() {
         return (
             <div>

@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import FormPassenger from './FormPassenger';
 import Success from './Success';
 import './Register.css';
-import {fetchUsuario} from '../../actions/usuariosActions';
-import { LISTAR_USUARIO } from '../../actions/actionTypes';
-import {connect} from "react-redux";
+
 
 export class UserForm extends Component {
   constructor(props){
@@ -62,7 +60,7 @@ componentWillReceiveProps(nextProps) {
           <div>
             <img src={process.env.PUBLIC_URL + '../images/card.jpg'} className="Fondo" alt="logo" />
             <div className="Form">
-              <Success afterSubmit= {this.props.fetchUsuario} />
+              <Success />
             </div>
           </div>
         );
@@ -70,15 +68,5 @@ componentWillReceiveProps(nextProps) {
   }
 }
 
-const mapState = state => {
-  return {
-      listausuarios: state.usuario.usuarios,
-      actionType: state.usuario.actionType
-  }
-};
 
-const mapDispatch = {
-    fetchUsuario
-};
-
-export default connect(mapState, mapDispatch)(UserForm);
+export default UserForm;
