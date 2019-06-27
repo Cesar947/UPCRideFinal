@@ -1,39 +1,57 @@
 import React from 'react';
+import { VIAJES_USUARIO } from '../../actions/actionTypes';
+import {connect} from "react-redux";
+import {viajesXUsuario} from '../../actions/viajesActions';
+import ViajesListados from './ViajesListados';
+import PropTypes from "prop-types";
 
 class ViajesXUsuario extends React.Component {
+
+    static propTypes = {
+        usuarios: PropTypes.array.isRequired
+    };
+
+
     constructor(props) {
-        super(props) = {
-            usuarios: []
+        super(props) 
+        this.state = {
+            usuarios: [],
+            listaviajes:[]
         }
+    }
+
+    componentDidMount() {
+        this.props.viajesXUsuario(this.state.usuarios.id);
+      }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.usuarios) {
+            this.setState({ usuarios: nextProps.usuarios })
+        }
+        if (nextProps.actionType === VIAJES_USUARIO) {
+            this.setState({ listaviajes: nextProps.listaviajes });
+          }
     }
 
     render() {
         return (
             <div>
-                <Grid>
-
-                    {this.state.trips.map((trip, index) => (
-                        <Grid key={index} xs={12} >
-                            <Card >
-                                <CardContent>
-                                    <Typography className="Contenido" variant="h5" component="h2">
-                                        {trip.puntoPartida}</Typography>
-                                    <Typography variant="h5" component="h2">
-                                        {trip.puntoDestino}</Typography>
-                                    <Typography className="Contenido" color="textSecondary" gutterBottom>
-                                        {trip.descripcion}</Typography>
-                                </CardContent>
-
-                                <CardActions>
-                                    <Button size="small">Ver mas</Button>
-                                    <Button size="small">Solicitar</Button>
-                                </CardActions>
-                            </Card>
-                            <br />
-                        </Grid>
-                    ))}
-                </Grid>
+                <ViajesListados trips = {this.state.listaviajes}/>
             </div>
         );
     }
 }
+
+const mapState = state => {
+    return {
+        listaviajes: state.viaje.viajesUsuario,
+        actionType: state.viaje.actionType
+    }
+  };
+  
+  const mapDispatch = {
+     viajesXUsuario
+  };
+
+export default connect(mapState, mapDispatch)(ViajesXUsuario);
+

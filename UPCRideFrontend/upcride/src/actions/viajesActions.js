@@ -1,4 +1,4 @@
-import { LISTAR_VIAJES, PUBLICAR_VIAJE } from './actionTypes'
+import { LISTAR_VIAJES, PUBLICAR_VIAJE, VIAJES_USUARIO } from './actionTypes'
 
 export function fetchViajesList() {
     return function (dispatch, getState) {
@@ -50,13 +50,13 @@ export function viajesXUsuario(usuarioId) {
         fetch("http://localhost:5050/viajes/" + usuarioId)
             .then(response => response.json())
             .then(jsonData => {
-                dispatch(setViajes(jsonData))
+                dispatch(setViajesUsuario(jsonData))
             })
 
     }
 }
 
-export function setGuardarViaje(viajesUsuario) {
+export function setViajesUsuario(viajesUsuario) {
     return {
         type: VIAJES_USUARIO,
         viajesUsuario

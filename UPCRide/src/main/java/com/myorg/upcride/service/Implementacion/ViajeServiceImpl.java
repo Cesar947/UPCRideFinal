@@ -6,6 +6,7 @@ import com.myorg.upcride.model.Usuario;
 import com.myorg.upcride.model.Viaje;
 import com.myorg.upcride.repository.AutoRepository;
 
+import com.myorg.upcride.repository.SolicitudRepository;
 import com.myorg.upcride.repository.UsuarioRepository;
 import com.myorg.upcride.repository.ViajeRepository;
 import com.myorg.upcride.service.ViajeService;
@@ -22,13 +23,14 @@ public class ViajeServiceImpl implements ViajeService {
 
     ViajeRepository viajeRepository;
     AutoRepository autoRepository;
-    UsuarioRepository conductorRepository;
+    UsuarioRepository usuarioRepository;
+    SolicitudRepository solicitudRepository;
 
     @Autowired
-    public ViajeServiceImpl(ViajeRepository viajeRepository, AutoRepository autoRepository, UsuarioRepository conductorRepository) {
+    public ViajeServiceImpl(ViajeRepository viajeRepository, AutoRepository autoRepository, UsuarioRepository usuarioRepository) {
         this.viajeRepository = viajeRepository;
         this.autoRepository = autoRepository;
-        this.conductorRepository = conductorRepository;
+        this.usuarioRepository = usuarioRepository;
     }
 
 
@@ -54,29 +56,29 @@ public class ViajeServiceImpl implements ViajeService {
     }
 
     @Override
-    public List<Viaje> filtrar(String puntoPartida, String puntoDestino, Time horaPartida, Time horaLlegada, int entrada_salida, Date fecha) throws Exception {
+    public List<Viaje> filtrar(String puntoPartida, String puntoDestino, Time horaPartida, Time horaLlegada, int entradaSalida, Date fecha) throws Exception {
 
-        if (puntoPartida == null && puntoDestino == null && horaPartida == null && horaLlegada == null && entrada_salida == 2) {
+        if (puntoPartida == null && puntoDestino == null && horaPartida == null && horaLlegada == null && entradaSalida == 2) {
             return viajeRepository.listarPorFecha(fecha);
         }
-        else if(puntoPartida == null && puntoDestino == null && horaPartida == null && entrada_salida == 2 && fecha == null){
+        else if(puntoPartida == null && puntoDestino == null && horaPartida == null && entradaSalida == 2 && fecha == null){
             return viajeRepository.listarPorHoraLlegada(horaLlegada);
         }
-        else if (puntoPartida == null && puntoDestino == null && entrada_salida == 2 && fecha == null) {
+        else if (puntoPartida == null && puntoDestino == null && entradaSalida == 2 && fecha == null) {
             return viajeRepository.listarPorHoraInicioYHoraFin(horaPartida, horaLlegada);
-        } else if (horaPartida == null && horaLlegada == null && entrada_salida == 2 && fecha == null) {
+        } else if (horaPartida == null && horaLlegada == null && entradaSalida == 2 && fecha == null) {
             return viajeRepository.listarPorPuntoPartidaYPuntoDestino(puntoPartida, puntoDestino);
         } else if (puntoPartida == null && puntoDestino == null && fecha == null && horaPartida == null && horaLlegada == null) {
-            return viajeRepository.listarPorEntradaOSalida(entrada_salida);
+            return viajeRepository.listarPorEntradaOSalida(entradaSalida);
 
         }
-       else if (entrada_salida == 2 && fecha == null) {
+       else if (entradaSalida == 2 && fecha == null) {
             return viajeRepository.listarPorPuntoPartidaYPuntoDestinoYHoraInicioYHoraFin(puntoPartida, puntoDestino, horaPartida, horaLlegada);
-        } else if (entrada_salida == 2) {
+        } else if (entradaSalida == 2) {
 
             return viajeRepository.listarPorPuntoPartidaYPuntoDestinoYHoraInicioYHoraFinYFecha( horaPartida, horaLlegada, puntoPartida, puntoDestino, fecha);
         } else {
-            return viajeRepository.listarPorTodosLosFiltros(horaPartida, horaLlegada, puntoPartida, puntoDestino, entrada_salida, fecha);
+            return viajeRepository.listarPorTodosLosFiltros(horaPartida, horaLlegada, puntoPartida, puntoDestino, entradaSalida, fecha);
 
         }
     }
@@ -103,6 +105,35 @@ public class ViajeServiceImpl implements ViajeService {
     @Override
     public List<Solicitud> listarSolicitudesPendientesDelViaje(Integer viajeId) throws Exception{
        return viajeRepository.listarSolicitudesPendientesDelViaje(viajeId);
+    }
+    @Override
+    public Solicitud solicitarViaje(Integer viajeId, Solicitud s) throws Exception {
+        Viaje objViaje = viajeRepository.findById(viajeId).get();
+        s.setViaje(objViaje);
+        int pasajerosRegistrados = viajeRepository.calcularNumerodePasajerosDelViaje(objViaje.getId()) + 1;
+        Solicitud resultado = new Solicitud();
+        if (pasajerosRegistrados <= objViaje.getLimitePasajeros()) {
+        try {
+
+
+
+                resultado = solicitudRepository.save(s);
+
+                viajeRepository.actualizarNumeroDePasajeros(pasajerosRegistrados, objViaje.getId());
+
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+
+        }
+        return resultado;
+    }
+
+    @Override
+    public List<Viaje> listarViajesPorConductor(Integer conductorId) throws Exception{
+        return viajeRepository.listarViajesPorConductor(conductorId);
     }
 
 }

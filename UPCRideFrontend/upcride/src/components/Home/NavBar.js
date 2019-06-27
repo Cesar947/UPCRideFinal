@@ -15,7 +15,6 @@ import Typography from '@material-ui/core/Typography';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    console.log("bar: ", this.props)
     this.state = {
       listausuarios: []
     }

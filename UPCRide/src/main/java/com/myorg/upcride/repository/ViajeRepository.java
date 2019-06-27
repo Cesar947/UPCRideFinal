@@ -18,7 +18,7 @@ import java.util.List;
 public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
 
     @Query("SELECT v FROM Viaje v WHERE v.horaPartida = ?1 and v.horaLlegada = ?2 AND v.puntoPartida = ?3 AND v.puntoDestino = ?4 AND v.entradaSalida= ?5 AND v.fecha = ?6")
-    List<Viaje> listarPorTodosLosFiltros(Time horaPartida, Time horaLlegada, String puntoPartida, String puntoDestino, int entrada_salida, Date fecha) throws Exception;
+    List<Viaje> listarPorTodosLosFiltros(Time horaPartida, Time horaLlegada, String puntoPartida, String puntoDestino, int entradaSalida, Date fecha) throws Exception;
 
     @Query("SELECT v FROM Viaje v WHERE v.puntoPartida = ?1 AND v.puntoDestino = ?2")
     List<Viaje> listarPorPuntoPartidaYPuntoDestino(String puntoPartida,String puntoDestino) throws Exception;
@@ -60,6 +60,8 @@ public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
     @Query("SELECT u FROM Usuario u JOIN Solicitud s ON u.id = s.pasajero.id JOIN Viaje v ON v.id = s.viaje.id WHERE v.id = ?1 AND s.confirmacionConductor = 'Aceptada'")
     List<Usuario> listarPasajerosDelViaje(Integer viajeId) throws Exception;
 
+    @Query("SELECT v FROM Viaje v JOIN Usuario u ON u.id = v.conductor.id WHERE u.id = ?1")
+    List<Viaje> listarViajesPorConductor(Integer conductorId) throws Exception;
 
     @Query("SELECT s FROM Solicitud s WHERE s.viaje.id = ?1 AND s.confirmacionConductor = 'Pendiente' ")
     List<Solicitud> listarSolicitudesPendientesDelViaje(Integer viajeId) throws Exception;
