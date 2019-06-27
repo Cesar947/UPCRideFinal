@@ -1,4 +1,6 @@
 import React from 'react';
+import { SOLICITAR_VIAJE } from '../../actions/actionTypes';
+import { solicitarViaje } from '../../actions/solicitudActions';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -29,8 +31,8 @@ const classes = makeStyles(theme => ({
         flexWrap: 'wrap',
     },
     textField: {
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1),
+        marginLeft: 3,
+        marginRight: 3,
         width: '800px'
     },
     dense: {
@@ -65,23 +67,47 @@ export default class Solicitud extends React.Component {
 
     constructor(props){
         super(props);
+       
+        let posted = false
      this.state = {
-      
-  
-    id: '',
-    pasajero: '',
-    viaje:'',
+    
     mensaje:'',
-    confirmacionConductor:'',
     puntoEncuentro:'',
     encuentroLatitud:'',
     encuentroLongitud:'',
-    fecha:''
-
+    posted
      }
+    
+     this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange(event) {
+        let fieldName = event.target.name;
+        let fieldValue = event.target.value;
+        this.setState({ ...this.state, [fieldName]: fieldValue });
+    }
+    handleSubmit(){
+        this.props.solicitarViaje(this.state);
+        this.setState({
+             posted:true
+        })
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.actionType === SOLICITAR_VIAJE) {
+            this.setState({
+                posted: true})
+            }
+        }
+
+
     render() {
+       if(this.state.posted){
+       // const { values, handleChange } = this.props;
+           alert("La solicitud ha sido realizada");
+       }
+       
+       
+       
         return (
         <div>
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -104,7 +130,7 @@ export default class Solicitud extends React.Component {
         
         
         
-          <Grid item xs={6}>
+          <Grid item xs={6} sm={6}>
           <Card className={classes.cardSolicitud}>
                                 <CardContent>
            <Typography component="p">
@@ -117,29 +143,31 @@ export default class Solicitud extends React.Component {
                         <Typography component="p">
                             Conductor: Juanelv Salgado
                  </Typography>
-
+                         
                         <TextField 
-                            id="outlined-textarea"
+                            id="mensaje"
+                            name="mensaje"
                             label="Escribe un mensaje corto"
                             placeholder="Placeholder"
                             multiline
                             className={classes.textField}
                             margin="normal"
                             variant="outlined"
-                            value="¡Hola! Me encantaría poder formar parte de tu viaje ;)"
-
+                            value={this.state.mensaje}
+                            onChange = {this.handleChange.bind(this)}
                         />
 
 
                       <TextField 
-                            id="outlined-textarea"
-                            label="Escribe el punto de encuentro"
+                             id="puntoEncuentro"
+                             name="puntoEncuentro"
+                            label="Punto de encuentro"
                             placeholder="Placeholder"
                             multiline
                             className={classes.textField}
                             margin="normal"
                             variant="outlined"
-                            value="¡Hola! Me encantaría poder formar parte de tu viaje ;)"
+                            onChange = {this.handleChange.bind(this)}
 
                         /> 
                         <Typography component="p">
@@ -149,7 +177,10 @@ export default class Solicitud extends React.Component {
                 </CardContent>
                 <CardActions>
 
-                        <Button variant="contained" color="primary" className={classes.button}>
+                        <Button variant="contained" 
+                        color="primary"
+                         className={classes.button}
+                         onClick={this.handleSubmit}>
                             Enviar solicitud
         {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
                            <i class="material-icons">send</i>
