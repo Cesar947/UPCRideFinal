@@ -1,6 +1,17 @@
+.Inicio{
+    position: relative;
+    left: 750px;
+    color: white;
+}
+
+.MiItinerario{
+    position: relative;
+    left: 740px;
+}
+
 .MisViajes{
     position: relative;
-    left: 1000px;
+    left: 770px;
 }
 
 .Postear{
@@ -11,12 +22,12 @@
 
 .Usuario{
     position: relative;
-    left:1150px;
+    left:810px;
   }
 
 .User{
-    position: relative;
-    left: 1170px;
+    position: absolute;
+    left: 1850px;
 }
 
 .Titulo{

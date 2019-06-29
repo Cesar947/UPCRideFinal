@@ -56,13 +56,13 @@ class PostForm extends React.Component {
     }
 
     handleSubmit() {
-        this.props.publicarViaje(this.state);
+        this.props.publicarViaje(this.state, 1);
         this.props.post()
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.usuarios) {
-             this.setState({ usuarios: nextProps.usuarios })
+             this.setState({ usuarios: nextProps.usuarios})
         }
         if (nextProps.actionType === PUBLICAR_VIAJE) {
             this.setState({

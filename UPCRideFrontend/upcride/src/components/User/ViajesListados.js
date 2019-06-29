@@ -18,6 +18,11 @@ class ViajesListados extends React.Component{
         this.state = {
             trips: []
         }
+        this.iniciarViaje = this.iniciarViaje.bind(this)
+    }
+
+    iniciarViaje(){
+        alert("Viaje Iniciado")
     }
 
     componentWillReceiveProps(nextProps) {
@@ -42,7 +47,7 @@ class ViajesListados extends React.Component{
                         </CardContent>
 
                         <CardActions>
-                            <Button size="small">Iniciar Viaje</Button>
+                            <Button size="small" onClick = {this.iniciarViaje} >Iniciar Viaje</Button>
                         </CardActions>
                     </Card>
                     <br />

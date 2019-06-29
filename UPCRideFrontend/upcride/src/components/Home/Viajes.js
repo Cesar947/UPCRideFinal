@@ -13,6 +13,7 @@ import Table from '@material-ui/core/Table';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
 import GoogleMap from '../GoogleMap/GoogleMap';
+import {Redirect} from 'react-router-dom'
 
 
 
@@ -27,9 +28,12 @@ class ViajesList extends React.Component {
 
     constructor(props) {
         super(props);
+        let rec = false
         this.state = {
-            trips: []
+            trips: [],
+            rec
         }
+        this.alViaje = this.alViaje.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
@@ -38,10 +42,16 @@ class ViajesList extends React.Component {
         }
     }
 
-
+    alViaje(){
+        this.setState({
+            rec: true 
+        })
+    }
 
     render() {
-        
+        if(this.state.rec){
+            return <Redirect to = "/viaje/detalle"/>
+        }
         return (
             <div>
 
@@ -65,7 +75,7 @@ class ViajesList extends React.Component {
                                 </CardContent>
 
                                 <CardActions>
-                                    <Button size="small">Ver mas</Button>
+                                    <Button size="small" onClick={this.alViaje}>Ver mas</Button>
                                     <Button size="small">Solicitar</Button>
                                 </CardActions>
                             </Card>

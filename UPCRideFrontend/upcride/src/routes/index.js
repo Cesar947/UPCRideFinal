@@ -10,6 +10,7 @@ import RequestPage from './RequestPage';
 import NavBar from '../components/Home/NavBar';
 import SuccessPage from '../components/Register/SuccessPage';
 import ListaViajes from '../components/User/ListaViajes';
+import Viaje from '../components/Viaje/index';
 
 
 const Routes = () => (
@@ -25,8 +26,11 @@ const Routes = () => (
                 <Route path="/navbar" component={NavBar}/>
                 <Route path="/register/success" component={SuccessPage}/>
                 <Route path = "/user/misViajes" component={ListaViajes}/>
+                <Route path = "/viaje/detalle" component={Viaje}/>
             </Switch>
         </Router>
 );
+
+
 
 export default Routes;

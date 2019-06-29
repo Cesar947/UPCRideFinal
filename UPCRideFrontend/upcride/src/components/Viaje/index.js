@@ -1,50 +1,59 @@
 import React from 'react';
 import NavBar from '../Home/NavBar';
-import GoogleMap from '../GoogleMap/GoogleMap';
+import ViajeDetallado from './ViajeDetallado';
+import { selectViaje } from '../../actions/viajesActions';
+import { connect } from "react-redux"
+import { SELECT_VIAJE } from '../../actions/actionTypes';
 
 class Viaje extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state={
-            listausuarios:[]
+        this.state = {
+            listaviajes: [],
+            origenLongitud: 0.0,
+            origenLatitud: 0.0,
+            destinoLongitud: 0.0,
+            destinoLatitud: 0.0
         }
     }
-    
+
+    componentDidMount() {
+        this.props.selectViaje(1)
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.actionType === SELECT_VIAJE) {
+            this.setState({
+                listaviajes: nextProps.listaviajes,
+                origenLongitud: nextProps.listaviajes.partidaLongitud,
+                origenLatitud: nextProps.listaviajes.partidaLatitud,
+                destinoLongitud: nextProps.listaviajes.destinoLongitud,
+                destinoLatitud: nextProps.listaviajes.destinoLatitud
+            });
+        }
+    }
+
     render() {
         return (
             <div>
 
-            <NavBar />
-                <Card >
-                    <CardContent>
-                        <Avatar aria-label="Recipe" className="Avatar">
-                            C
-                                     </Avatar>
-                        <Typography className="Titulo" color="textSecondary" gutterBottom>
-                            Brian</Typography>
-                        <Typography className="Contenido" variant="h5" component="h2">
-                            Los Olivos</Typography>
-                        <Typography variant="h5" component="h2">
-                            UPC San Miguel</Typography>
-                        <Typography className="Contenido" color="textSecondary" gutterBottom>
-                            Hola</Typography>
-
-                    </CardContent>
-
-                    <CardActions>
-                        <Button size="small">Ver mas</Button>
-                        <Button size="small">Solicitar</Button>
-                    </CardActions>
-
-                    <GoogleMap origenLongitud= {0.0}
-                                origenLatitud= {0.0}
-                                destinoLongitud= {0.0}
-                                destinoLatitud= {0.0}/>
-                </Card>
+                <NavBar />
+                <ViajeDetallado viajes={this.state.listaviajes}/>
             </div>
         );
     }
 }
 
-export default Viaje;
+const mapState = state => {
+    return {
+        listaviajes: state.viaje.viaje,
+        actionType: state.viaje.actionType
+    }
+};
+
+const mapDispatch = {
+    selectViaje
+};
+
+export default connect(mapState, mapDispatch)(Viaje);

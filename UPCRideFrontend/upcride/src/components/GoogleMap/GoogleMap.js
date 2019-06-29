@@ -14,22 +14,18 @@ class GoogleMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      origenLongitud: 0.0,
-      origenLatitud: 0.0,
-      destinoLongitud: 0.0,
-      destinoLatitud: 0.0
-    } 
+      destinoLatitud: '',
+      destinoLongitud: '',
+      origenLatitud: '',
+      origenLongitud: ''
+
+    }
   }
 
-  /*componentWillReceiveProps(nextProps) {
-    if (nextProps.trips) {
-        this.setState({ trips: nextProps.trips })
-    }
-}*/
 
   componentDidMount() {
     console.log("componentDidMount: ", this.props);
-    this.renderMap({origenLongitud: this.props.origenLongitud, origenLatitud: this.props.origenLatitud, destinoLongitud: this.props.destinoLongitud, destinoLatitud: this.props.destinoLatitud});
+    this.renderMap({ origenLongitud: this.props.origenLongitud, origenLatitud: this.props.origenLatitud, destinoLongitud: this.props.destinoLongitud, destinoLatitud: this.props.destinoLatitud });
   }
 
 
@@ -104,7 +100,7 @@ class GoogleMap extends Component {
   calculateAndDisplayRoute = (directionsService, directionsDisplay, cords) => {
     console.log(" window.cords: ", window.cords);
     directionsService.route({
-     origin: { lat: cords.origenLatitud, lng: cords.origenLongitud },
+      origin: { lat: cords.origenLatitud, lng: cords.origenLongitud },
       destination: { lat: cords.destinoLatitud, lng: cords.destinoLongitud },
       /*origin: { lat: -11.990887, lng: -77.070377 },
       destination: { lat: -12.076967, lng: -77.093636 },*/

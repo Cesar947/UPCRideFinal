@@ -1,4 +1,4 @@
-import { LISTAR_VIAJES, PUBLICAR_VIAJE, VIAJES_USUARIO } from './actionTypes'
+import { LISTAR_VIAJES, PUBLICAR_VIAJE, VIAJES_USUARIO, ACTU_VIAJE, SELECT_VIAJE } from './actionTypes'
 
 export function fetchViajesList() {
     return function (dispatch, getState) {
@@ -18,10 +18,10 @@ function setViajes(viajes) {
     }
 }
 
-export function publicarViaje(viaje) {
+export function publicarViaje(viaje, viajeid) {
 
     return function (dispatch, getState) {
-        fetch('http://localhost:5050/viajes', {
+        fetch('http://localhost:5050/viajes/publicar/' + viajeid, {
             method: 'post',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
@@ -60,6 +60,51 @@ export function setViajesUsuario(viajesUsuario) {
     return {
         type: VIAJES_USUARIO,
         viajesUsuario
+    }
+}
+
+export function actualizarViaje(viaje, viajeId) {
+
+    return function (dispatch, getState) {
+        fetch('http://localhost:5050/viajes/update/' + viajeId, {
+            method: 'put',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(viaje)
+        })
+            .then(response => response.json())
+            .then(jsonData => {
+                dispatch(setActuViaje(jsonData))
+            })
+
+    }
+}
+
+export function setActuViaje(viaje) {
+    return {
+        type: ACTU_VIAJE,
+        viaje
+    }
+}
+
+export function selectViaje(viajeId) {
+
+    return function (dispatch, getState) {
+        fetch("http://localhost:5050/viajes/" + viajeId)
+            .then(response => response.json())
+            .then(jsonData => {
+                dispatch(setViaje(jsonData))
+            })
+
+    }
+}
+
+export function setViaje(viaje) {
+    return {
+        type: SELECT_VIAJE,
+        viaje
     }
 }
 
