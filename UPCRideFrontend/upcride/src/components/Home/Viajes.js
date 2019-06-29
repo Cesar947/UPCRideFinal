@@ -76,7 +76,7 @@ class ViajesList extends React.Component {
 
                                 <CardActions>
                                     <Button size="small" onClick={this.alViaje}>Ver mas</Button>
-                                    <Button size="small">Solicitar</Button>
+                                 
                                 </CardActions>
                             </Card>
                             <br />

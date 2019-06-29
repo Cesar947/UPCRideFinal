@@ -8,7 +8,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
 import PropTypes from "prop-types";
-
+import {Redirect} from 'react-router-dom'
+import {RequestButton} from '../Button/index.js';
 
 
 
@@ -19,11 +20,13 @@ class ViajeDetallado extends React.Component{
     static propTypes = {
         viajes: PropTypes.array.isRequired
     };
-
+   
     constructor(props){
+        let paraSolicitar = false;
         super(props);
         this.state={
             viajes:[],
+            paraSolicitar
         }
     }
 
@@ -34,8 +37,19 @@ class ViajeDetallado extends React.Component{
         })
         }
       }
-
+ 
+      ALaSolicitud = () => {
+         this.setState(
+             {
+                 paraSolicitar: true
+             }
+         )
+      }
     render(){
+   if(this.state.paraSolicitar){
+     return <Redirect to="/solicitar"/>
+   }
+       
         return(
             <div>
                 <Card >
@@ -51,16 +65,16 @@ class ViajeDetallado extends React.Component{
                         {this.state.viajes.puntoDestino}</Typography>
                         <Typography className="Contenido" color="textSecondary" gutterBottom>
                         {this.state.viajes.descripcion}</Typography>
-                        
+                        <CardActions>
+                        <RequestButton onClick={this.ALaSolicitud}>SOLICITAR</RequestButton>
+                       </CardActions>
+  
                     </CardContent>
                     <GoogleMap  origenLongitud= {this.state.viajes.partidaLongitud}
                                 origenLatitud= {this.state.viajes.partidaLatitud}
                                 destinoLongitud= {this.state.viajes.destinoLongitud}
                                 destinoLatitud= {this.state.viajes.destinoLatitud} />
-                    <CardActions>
-                        <Button size="small">Solicitar</Button>
-                    </CardActions>
-
+                   
                 </Card>
             </div>
         );

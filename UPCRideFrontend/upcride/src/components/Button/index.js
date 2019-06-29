@@ -51,7 +51,17 @@ const PostButton = withStyles(theme =>({
     }
 }))(Button)
 
+const RequestButton = withStyles(theme => ({
+    root:{
+        color: "white",
+        backgroundColor: "#4FAB20;",
+        '&:hover': {
+            backgroundColor: "#5FCF27",
+        }
+        
+    }
+}))(Button)
 
 
 
-export {LoginButton, RegisterButton, PostButton};
+export {LoginButton, RegisterButton, PostButton, RequestButton};
