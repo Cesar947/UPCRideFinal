@@ -26,7 +26,10 @@ class Trip extends React.Component {
             this.setState({
                 listaviajes: nextProps.listaviajes,
             });
+            
         }
+
+        
     }
 
 
@@ -35,8 +38,10 @@ class Trip extends React.Component {
         return (
             <div>
                 <NavBar id = {this.state.userid}/>
+                
                 <TripDetail userid = {this.state.userid} viajes={this.state.listaviajes}/>
                 <GoogleMap  viajes={this.state.listaviajes} />
+                
             </div>
         );
     }

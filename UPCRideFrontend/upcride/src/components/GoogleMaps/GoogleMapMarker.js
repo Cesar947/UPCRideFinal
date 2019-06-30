@@ -35,7 +35,7 @@ class GoogleMap extends Component {
       zoom: 16
     });
 
-    //directionsDisplay.setMap(map);
+    directionsDisplay.setMap(map);
 
     // This event listener calls addMarker() when the map is clicked.
     window.google.maps.event.addListener(map, 'click', function (event) {
