@@ -44,7 +44,7 @@ public class Solicitud implements Serializable {
     @Column(name = "mensaje", length = 120, nullable = true)
     private String mensaje;
 
-    @Column(name = "confirmacion_conductor", length = 9, nullable = false)
+    @Column(name = "confirmacion_conductor", length = 20, nullable = false)
     private String confirmacionConductor;
 
     @Column(name = "punto_encuentro", length = 30, nullable = false)

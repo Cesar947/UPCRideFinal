@@ -60,4 +60,9 @@ public class UsuarioServiceImpl implements UsuarioService {
     public Usuario pasajeroPrueba() throws Exception{
         return usuarioRepository.pasajeroPrueba();
     }
+
+    @Override
+    public Integer iniciarSesion(String correoUPC, String contraseña) throws Exception{
+        return usuarioRepository.iniciarSesion(correoUPC, contraseña);
+    }
 }

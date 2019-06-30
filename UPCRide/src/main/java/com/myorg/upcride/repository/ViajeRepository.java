@@ -65,4 +65,7 @@ public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
 
     @Query("SELECT s FROM Solicitud s WHERE s.viaje.id = ?1 AND s.confirmacionConductor = 'Pendiente' ")
     List<Solicitud> listarSolicitudesPendientesDelViaje(Integer viajeId) throws Exception;
+
+    @Query("SELECT s FROM Solicitud s WHERE s.viaje.id = ?1 AND s.confirmacionConductor = 'Aceptada' ")
+    List<Solicitud> listarSolicitudesConfrimadasDelViaje(Integer viajeId) throws Exception;
 }

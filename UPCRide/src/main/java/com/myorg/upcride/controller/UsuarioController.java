@@ -51,6 +51,12 @@ public class UsuarioController {
     }
 
 
+    @RequestMapping(path="/inicioSesion/{correo}/{contraseña}", method=RequestMethod.GET)
+    public Integer iniciarSesion(@PathVariable("correo") String correoUPC, @PathVariable("contraseña") String contraseña) throws Exception{
+             return usuarioService.iniciarSesion(correoUPC, contraseña);
+    }
+
+
 
 
 }

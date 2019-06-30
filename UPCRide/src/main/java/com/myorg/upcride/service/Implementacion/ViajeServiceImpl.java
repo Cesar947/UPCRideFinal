@@ -108,6 +108,12 @@ public class ViajeServiceImpl implements ViajeService {
     public List<Solicitud> listarSolicitudesPendientesDelViaje(Integer viajeId) throws Exception{
        return viajeRepository.listarSolicitudesPendientesDelViaje(viajeId);
     }
+
+    @Override
+    public List<Solicitud> listarSolicitudesConfirmadasDelViaje(Integer viajeId) throws Exception{
+        return viajeRepository.listarSolicitudesConfrimadasDelViaje(viajeId);
+    }
+
     @Override
     public Solicitud solicitarViaje(Integer viajeId, Solicitud s) throws Exception {
         Viaje objViaje = viajeRepository.findById(viajeId).get();

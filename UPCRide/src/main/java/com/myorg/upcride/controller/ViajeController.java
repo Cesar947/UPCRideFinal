@@ -67,6 +67,11 @@ public class ViajeController {
         return viajeService.listarSolicitudesPendientesDelViaje(viajeId);
     }
 
+    @RequestMapping(path="/solicitudesConfirmadas/{viajeId}", method=RequestMethod.GET)
+    public List<Solicitud> listarSolicitudesConfirmadasDelViaje(@PathVariable("viajeId") Integer viajeId) throws Exception{
+        return viajeService.listarSolicitudesConfirmadasDelViaje(viajeId);
+    }
+
     
 
     @RequestMapping(path="/filtros", method = RequestMethod.GET)

@@ -15,14 +15,14 @@ class TripDetail extends React.Component {
 
   constructor(props) {
     let paraSolicitar = false;
-    let paraReservar = false;
+    let paraReseñar = false;
     super(props);
     this.state = {
       viajes: [],
       userid: this.props.userid,
       paraSolicitar,
-      paraReservar,
-      conductor: []
+      conductor: [],
+      paraReseñar
     };
   }
 
@@ -32,7 +32,6 @@ class TripDetail extends React.Component {
         viajes: nextProps.viajes,
         conductor: nextProps.viajes.conductor
       });
-      
     }
   }
 
@@ -42,9 +41,9 @@ class TripDetail extends React.Component {
     });
   };
 
-  ALaReserva = () => {
+  ALaReseña = () => {
     this.setState({
-      paraReservar: true
+      paraReseñar: true
     });
   };
 
@@ -61,7 +60,9 @@ class TripDetail extends React.Component {
         />
       );
     }
-
+    if (this.state.paraReseñar) {
+      return <Redirect to={"/user/"} />;
+    }
     return (
       <div>
         <Card>
@@ -70,7 +71,7 @@ class TripDetail extends React.Component {
               C
             </Avatar>
             <Typography className="Titulo" color="textSecondary" gutterBottom>
-              {this.state.conductor.nombres}
+              Nombre Conductor
             </Typography>
             <Typography className="Contenido" variant="h5" component="h2">
               {this.state.viajes.puntoPartida}
@@ -89,7 +90,7 @@ class TripDetail extends React.Component {
               <RequestButton onClick={this.ALaSolicitud}>
                 SOLICITAR
               </RequestButton>
-              <ReviewButton onClick={this.ALaReserva}>RESEÑAR</ReviewButton>
+              <ReviewButton onClick={this.ALaReseña}>RESEÑAR</ReviewButton>
             </CardActions>
           </CardContent>
         </Card>
