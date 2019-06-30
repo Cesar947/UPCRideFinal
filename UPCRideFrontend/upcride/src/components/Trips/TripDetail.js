@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import PropTypes from "prop-types";
 import {Redirect} from 'react-router-dom'
-import {RequestButton} from '../Buttons';
+import {RequestButton, ReviewButton} from '../Buttons';
 
 
 
@@ -20,11 +20,13 @@ class TripDetail extends React.Component{
    
     constructor(props){
         let paraSolicitar = false;
+        let paraReservar = false;
         super(props);
         this.state={
             viajes:[],
             userid: this.props.userid,
-            paraSolicitar
+            paraSolicitar,
+            paraReservar
         }
     }
 
@@ -43,6 +45,15 @@ class TripDetail extends React.Component{
              }
          )
       }
+
+      ALaReserva = () => {
+          this.setState(
+              {
+                  paraReservar: true
+              }
+          )
+      }
+
     render(){
    if(this.state.paraSolicitar){
      return <Redirect to={"/user/" + this.state.userid +"/request/trips/" + this.state.viajes.id}/>
@@ -65,6 +76,7 @@ class TripDetail extends React.Component{
                         {this.state.viajes.descripcion}</Typography>
                         <CardActions>
                         <RequestButton onClick={this.ALaSolicitud}>SOLICITAR</RequestButton>
+                        <ReviewButton onClick={this.ALaReserva}>RESEÑAR</ReviewButton>
                        </CardActions>
   
                     </CardContent>         

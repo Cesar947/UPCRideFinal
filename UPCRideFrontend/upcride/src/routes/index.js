@@ -6,6 +6,7 @@ import Trip from '../components/Trips/Trip';
 import MyTrips from '../components/User/MyTrips';
 import Request from '../components/Request';
 import TripState from '../components/TripState';
+import Review from '../components/Review/Review';
 
 
 const Routes = () => (
@@ -17,6 +18,7 @@ const Routes = () => (
                 <Route path = "/user/:userid/mytrips" component={MyTrips}/>
                 <Route path = "/user/:userid/request/trips/:tripid" component={Request}/>
                 <Route path = "/user/:userid/:tripid" component={TripState}/>
+                <Route path="/review" component={Review}/>
             </Switch>
         </Router>
 );
