@@ -67,6 +67,7 @@ public class ViajeController {
         return viajeService.listarSolicitudesPendientesDelViaje(viajeId);
     }
 
+    
 
     @RequestMapping(path="/filtros", method = RequestMethod.GET)
     public List<Viaje> filtrar(@RequestParam(value = "puntoPartida" , required = false) String puntoPartida,

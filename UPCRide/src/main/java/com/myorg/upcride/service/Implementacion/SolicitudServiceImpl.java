@@ -38,5 +38,9 @@ public class SolicitudServiceImpl implements SolicitudService {
         return solicitudRepository.findAll();
     }
 
+    @Override
+    public List<Solicitud> listarSolicitudesPorConductor(Integer conductorId) throws Exception{
+        return solicitudRepository.listarSolicitudesPorConductor(conductorId);
+    }
 
 }

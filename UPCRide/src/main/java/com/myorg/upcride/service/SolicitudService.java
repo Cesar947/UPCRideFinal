@@ -7,5 +7,5 @@ import java.util.List;
 public interface SolicitudService{
     Solicitud guardarSolicitud(Solicitud s) throws Exception;
     List<Solicitud> listarSolicitudes() throws Exception;
-
+    List<Solicitud> listarSolicitudesPorConductor(Integer conductorId) throws Exception;
 }
