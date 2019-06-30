@@ -4,3 +4,13 @@
     top: -33px;
     left: 50px;
 }
+.TextoIzquierda{
+    position: relative;
+   align-content: left;
+}
+
+.TextoDerecha{
+    position: relative;
+    top: 72px;
+    align-content: right;
+}

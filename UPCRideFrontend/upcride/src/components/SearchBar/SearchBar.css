@@ -1,29 +1,29 @@
 .EncontrarViajeTexto {
     font: 15px roboto, sans-serif;
-    font-size: 14 solid;
+    font-size: 20 solid;
     position: relative;
-    left: 175px;
-    top: 0px;
+    left: 0px;
+    top: 50px;
 }
 
 .Iconu {
     height: 40px;
     position: relative;
     left: 0px;
-    top: 62px;
+    top: 60px;
 }
 
 .IconPartida {
     margin: 1;
     position: relative;
     left: 0px;
-    top: 68px;
+    top: 50px;
 }
 
 .IconFlecha {
     position: relative;
     left: 0px;
-    top: 70px;
+    top: 55px;
 }
 
 .FechaYHora{

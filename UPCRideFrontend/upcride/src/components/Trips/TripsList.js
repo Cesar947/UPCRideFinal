@@ -59,17 +59,27 @@ class ViajesList extends React.Component {
                         <Grid key={index} xs={12} >
                             <Card >
                                 <CardContent>
+                                    <Grid container>
+                                    <Grid item xs={6} className="TextoIzquierda">
                                     <Avatar aria-label="Recipe" className="Avatar">
                                         C
                                      </Avatar>
                                     <Typography className="Titulo" color="textSecondary" gutterBottom>
-                                        {trip.conductor.nombres}</Typography>
+                                         {trip.conductor.nombres}</Typography>
                                     <Typography className="Contenido" variant="h5" component="h2">
-                                        {trip.puntoPartida}</Typography>
+                                    Desde: {trip.puntoPartida}</Typography>
                                     <Typography variant="h5" component="h2">
-                                        {trip.puntoDestino}</Typography>
+                                    Hasta:  {trip.puntoDestino}</Typography>
                                     <Typography className="Contenido" color="textSecondary" gutterBottom>
-                                        {trip.descripcion}</Typography>                  
+                                        {trip.descripcion}</Typography>  
+                                </Grid>    
+                                <Grid item xs={6} className="TextoDerecha">
+                                <Typography className="Contenido" variant="h5" component="h2">
+                                    Hora de partida: {trip.horaPartida}</Typography>
+                                    <Typography variant="h5" component="h2">
+                                    Hora de llegada:  {trip.horaLlegada}</Typography>
+                                    </Grid>  
+                                    </Grid>          
                                 </CardContent>
 
                                 <CardActions>

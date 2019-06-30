@@ -42,7 +42,9 @@ class Home extends React.Component {
     return (
       <div>
         <NavBar id = {this.state.id}/>
+        <div className="searchBar">
         <SearchBar/>
+        </div>
         <PostButton className = " Postear" onClick={this.postear}>Publicar</PostButton>
         <div className="Viajes" xs="3">
         <TripsList trips={this.state.listaviajes} userid={this.state.id} />

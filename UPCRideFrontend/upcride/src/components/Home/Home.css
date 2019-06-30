@@ -5,3 +5,8 @@
     height: 500%;
     width: 60%;
 }
+
+.searchBar{
+    position: absolute;
+    left: 400px;
+}

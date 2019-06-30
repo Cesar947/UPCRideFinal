@@ -12,7 +12,7 @@ class SearchBar extends React.Component{
         return(
             <div>
           <form className="Contenedor" noValidate autoComplete="off">
-            <h5 className="EncontrarViajeTexto">Encuentra tu viaje aquÃ­:</h5>
+            <h5 className="EncontrarViajeTexto">Encuentra tu viaje aquí:</h5>
             <Place className="IconPartida" />
             <TextField
               id="standardPartida"
