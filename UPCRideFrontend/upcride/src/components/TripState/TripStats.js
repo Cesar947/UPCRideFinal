@@ -11,7 +11,7 @@ import {RequestButton} from '../Buttons';
 
 
 
-class TripDetail extends React.Component{
+class TripStats extends React.Component{
     
 
     static propTypes = {
@@ -36,13 +36,6 @@ class TripDetail extends React.Component{
         }
       }
  
-      ALaSolicitud = () => {
-         this.setState(
-             {
-                 paraSolicitar: true
-             }
-         )
-      }
     render(){
    if(this.state.paraSolicitar){
      return <Redirect to={"/user/" + this.state.userid +"/request/trips/" + this.state.viajes.id}/>
@@ -64,7 +57,7 @@ class TripDetail extends React.Component{
                         <Typography className="Contenido" color="textSecondary" gutterBottom>
                         {this.state.viajes.descripcion}</Typography>
                         <CardActions>
-                        <RequestButton onClick={this.ALaSolicitud}>SOLICITAR</RequestButton>
+                        
                        </CardActions>
   
                     </CardContent>         
@@ -74,4 +67,4 @@ class TripDetail extends React.Component{
     }
 }
 
-export default TripDetail;
+export default TripStats;

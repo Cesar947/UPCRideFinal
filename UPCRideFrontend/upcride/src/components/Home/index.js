@@ -45,7 +45,7 @@ class Home extends React.Component {
         <SearchBar/>
         <PostButton className = " Postear" onClick={this.postear}>Publicar</PostButton>
         <div className="Viajes" xs="3">
-        <TripsList trips={this.state.listaviajes} />
+        <TripsList trips={this.state.listaviajes} userid={this.state.id} />
         </div>
       </div>
 

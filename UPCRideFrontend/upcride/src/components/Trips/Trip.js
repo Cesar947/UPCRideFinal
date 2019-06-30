@@ -4,6 +4,7 @@ import TripDetail from './TripDetail';
 import { selectViaje } from '../../actions/tripsActions';
 import { connect } from "react-redux"
 import { SELECT_VIAJE } from '../../actions/actionTypes';
+import GoogleMap from '../GoogleMaps/GoogleMap';
 
 class Trip extends React.Component {
 
@@ -12,6 +13,7 @@ class Trip extends React.Component {
         this.state = {
             listaviajes: [],
             id: this.props.match.params.tripid,
+            userid: this.props.match.params.userid
         }
     }
 
@@ -33,7 +35,8 @@ class Trip extends React.Component {
         return (
             <div>
                 <NavBar />
-                <TripDetail viajes={this.state.listaviajes}/>
+                <TripDetail userid = {this.state.userid} viajes={this.state.listaviajes}/>
+                <GoogleMap  viajes={this.state.listaviajes} />
             </div>
         );
     }

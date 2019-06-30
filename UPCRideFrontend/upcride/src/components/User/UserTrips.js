@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import PropTypes from "prop-types";
+import {Redirect} from 'react-router-dom';
 
 class UserTrips extends React.Component{
 
@@ -15,14 +16,22 @@ class UserTrips extends React.Component{
 
     constructor(props) {
         super(props);
+        let started = false;
         this.state = {
-            trips: []
+            started,
+            tripid: '',
+            trips: [],
+            userid: this.props.userid
         }
         this.iniciarViaje = this.iniciarViaje.bind(this)
     }
 
-    iniciarViaje(){
-        alert("Viaje Iniciado")
+    iniciarViaje(id , e){
+        e.preventDefault()
+        this.setState({
+            started: true,
+            tripid: id,
+        })
     }
 
     componentWillReceiveProps(nextProps) {
@@ -32,6 +41,9 @@ class UserTrips extends React.Component{
     }
 
     render(){
+        if(this.state.started){
+            return <Redirect to={"/user/" + this.state.userid + "/" + this.state.tripid}/>
+        }
         return(
             <Grid>
             {this.state.trips.map((trip, index) => (
@@ -47,7 +59,7 @@ class UserTrips extends React.Component{
                         </CardContent>
 
                         <CardActions>
-                            <Button size="small" onClick = {this.iniciarViaje} >Iniciar Viaje</Button>
+                            <Button size="small" onClick = {(e)=>this.iniciarViaje(trip.id, e)} >Iniciar Viaje</Button>
                         </CardActions>
                     </Card>
                     <br />

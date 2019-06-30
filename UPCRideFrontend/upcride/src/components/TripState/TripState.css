@@ -1,0 +1,17 @@
+.Titulo{
+    font-size: 14px;
+    position: relative;
+    top: -33px;
+    left: 50px;
+}
+
+.Fondo{
+    width: 80%;
+    position: absolute;
+    top: 50px;
+    left: 120px;
+    -webkit-box-shadow: 0px 7px 79px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 7px 79px -23px rgba(0,0,0,0.75);
+  box-shadow: 0px 7px 79px -23px rgba(0,0,0,0.75);
+  }
+  

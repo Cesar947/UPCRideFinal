@@ -1,7 +1,6 @@
 import './google.css';
 import React, { Component } from 'react';
-import PropTypes from "prop-types";
-import { thisExpression } from '@babel/types';
+
 
 
 var markers = [];
@@ -9,38 +8,19 @@ var currentMarker;
 
 class GoogleMap extends Component {
 
-  static propTypes = {
-    viajes: PropTypes.object.isRequired
-  };
-  constructor(props) {
-    super(props);
-    this.state = {
-      viajes: []
-
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.viajes) {
-      this.setState({ viajes: nextProps.viajes,
-    })
-    }
-  }
-
+  
 
   componentDidMount() {
-    console.log("componentDidMount: ", this.props);
-    this.renderMap({ origenLongitud: this.state.viajes.partidaLongitud, origenLatitud: this.state.viajes.partidaLatitud, destinoLongitud: this.state.viajes.destinoLongitud, destinoLatitud: this.state.viajes.destinoLatitud });
+    this.renderMap()
   }
 
 
-  renderMap = (cords) => {
+  renderMap = () => {
     loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw&callback=initMap")
 
     //convertirlo a nuestra ventana para que sea visible
-    window.cords = cords;
     window.initMap = this.initMap
-    window.calculateAndDisplayRoute = this.calculateAndDisplayRoute
+   
     window.addMarker = this.addMarker
     window.removeLastMarker = this.removeLastMarker
     window.setMapOnAll = this.setMapOnAll
@@ -48,7 +28,6 @@ class GoogleMap extends Component {
   }
 
   initMap = () => {
-    console.log("cords: ", window.cords);
     var directionsService = new window.google.maps.DirectionsService;
     var directionsDisplay = new window.google.maps.DirectionsRenderer;
     var map = new window.google.maps.Map(document.getElementById('map'), {
@@ -56,16 +35,16 @@ class GoogleMap extends Component {
       zoom: 16
     });
 
-    directionsDisplay.setMap(map);
+    //directionsDisplay.setMap(map);
 
-    // // This event listener calls addMarker() when the map is clicked.
-    // window.google.maps.event.addListener(map, 'click', function (event) {
-    //   //window.removeLastMarker(event.latLng, map);
-    //   window.deleteMarkers();
-    //   window.addMarker(event.latLng, map);
-    // });
+    // This event listener calls addMarker() when the map is clicked.
+    window.google.maps.event.addListener(map, 'click', function (event) {
+      //window.removeLastMarker(event.latLng, map);
+      window.deleteMarkers();
+      window.addMarker(event.latLng, map);
+    });
 
-    window.calculateAndDisplayRoute(directionsService, directionsDisplay, window.cords);
+    //window.calculateAndDisplayRoute(directionsService, directionsDisplay);
 
   }
 
@@ -102,11 +81,10 @@ class GoogleMap extends Component {
     markers = [];
   }
 
-  calculateAndDisplayRoute = (directionsService, directionsDisplay, cords) => {
-    console.log(" window.cords: ", window.cords);
+  calculateAndDisplayRoute = (directionsService, directionsDisplay) => {
     directionsService.route({
-      origin: { lat: cords.origenLatitud, lng: cords.origenLongitud },
-      destination: { lat: cords.destinoLatitud, lng: cords.destinoLongitud },
+      origin: { lat: this.state.origenLatitud, lng: this.state.origenLongitud },
+      destination: { lat: this.state.destinoLatitud, lng: this.state.destinoLongitud },
       /*origin: { lat: -11.990887, lng: -77.070377 },
       destination: { lat: -12.076967, lng: -77.093636 },*/
       travelMode: 'DRIVING'

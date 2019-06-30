@@ -1,4 +1,4 @@
-import { LISTAR_VIAJES, PUBLICAR_VIAJE, VIAJES_USUARIO, ACTU_VIAJE, SELECT_VIAJE } from './actionTypes'
+import { LISTAR_VIAJES, PUBLICAR_VIAJE, VIAJES_USUARIO, ACTU_VIAJE, SELECT_VIAJE, SOLICITAR_VIAJE, SELECT_PASSENGERS } from './actionTypes'
 
 export function fetchViajesList() {
     return function (dispatch, getState) {
@@ -107,3 +107,50 @@ export function setViaje(viaje) {
         viaje
     }
 }
+
+
+export function solicitarViaje(solicitud, id){
+    return function(dispatch, getState){
+        fetch('http://localhost:5050/solicitar/' + id, {
+            method: 'post',
+            headers:{
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json' 
+            },
+            body: JSON.stringify(solicitud)
+        }).then(response => response.json())
+        .then(jsonData => {
+            dispatch(setSolicitarViaje(jsonData))
+        })
+    }
+}
+
+export function setSolicitarViaje(dataSolicitud){
+    return{
+        type: SOLICITAR_VIAJE,
+        dataSolicitud
+    }
+}
+
+
+export function selectTripPassengers(viajeId) {
+
+    return function (dispatch, getState) {
+        fetch("http://localhost:5050/viajes/" + viajeId + "/listaPasajeros")
+            .then(response => response.json())
+            .then(jsonData => {
+                dispatch(setPassengers(jsonData))
+            })
+
+    }
+}
+
+export function setPassengers(pasajeros) {
+    return {
+        type: SELECT_PASSENGERS,
+        pasajeros
+    }
+}
+
+
+

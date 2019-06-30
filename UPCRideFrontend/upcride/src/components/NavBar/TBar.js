@@ -49,7 +49,7 @@ class TBar extends React.Component {
 
   render() {
     if (this.state.misViajes) {
-      return <Redirect to={"/user/" + this.state.id + "/trips"} />
+      return <Redirect to={"/user/" + this.state.id + "/mytrips"} />
     }
     if (this.state.inicio) {
       return <Redirect to="/home" />
