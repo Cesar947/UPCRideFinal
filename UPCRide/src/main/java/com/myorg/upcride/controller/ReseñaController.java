@@ -25,6 +25,11 @@ public class ReseñaController {
         return reseñaService.publicarReseña(r);
     }
 
+    @RequestMapping(path="/conductor/{pasajeroId}/{conductorId}/", method = RequestMethod.POST)
+    public Reseña reseñarConductor(@RequestBody Reseña r, @PathVariable Integer pasajeroId, @PathVariable Integer conductorId) throws Exception{
+           return reseñaService.publicarReseñaPorConductor(r, pasajeroId, conductorId);
+    }
+
     @RequestMapping(path="/{conductorId}", method = RequestMethod.GET)
     public List<Reseña> listarResñasPorConductor(@PathVariable Integer conductorId) throws Exception{
         return reseñaService.listarReseñasPorConductor(conductorId);

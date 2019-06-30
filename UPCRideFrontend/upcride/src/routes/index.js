@@ -4,7 +4,7 @@ import Login from '../components/Login';
 import Home from '../components/Home';
 import Trip from '../components/Trips/Trip';
 import MyTrips from '../components/User/MyTrips';
-
+import Review from '../components/Review/Review';
 
 const Routes = () => (
         <Router>
@@ -13,6 +13,7 @@ const Routes = () => (
                 <Route path="/home/user/:userid" component={Home} />
                 <Route path="/trips/:tripid" component={Trip}/>
                 <Route path = "/user/:userid/trips" component={MyTrips}/>
+                <Route path="/review" component={Review}/>
             </Switch>
         </Router>
 );
