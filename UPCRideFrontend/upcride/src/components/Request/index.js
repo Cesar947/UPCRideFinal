@@ -4,6 +4,7 @@ import { LISTAR_USUARIO } from '../../actions/actionTypes';
 import { fetchUsuario } from '../../actions/userActions';
 import { connect } from "react-redux";
 import { Redirect } from 'react-router-dom';
+import NavBar from '../NavBar';
 
 class Request extends React.Component{
     constructor(props){
@@ -40,8 +41,9 @@ class Request extends React.Component{
         }
         return(
            <div>
+                <NavBar id = {this.state.userid}/>
                 <img src={process.env.PUBLIC_URL + '../resources/card.jpg'} className="Fondo" alt="logo" />
-                <RequestForm usuario = {this.state.listausuarios} viajeid = {this.state.viajeid} />
+                <RequestForm usuarios = {this.state.listausuarios} viajeid = {this.state.viajeid} />
            </div>     
         );
     }

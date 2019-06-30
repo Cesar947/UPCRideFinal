@@ -34,7 +34,7 @@ class Trip extends React.Component {
     render() {
         return (
             <div>
-                <NavBar />
+                <NavBar id = {this.state.userid}/>
                 <TripDetail userid = {this.state.userid} viajes={this.state.listaviajes}/>
                 <GoogleMap  viajes={this.state.listaviajes} />
             </div>

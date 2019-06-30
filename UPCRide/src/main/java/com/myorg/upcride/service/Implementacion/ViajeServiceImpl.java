@@ -27,10 +27,11 @@ public class ViajeServiceImpl implements ViajeService {
     SolicitudRepository solicitudRepository;
 
     @Autowired
-    public ViajeServiceImpl(ViajeRepository viajeRepository, AutoRepository autoRepository, UsuarioRepository usuarioRepository) {
+    public ViajeServiceImpl(ViajeRepository viajeRepository, AutoRepository autoRepository, UsuarioRepository usuarioRepository, SolicitudRepository solicitudRepository) {
         this.viajeRepository = viajeRepository;
         this.autoRepository = autoRepository;
         this.usuarioRepository = usuarioRepository;
+        this.solicitudRepository = solicitudRepository;
     }
 
 
@@ -93,7 +94,7 @@ public class ViajeServiceImpl implements ViajeService {
     }
 
     @Override
-    public Viaje actualizarNumeroDePasajeros(Integer id) throws Exception{
+    public int actualizarNumeroDePasajeros(Integer id) throws Exception{
        int resultado = viajeRepository.calcularNumerodePasajerosDelViaje(id);
        return viajeRepository.actualizarNumeroDePasajeros(resultado,id);
     }
@@ -116,9 +117,7 @@ public class ViajeServiceImpl implements ViajeService {
         if (pasajerosRegistrados <= objViaje.getLimitePasajeros()) {
         try {
 
-
-
-                resultado = solicitudRepository.save(s);
+               resultado = solicitudRepository.save(s);
 
                 viajeRepository.actualizarNumeroDePasajeros(pasajerosRegistrados, objViaje.getId());
 

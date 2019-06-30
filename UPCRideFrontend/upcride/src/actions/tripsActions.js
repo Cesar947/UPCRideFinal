@@ -111,7 +111,7 @@ export function setViaje(viaje) {
 
 export function solicitarViaje(solicitud, id){
     return function(dispatch, getState){
-        fetch('http://localhost:5050/solicitar/' + id, {
+        fetch('http://localhost:5050/viajes/solicitar/' + id, {
             method: 'post',
             headers:{
                 'Accept': 'application/json, text/plain, */*',

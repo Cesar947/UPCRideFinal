@@ -55,7 +55,7 @@ public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
     @Modifying
     @Query("UPDATE Viaje v SET v.numeroPasajeros = :numero WHERE v.id = :id")
     @Transactional
-    Viaje actualizarNumeroDePasajeros(@Param("numero") int numPasajeros, @Param("id") Integer id) throws Exception;
+    int actualizarNumeroDePasajeros(@Param("numero") int numPasajeros, @Param("id") Integer id) throws Exception;
 
     @Query("SELECT u FROM Usuario u JOIN Solicitud s ON u.id = s.pasajero.id JOIN Viaje v ON v.id = s.viaje.id WHERE v.id = ?1 AND s.confirmacionConductor = 'Aceptada'")
     List<Usuario> listarPasajerosDelViaje(Integer viajeId) throws Exception;

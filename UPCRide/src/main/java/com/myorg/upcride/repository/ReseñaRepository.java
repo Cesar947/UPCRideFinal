@@ -11,6 +11,4 @@ import java.util.List;
 public interface ReseñaRepository extends JpaRepository<Reseña, Integer> {
     @Query("SELECT r FROM Reseña r WHERE r.conductor =?1")
     List<Reseña> listarReseñasPorConductor (Integer conductorId);
-
-    
 }

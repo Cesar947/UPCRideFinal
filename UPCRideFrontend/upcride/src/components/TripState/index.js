@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import { SELECT_VIAJE } from '../../actions/actionTypes';
 import PassengerList from './PassengerList';
 import TripStats from './TripStats';
+import NavBar from '../NavBar';
 
 class TripState extends React.Component {
 
@@ -33,6 +34,7 @@ class TripState extends React.Component {
     render(){
         return(
             <div>
+                <NavBar id = {this.state.userid}/>
                 <img src={process.env.PUBLIC_URL + 'resources/card.jpg'} className="Fondo" alt="logo" />
                 <PassengerList viajeid={this.state.viajeid} />
                 <TripStats viajes={this.state.listaviajes} />

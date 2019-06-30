@@ -27,7 +27,7 @@ class MyTrips extends React.Component{
     render(){
         return(
             <div>
-                <NavBar/>
+                <NavBar id = {this.state.id}/>
                 <UserTrips userid={this.state.id} trips = {this.state.trips}/>
             </div>
         );

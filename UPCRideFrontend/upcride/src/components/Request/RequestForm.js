@@ -62,7 +62,7 @@ const classes = makeStyles(theme => ({
 class RequestForm extends React.Component {
 
     static propTypes = {
-        usuario: PropTypes.object.isRequired,
+        usuarios: PropTypes.array.isRequired,
         viaje: PropTypes.object.isRequired
     };
 
@@ -70,16 +70,16 @@ class RequestForm extends React.Component {
     constructor(props){
         super(props);
        
-        let posted = false
+    let posted = false
      this.state = {
-        usuario: this.props.usuarios,
+        usuarios: [],
         viajeid: this.props.viajeid,
         mensaje:'',
         puntoEncuentro:'',
         encuentroLatitud:'-2354758',
         encuentroLongitud:'-12331242',
         confirmacionConductor: 'en espera',
-        fecha: '06-30-2019',
+        fecha: '2019-06-22',
         posted
      }
     
@@ -99,6 +99,9 @@ class RequestForm extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        if (nextProps.usuarios) {
+            this.setState({ usuarios: nextProps.usuarios})
+        }
         if (nextProps.actionType === SOLICITAR_VIAJE) {
             this.setState({
                 posted: true})
@@ -118,7 +121,6 @@ class RequestForm extends React.Component {
         <div>
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"></link>
-            <NavBar/>
             <Grid container>
 
                 <Grid item xs={6}>
@@ -140,15 +142,15 @@ class RequestForm extends React.Component {
           <Card className={classes.cardSolicitud}>
                                 <CardContent>
            <Typography component="p">
-                            Viaje #1394
-                          </Typography>
-                        <Typography component="p">
+                            Viaje #{this.state.viajeid}
+                    </Typography>
+                    <Typography component="p">
                             Fecha del viaje: 03/08/19
                  </Typography>
 
                         <Typography component="p">
-                            Conductor: Juanelv Salgado
-                 </Typography>
+                            Juanelv
+                        </Typography>
                          
                         <TextField 
                             id="mensaje"
@@ -167,11 +169,11 @@ class RequestForm extends React.Component {
                              id="puntoEncuentro"
                              name="puntoEncuentro"
                             label="Punto de encuentro"
-                            placeholder="Placeholder"
                             multiline
                             className={classes.textField}
                             margin="normal"
                             variant="outlined"
+                            value={this.state.puntoEncuentro}
                             onChange = {this.handleChange.bind(this)}
 
                         /> 
@@ -204,8 +206,8 @@ class RequestForm extends React.Component {
 
 const mapState = state => {
     return {
-        solicitud: state.pasajero,
-        actionType: state.actionType
+        solicitud: state.viaje.pasajero,
+        actionType: state.viaje.actionType
   
     }
   };
