@@ -1,9 +1,8 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import TextField from '@material-ui/core/TextField';
 import Place from '@material-ui/icons/Place';
 import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt';
+import './SearchBar.css';
 
   
 
@@ -13,7 +12,7 @@ class SearchBar extends React.Component{
         return(
             <div>
           <form className="Contenedor" noValidate autoComplete="off">
-            <h5 className="EncontrarViajeTexto">Encuentra tu viaje aquí:</h5>
+            <h5 className="EncontrarViajeTexto">Encuentra tu viaje aquÃ­:</h5>
             <Place className="IconPartida" />
             <TextField
               id="standardPartida"
@@ -22,7 +21,7 @@ class SearchBar extends React.Component{
               margin="normal"
             />
             <ArrowRightAlt className="IconFlecha" />
-            <img src={process.env.PUBLIC_URL + 'images/UPC.png'} alt="logo" className="Iconu" />
+            <img src={process.env.PUBLIC_URL + '/resources/UPC.png'} alt="logo" className="Iconu" />
             <TextField
               id="standardDestino"
               label="Punto de destino"

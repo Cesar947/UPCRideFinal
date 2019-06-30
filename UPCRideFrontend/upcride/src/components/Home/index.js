@@ -1,15 +1,14 @@
 import React from 'react';
-import ViajesList from './Viajes';
+import TripsList from '../Trips/TripsList';
 import './Home.css';
-import SearchBar from './SearchBar';
-import NavBar from './NavBar';
-import {connect} from "react-redux";
-import {PostButton} from '../Button/index.js';
-
+import NavBar from '../NavBar';
+import {PostButton} from '../Buttons';
+import SearchBar from '../SearchBar';
 import {Redirect} from 'react-router-dom';
-import {fetchViajesList} from '../../actions/viajesActions';
-
+import {fetchViajesList} from '../../actions/tripsActions';
 import {LISTAR_VIAJES} from '../../actions/actionTypes';
+import {connect} from "react-redux";
+
 
 
 
@@ -17,18 +16,10 @@ class Home extends React.Component {
 
   constructor(props) {
     super(props);
-    let quierepost = false
     this.state = {
       listaviajes: [],
-      quierepost
+      id: this.props.match.params.userid
     }
-    this.postear = this.postear.bind(this)
-  }
-
-  postear(){
-     this.setState({
-       quierepost: true
-     })
   }
 
   componentDidMount() {
@@ -41,6 +32,7 @@ class Home extends React.Component {
     }
   }
 
+
   render() {
     if(this.state.quierepost){
       return(
@@ -49,11 +41,11 @@ class Home extends React.Component {
     }
     return (
       <div>
-        <NavBar/>
-        <SearchBar />
+        <NavBar id = {this.state.id}/>
+        <SearchBar/>
         <PostButton className = " Postear" onClick={this.postear}>Publicar</PostButton>
         <div className="Viajes" xs="3">
-          <ViajesList trips={this.state.listaviajes} />
+        <TripsList trips={this.state.listaviajes} />
         </div>
       </div>
 
@@ -72,5 +64,5 @@ const mapDispatch = {
     fetchViajesList
 };
 
-export default connect(mapState, mapDispatch)(Home);
 
+export default connect(mapState, mapDispatch)(Home);

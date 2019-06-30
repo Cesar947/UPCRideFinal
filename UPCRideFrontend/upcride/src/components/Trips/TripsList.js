@@ -5,14 +5,9 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
-import './Home.css';
+import './Trips.css';
 import PropTypes from "prop-types";
-import { PostButton } from '../Button';
-import Table from '@material-ui/core/Table';
-import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
-import GoogleMap from '../GoogleMap/GoogleMap';
 import {Redirect} from 'react-router-dom'
 
 
@@ -28,12 +23,21 @@ class ViajesList extends React.Component {
 
     constructor(props) {
         super(props);
-        let rec = false
+        let select = false;
         this.state = {
             trips: [],
-            rec
+            tripid: '',
+            select,
         }
-        this.alViaje = this.alViaje.bind(this)
+        this.selectTrip = this.selectTrip.bind(this);
+    }
+
+    selectTrip(id , e){
+        e.preventDefault()
+        this.setState({
+            select: true,
+            tripid: id
+        })
     }
 
     componentWillReceiveProps(nextProps) {
@@ -42,15 +46,9 @@ class ViajesList extends React.Component {
         }
     }
 
-    alViaje(){
-        this.setState({
-            rec: true 
-        })
-    }
-
     render() {
-        if(this.state.rec){
-            return <Redirect to = "/viaje/detalle"/>
+        if(this.state.select){
+            return <Redirect to = {"/trips/" + this.state.tripid} />
         }
         return (
             <div>
@@ -75,7 +73,7 @@ class ViajesList extends React.Component {
                                 </CardContent>
 
                                 <CardActions>
-                                    <Button size="small" onClick={this.alViaje}>Ver mas</Button>
+                                    <Button size="small" onClick={(e)=>this.selectTrip(trip.id, e)}>Ver mas</Button>
                                  
                                 </CardActions>
                             </Card>

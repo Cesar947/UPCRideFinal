@@ -1,28 +1,22 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Bar from '../../components/Home/Bar';
-import Toolbar from '@material-ui/core/Toolbar';
-
-import './Home.css';
-import { LISTAR_USUARIO } from '../../actions/actionTypes';
-import {fetchUsuario} from '../../actions/usuariosActions';
-import {connect} from "react-redux";
-import Typography from '@material-ui/core/Typography';
-
-
+import TBar from './TBar';
+import {LISTAR_USUARIO} from '../../actions/actionTypes';
+import { connect } from 'react-redux';
+import {fetchUsuario} from '../../actions/userActions';
 
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listausuarios: []
+      id: this.props.id,
+      listausuarios: [],
+      
     }
-    
   }
 
   componentDidMount() {
-    this.props.fetchUsuario();
+    this.props.fetchUsuario(this.state.id);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,7 +27,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <Bar usuarios = {this.state.listausuarios}/>
+      <TBar id={this.state.id} usuarios = {this.state.listausuarios}/>
     );
   }
 }

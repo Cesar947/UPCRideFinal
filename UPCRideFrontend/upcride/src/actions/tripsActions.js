@@ -44,7 +44,7 @@ export function setGuardarViaje(dataviaje) {
     }
 }
 
-export function viajesXUsuario(usuarioId) {
+export function viajesByConductor(usuarioId) {
 
     return function (dispatch, getState) {
         fetch("http://localhost:5050/viajes/conductor/" + usuarioId)
@@ -107,4 +107,3 @@ export function setViaje(viaje) {
         viaje
     }
 }
-

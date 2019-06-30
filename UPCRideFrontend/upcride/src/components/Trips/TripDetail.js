@@ -1,20 +1,18 @@
 import React from 'react'
-import GoogleMap from '../GoogleMap/GoogleMap';
+import GoogleMap from '../GoogleMaps/GoogleMap';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
 import PropTypes from "prop-types";
 import {Redirect} from 'react-router-dom'
-import {RequestButton} from '../Button/index.js';
+import {RequestButton} from '../Buttons';
 
 
 
 
-class ViajeDetallado extends React.Component{
+class TripDetail extends React.Component{
     
 
     static propTypes = {
@@ -58,7 +56,7 @@ class ViajeDetallado extends React.Component{
                             C
                         </Avatar>
                         <Typography className="Titulo" color="textSecondary" gutterBottom>
-                        Bryan Antony</Typography>
+                            {this.state.viajes.conductor.nombres}}</Typography>
                         <Typography className="Contenido" variant="h5" component="h2">
                             {this.state.viajes.puntoPartida}</Typography>
                         <Typography variant="h5" component="h2">
@@ -81,4 +79,4 @@ class ViajeDetallado extends React.Component{
     }
 }
 
-export default ViajeDetallado;
+export default TripDetail;

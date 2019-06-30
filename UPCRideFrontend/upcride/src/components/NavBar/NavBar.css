@@ -1,0 +1,43 @@
+.Inicio{
+    position: relative;
+    left: 750px;
+    color: white;
+}
+
+.MiItinerario{
+    position: relative;
+    left: 740px;
+}
+
+.MisViajes{
+    position: relative;
+    left: 770px;
+}
+
+.Postear{
+    position: relative;
+    left: 200px;
+    top: 200px;
+}
+
+.Usuario{
+    position: relative;
+    left:810px;
+  }
+
+.User{
+    position: absolute;
+    left: 1190px;
+}
+
+.Logo {
+    width: 120px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.NavBar {
+    background: #0388a6;
+    height: 30px;
+}

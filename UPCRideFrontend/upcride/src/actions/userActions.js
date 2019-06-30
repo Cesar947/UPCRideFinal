@@ -52,10 +52,10 @@ export function setGuardarConductor(dataconductor) {
     }
 }
 
-export function fetchUsuario() {
+export function fetchUsuario(id) {
     return function (dispatch, getState) {
 
-        fetch("http://localhost:5050/usuarios/prueba")
+        fetch("http://localhost:5050/usuarios/" + id)
             .then(response => response.json())
             .then(jsonData => {
                 dispatch(setUsuario(jsonData))

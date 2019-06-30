@@ -1,4 +1,3 @@
-
 export const LISTAR_VIAJES = 'LISTAR_VIAJES';
 export const PUBLICAR_VIAJE = 'PUBLICAR_VIAJE';
 export const REGISTRAR_PASAJERO = 'REGISTRAR_PASAJERO';
@@ -8,6 +7,3 @@ export const SOLICITAR_VIAJE = 'SOLICITAR_VIAJE';
 export const VIAJES_USUARIO = 'VIAJES_USUARIO';
 export const ACTU_VIAJE = 'ACTU_VIAJE';
 export const SELECT_VIAJE = 'SELECT_VIAJE'
-
-
-

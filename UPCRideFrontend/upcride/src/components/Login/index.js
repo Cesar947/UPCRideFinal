@@ -1,7 +1,7 @@
 import React from 'react';
 import { LoginTextField } from '../Text';
 import './Login.css';
-import { LoginButton, RegisterButton } from '../Button';
+import { LoginButton, RegisterButton } from '../Buttons';
 import {Redirect} from 'react-router-dom';
 
 
@@ -38,7 +38,7 @@ class Login extends React.Component {
     e.preventDefault()
     const{username, password} = this.state
     ////
-    if(username === "u201711033@upc.edu.pe" && password === "1234"){
+    if(username === "1" && password === "1234"){
       this.setState({
         loggedIn: true})
     }
@@ -46,7 +46,7 @@ class Login extends React.Component {
 
   render() {
     if(this.state.loggedIn){
-      return <Redirect to="/home"/>
+      return <Redirect to={"/home/user/" + this.state.username}  />
     }
     if(this.state.registerIn){
       return <Redirect to="/SelectRol"/>
@@ -54,7 +54,7 @@ class Login extends React.Component {
     return (
       <div >
 
-        <img src={process.env.PUBLIC_URL + 'images/fondo.jpg'} className="Fondo" alt="logo" />
+        <img src={process.env.PUBLIC_URL + 'resources/fondo.jpg'} className="Fondo" alt="logo" />
         <form className="login" onSubmit={this.submitForm}>
           <LoginTextField
             className='LoginTextField'
@@ -69,7 +69,7 @@ class Login extends React.Component {
           <br/>
           <LoginTextField
             className='LoginTextField'
-            label="Contraseña"
+            label="ContraseÃ±a"
             value={this.state.password}
             variant="outlined"
             id="custom-css-outlined-input"
@@ -81,7 +81,7 @@ class Login extends React.Component {
           <LoginButton variant="contained" className='LoginButton' type="submit">
             Iniciar Sesion
           </LoginButton>
-          <a className='RegisterQ'>¿No te has registrado aún?</a>
+          <a className='RegisterQ'>¿No te has registrado aun?</a>
           <RegisterButton onClick={this.registrar} variant="contained" className='RegisterButton'>
             Registrate
           </RegisterButton>

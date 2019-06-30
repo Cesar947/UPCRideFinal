@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import PropTypes from "prop-types";
 
-class ViajesListados extends React.Component{
+class UserTrips extends React.Component{
 
     static propTypes = {
         trips: PropTypes.array.isRequired
@@ -58,4 +58,4 @@ class ViajesListados extends React.Component{
     }
 }
 
-export default ViajesListados;
+export default UserTrips;

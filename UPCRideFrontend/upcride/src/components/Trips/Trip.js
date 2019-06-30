@@ -1,45 +1,39 @@
 import React from 'react';
-import NavBar from '../Home/NavBar';
-import ViajeDetallado from './ViajeDetallado';
-import { selectViaje } from '../../actions/viajesActions';
+import NavBar from '../NavBar';
+import TripDetail from './TripDetail';
+import { selectViaje } from '../../actions/tripsActions';
 import { connect } from "react-redux"
 import { SELECT_VIAJE } from '../../actions/actionTypes';
 
-class Viaje extends React.Component {
+class Trip extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
             listaviajes: [],
-            origenLongitud: 0.0,
-            origenLatitud: 0.0,
-            destinoLongitud: 0.0,
-            destinoLatitud: 0.0
+            id: this.props.match.params.tripid,
         }
     }
 
     componentDidMount() {
-        this.props.selectViaje(1)
+        this.props.selectViaje(this.state.id)
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.actionType === SELECT_VIAJE) {
             this.setState({
                 listaviajes: nextProps.listaviajes,
-                origenLongitud: nextProps.listaviajes.partidaLongitud,
-                origenLatitud: nextProps.listaviajes.partidaLatitud,
-                destinoLongitud: nextProps.listaviajes.destinoLongitud,
-                destinoLatitud: nextProps.listaviajes.destinoLatitud
             });
         }
     }
 
+
+
     render() {
         return (
             <div>
-
                 <NavBar />
-                <ViajeDetallado viajes={this.state.listaviajes}/>
+                <TripDetail viajes={this.state.listaviajes}/>
             </div>
         );
     }
@@ -56,4 +50,5 @@ const mapDispatch = {
     selectViaje
 };
 
-export default connect(mapState, mapDispatch)(Viaje);
+
+export default connect(mapState, mapDispatch)(Trip);

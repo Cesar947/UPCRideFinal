@@ -1,32 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from '../components/Login/Login';
-import SelectRol from '../components/SelectRol/SelectRol';
-import UserRegister from '../components/Register/UserRegister';
-import DriverRegister from '../components/Register/DriverRegister';
-import HomePage from './HomePage';
-import PostViajePage from './PostViajePage';
-import RequestPage from './RequestPage';
-import NavBar from '../components/Home/NavBar';
-import SuccessPage from '../components/Register/SuccessPage';
-import ListaViajes from '../components/User/ListaViajes';
-import Viaje from '../components/Viaje/index';
+import Login from '../components/Login';
+import Home from '../components/Home';
+import Trip from '../components/Trips/Trip';
+import MyTrips from '../components/User/MyTrips';
 
 
 const Routes = () => (
         <Router>
             <Switch>
                 <Route exact path="/" component={Login} />
-                <Route path="/SelectRol" component={SelectRol} />
-                <Route path="/passenger/register" component={UserRegister}/>
-                <Route path="/driver/register" component={DriverRegister} />
-                <Route path="/home" component={HomePage} />
-                <Route path="/post/viaje" component={PostViajePage} />
-                <Route path="/solicitar" component={RequestPage}/>
-                <Route path="/navbar" component={NavBar}/>
-                <Route path="/register/success" component={SuccessPage}/>
-                <Route path = "/user/misViajes" component={ListaViajes}/>
-                <Route path = "/viaje/detalle" component={Viaje}/>
+                <Route path="/home/user/:userid" component={Home} />
+                <Route path="/trips/:tripid" component={Trip}/>
+                <Route path = "/user/:userid/trips" component={MyTrips}/>
             </Switch>
         </Router>
 );

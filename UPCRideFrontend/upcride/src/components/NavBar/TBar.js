@@ -6,11 +6,11 @@ import PropTypes from "prop-types";
 
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
-import './Home.css';
+import './NavBar.css';
 import { Button } from '@material-ui/core';
 import { Redirect } from 'react-router-dom';
 
-class Bar extends React.Component {
+class TBar extends React.Component {
 
   static propTypes = {
     usuarios: PropTypes.array.isRequired
@@ -21,13 +21,14 @@ class Bar extends React.Component {
     let misViajes = false;
     this.state = {
       usuarios: [],
-      misViajes
+      misViajes, 
+      id: this.props.id
     }
     this.misViajes = this.misViajes.bind(this)
     this.inicio = this.inicio.bind(this)
   }
 
-  misViajes() {
+  misViajes(){
     this.setState({
       misViajes: true
     })
@@ -48,7 +49,7 @@ class Bar extends React.Component {
 
   render() {
     if (this.state.misViajes) {
-      return <Redirect to="/user/misViajes" />
+      return <Redirect to={"/user/" + this.state.id + "/trips"} />
     }
     if (this.state.inicio) {
       return <Redirect to="/home" />
@@ -57,13 +58,13 @@ class Bar extends React.Component {
       <div>
         <AppBar position="relative">
           <Toolbar className="NavBar" >
-            <img src={process.env.PUBLIC_URL + 'images/Logo.png'} alt="logo" className="Logo" />
+            <img src={process.env.PUBLIC_URL + '/resources/Logo.png'} alt="logo" className="Logo" />
             <div></div>
     
             <Button className="Inicio " onClick={this.inicio}>
               Inicio
                 </Button>
-                <Avatar className="User">
+            <Avatar className="User">
               P
             </Avatar>
             <Button className="MiItinerario " onClick={this.misViajes}>
@@ -84,4 +85,4 @@ class Bar extends React.Component {
   }
 }
 
-export default Bar;
+export default TBar;
