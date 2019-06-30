@@ -28,7 +28,6 @@ public class SolicitudController {
     }
 
 
-
     @RequestMapping(path="/conductor/{conductorId}", method= RequestMethod.GET)
     public List<Solicitud> listarSolicitudesPorConductor(@PathVariable Integer conductorId) throws Exception{
           return solicitudService.listarSolicitudesPorConductor(conductorId);

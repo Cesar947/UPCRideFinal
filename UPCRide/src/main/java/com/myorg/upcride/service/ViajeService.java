@@ -20,6 +20,7 @@ public interface ViajeService {
     int actualizarNumeroDePasajeros(Integer id) throws Exception;
     List<Usuario> listarPasajerosDelViaje(Integer viajeId) throws Exception;
     List<Solicitud> listarSolicitudesPendientesDelViaje(Integer viajeId) throws Exception;
+    List<Solicitud> listarSolicitudesConfirmadasDelViaje(Integer viajeId) throws Exception;
     Solicitud solicitarViaje(Integer viajeId, Solicitud s) throws Exception;
     List<Viaje> listarViajesPorConductor(Integer conductor) throws Exception;
 }

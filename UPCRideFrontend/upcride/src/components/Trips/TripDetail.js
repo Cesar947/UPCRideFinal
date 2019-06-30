@@ -20,13 +20,13 @@ class TripDetail extends React.Component{
    
     constructor(props){
         let paraSolicitar = false;
-        let paraReservar = false;
+        let paraReseñar = false;
         super(props);
         this.state={
             viajes:[],
             userid: this.props.userid,
             paraSolicitar,
-            paraReservar
+            paraReseñar
         }
     }
 
@@ -46,10 +46,10 @@ class TripDetail extends React.Component{
          )
       }
 
-      ALaReserva = () => {
+      ALaReseña = () => {
           this.setState(
               {
-                  paraReservar: true
+                  paraReseñar: true
               }
           )
       }
@@ -58,7 +58,9 @@ class TripDetail extends React.Component{
    if(this.state.paraSolicitar){
      return <Redirect to={"/user/" + this.state.userid +"/request/trips/" + this.state.viajes.id}/>
    }
-       
+       if(this.state.paraReseñar){
+           return <Redirect to={"/user/"}/>
+       }
         return(
             <div>
                 <Card >
@@ -76,7 +78,7 @@ class TripDetail extends React.Component{
                         {this.state.viajes.descripcion}</Typography>
                         <CardActions>
                         <RequestButton onClick={this.ALaSolicitud}>SOLICITAR</RequestButton>
-                        <ReviewButton onClick={this.ALaReserva}>RESEÑAR</ReviewButton>
+                        <ReviewButton onClick={this.ALaReseña}>RESEÑAR</ReviewButton>
                        </CardActions>
   
                     </CardContent>         
