@@ -153,4 +153,12 @@ export function setPassengers(pasajeros) {
 }
 
 
+//////////////////////////////////
+
+var url = new URL("http://localhost:5050/viajes/filtros"),
+    params = {lat:35.696233, long:139.570431}
+Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
+fetch(url).then(/* … */)
+
+
 

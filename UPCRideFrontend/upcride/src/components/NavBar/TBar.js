@@ -19,18 +19,27 @@ class TBar extends React.Component {
   constructor(props) {
     super(props);
     let misViajes = false;
+    let misRequests = false;
     this.state = {
       usuarios: [],
       misViajes, 
+      misRequests,
       id: this.props.id
     }
     this.misViajes = this.misViajes.bind(this)
+    this.misRequests = this.misRequests.bind(this)
     this.inicio = this.inicio.bind(this)
   }
 
   misViajes(){
     this.setState({
       misViajes: true
+    })
+  }
+
+  misRequests(){
+    this.setState({
+      misRequests: true
     })
   }
 
@@ -51,8 +60,11 @@ class TBar extends React.Component {
     if (this.state.misViajes) {
       return <Redirect to={"/user/" + this.state.id + "/mytrips"} />
     }
+    if (this.state.misRequests) {
+      return <Redirect to={"/user/" + this.state.id + "/myrequests"} />
+    }
     if (this.state.inicio) {
-      return <Redirect to="/home" />
+      return <Redirect to={"/home/user/" + this.state.id} />
     }
     return (
       <div>
@@ -67,8 +79,8 @@ class TBar extends React.Component {
             <Avatar className="User">
               P
             </Avatar>
-            <Button className="MiItinerario " onClick={this.misViajes}>
-              Mi Itinerario
+            <Button className="MiItinerario " onClick={this.misRequests}>
+              Mis Solicitudes
                 </Button>
                 
             <Button className="MisViajes " onClick={this.misViajes}>

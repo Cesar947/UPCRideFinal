@@ -1,9 +1,10 @@
 import React from 'react';
 import PostForm from './PostForm';
 import { LISTAR_USUARIO } from '../../actions/actionTypes';
-import { fetchUsuario } from '../../actions/usuariosActions';
+import { fetchUsuario } from '../../actions/userActions';
 import { connect } from "react-redux";
 import { Redirect } from 'react-router-dom';
+import './Viaje.css';
 
 class Posteo extends React.Component{
     constructor(props){
@@ -11,6 +12,7 @@ class Posteo extends React.Component{
         let posted = false;
         this.state={
             listausuarios:[],
+            userid: this.props.match.params.userid,
             posted
         }
         this.post = this.post.bind(this)
@@ -23,7 +25,7 @@ class Posteo extends React.Component{
     }
     
     componentDidMount() {
-        this.props.fetchUsuario();
+        this.props.fetchUsuario(this.state.userid);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -34,11 +36,11 @@ class Posteo extends React.Component{
 
     render(){
         if (this.state.posted) {
-            return <Redirect to="/home" />
+            return <Redirect to={"/home/user/" + this.state.userid }/>
         }
         return(
            <div>
-                <img src={process.env.PUBLIC_URL + '../images/card.jpg'} className="Fondo" alt="logo" />
+                <img src={process.env.PUBLIC_URL + '/resources/card.jpg'} className="Fondo" alt="logo" />
                 <PostForm usuarios = {this.state.listausuarios}  post = {this.post}/>
            </div>     
         );

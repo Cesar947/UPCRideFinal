@@ -1,4 +1,4 @@
-import { LISTAR_USUARIO, REGISTRAR_CONDUCTOR, REGISTRAR_PASAJERO } from './actionTypes'
+import { LISTAR_USUARIO, REGISTRAR_CONDUCTOR, REGISTRAR_PASAJERO, SOLICITUDES_USUARIO } from './actionTypes'
 
 export function registrarPasajero(pasajero) {
 
@@ -67,5 +67,24 @@ function setUsuario(usuarios) {
     return {
         type: LISTAR_USUARIO,
         usuarios
+    }
+}
+
+export function requestsByConductor(usuarioId) {
+
+    return function (dispatch, getState) {
+        fetch("http://localhost:5050/solicitudes/conductor/" + usuarioId)
+            .then(response => response.json())
+            .then(jsonData => {
+                dispatch(setSolicitudesUsuario(jsonData))
+            })
+
+    }
+}
+
+export function setSolicitudesUsuario(solicitudesUsuario) {
+    return {
+        type: SOLICITUDES_USUARIO,
+        solicitudesUsuario
     }
 }

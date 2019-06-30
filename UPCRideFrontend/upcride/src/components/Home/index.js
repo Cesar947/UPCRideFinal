@@ -16,10 +16,19 @@ class Home extends React.Component {
 
   constructor(props) {
     super(props);
+    let quierepost = false;
     this.state = {
       listaviajes: [],
+      quierepost,
       id: this.props.match.params.userid
     }
+    this.postear = this.postear.bind(this)
+  }
+
+  postear(){
+    this.setState({
+      quierepost: true
+    })
   }
 
   componentDidMount() {
@@ -36,7 +45,7 @@ class Home extends React.Component {
   render() {
     if(this.state.quierepost){
       return(
-        <Redirect to="/post/viaje"/>
+        <Redirect to={"/post/user/" + this.state.id + "/new/trip"}/>
       );
     }
     return (
