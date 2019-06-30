@@ -43,4 +43,9 @@ public class SolicitudServiceImpl implements SolicitudService {
         return solicitudRepository.listarSolicitudesPorConductor(conductorId);
     }
 
+    @Override
+    public int actualizarConfirmacionConductor(String confirmacionConductor, Integer solicitudId) throws Exception{
+        return solicitudRepository.actualizarConfirmacionConductor(confirmacionConductor, solicitudId);
+    }
+
 }
