@@ -8,5 +8,7 @@
 
 .searchBar{
     position: absolute;
-    left: 400px;
+    left: 40px;
+    top: 2px;
+    width: 100%;
 }

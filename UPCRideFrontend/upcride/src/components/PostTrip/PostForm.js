@@ -1,6 +1,6 @@
 import React from 'react';
 import { PUBLICAR_VIAJE } from '../../actions/actionTypes';
-import { publicarViaje } from '../../actions/viajesActions';
+import { publicarViaje } from '../../actions/tripsActions';
 
 import TextField from '@material-ui/core/Button';
 import Button from '@material-ui/core/Button';
@@ -75,7 +75,6 @@ class PostForm extends React.Component {
        
         return (
             <div>
-                <img src={process.env.PUBLIC_URL + '../images/card.jpg'} className="Fondo" alt="logo" />
                 <div className="Form">
                     <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>
