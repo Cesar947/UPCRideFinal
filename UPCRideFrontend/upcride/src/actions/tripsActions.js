@@ -1,4 +1,4 @@
-import { LISTAR_VIAJES, PUBLICAR_VIAJE, VIAJES_USUARIO, ACTU_VIAJE, SELECT_VIAJE, SOLICITAR_VIAJE, SELECT_PASSENGERS } from './actionTypes'
+import { LISTAR_VIAJES, PUBLICAR_VIAJE, VIAJES_USUARIO, ACTU_VIAJE, SELECT_VIAJE, SOLICITAR_VIAJE, SELECT_PASSENGERS, FILTRAR_VIAJES } from './actionTypes'
 
 export function fetchViajesList() {
     return function (dispatch, getState) {
@@ -155,10 +155,25 @@ export function setPassengers(pasajeros) {
 
 //////////////////////////////////
 
-var url = new URL("http://localhost:5050/viajes/filtros"),
-    params = {lat:35.696233, long:139.570431}
-Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
-fetch(url).then(/* … */)
 
+
+export function filtrarViajes(puntoPartida, puntoDestino, horaPartida, horaLlegada, fecha) {
+
+    return function (dispatch, getState) {
+        fetch("http://localhost:5050/viajes/filtros?puntoPartida=" + puntoPartida + "&puntoDestino=" + puntoDestino +"&horaPartida=" + horaPartida +"&horaLlegada=" + horaLlegada+ "&fecha=" + fecha + "&entrada_salida=0")
+            .then(response => response.json())
+            .then(jsonData => {
+                dispatch(setFiltros(jsonData))
+            })
+
+    }
+}
+
+export function setFiltros(filtros) {
+    return {
+        type: FILTRAR_VIAJES,
+        filtros
+    }
+}
 
 

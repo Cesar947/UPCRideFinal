@@ -2,58 +2,73 @@ import React from 'react';
 import { LoginTextField } from '../Text';
 import './Login.css';
 import { LoginButton, RegisterButton } from '../Buttons';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { LOGIN_USUARIO } from '../../actions/actionTypes';
+import { logear } from '../../actions/userActions';
+import {connect} from 'react-redux'
+import Logear from './logear';
+import PropTypes from "prop-types";
 
 
 class Login extends React.Component {
 
-  constructor(props){
+  static propTypes = {
+    usuarioid: PropTypes.object.isRequired
+  };
+
+  constructor(props) {
     super(props)
     let loggedIn = false
     let registerIn = false
-    this.state ={
+    this.state = {
       username: '',
-      password:'',
+      password: '',
+      usuarioid: '',
       loggedIn,
       registerIn
     }
 
     this.onChange = this.onChange.bind(this)
-    this.submitForm = this.submitForm.bind(this)
+    this.login = this.login.bind(this)
     this.registrar = this.registrar.bind(this)
   }
 
-  onChange(e){
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.actionType === LOGIN_USUARIO) {
+      this.setState({ usuarioid: nextProps.usuarioid });
+    }
+  }
+
+  onChange(e) {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  registrar(){
+  registrar() {
     this.setState({
-      registerIn: true})
-  }  
+      registerIn: true
+    })
+  }
 
-  submitForm(e){
+  login(e) {
     e.preventDefault()
-    const{username, password} = this.state
-    ////
-    if(username === "1" && password === "1234"){
-      this.setState({
-        loggedIn: true})
-    }
+    this.props.logear(this.state.username, this.state.password);
+    this.setState({
+      loggedIn: true
+    })
   }
 
   render() {
-    if(this.state.loggedIn){
-      return <Redirect to={"/home/user/" + this.state.username}  />
+    if (this.state.loggedIn) {
+      return <Redirect to={"/prueba/" + this.state.usuarioid} />
     }
-    if(this.state.registerIn){
-      return <Redirect to="/SelectRol"/>
+    if (this.state.registerIn) {
+      return <Redirect to="/register/select/" />
     }
     return (
       <div >
-
+        <Logear usuarioid={this.state.usuarioid}/>
         <img src={process.env.PUBLIC_URL + 'resources/fondo.jpg'} className="Fondo" alt="logo" />
         <form className="login" onSubmit={this.submitForm}>
           <LoginTextField
@@ -65,8 +80,8 @@ class Login extends React.Component {
             onChange={this.onChange}
             name='username'
           />
-          <br/>
-          <br/>
+          <br />
+          <br />
           <LoginTextField
             className='LoginTextField'
             label="ContraseÃ±a"
@@ -78,7 +93,7 @@ class Login extends React.Component {
             name='password'
             onChange={this.onChange}
           />
-          <LoginButton variant="contained" className='LoginButton' type="submit">
+          <LoginButton variant="contained" className='LoginButton' onClick={this.login}>
             Iniciar Sesion
           </LoginButton>
           <a className='RegisterQ'>¿No te has registrado aun?</a>
@@ -91,4 +106,15 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const mapState = state => {
+  return {
+      usuarioid: state.usuario.usuarioid,
+      actionType: state.viaje.actionType
+  }
+};
+
+const mapDispatch = {
+    logear
+};
+
+export default connect(mapState, mapDispatch)(Login);
