@@ -1,4 +1,4 @@
-import { LISTAR_USUARIO, REGISTRAR_CONDUCTOR, REGISTRAR_PASAJERO, SOLICITUDES_USUARIO } from "../actions/actionTypes";
+import { LISTAR_USUARIO, REGISTRAR_CONDUCTOR, REGISTRAR_PASAJERO, SOLICITUDES_USUARIO, LOGIN_USUARIO } from "../actions/actionTypes";
 
 export default function usuario(state = {}, action) {
     switch (action.type) {
@@ -22,6 +22,11 @@ export default function usuario(state = {}, action) {
                 actionType: action.type,
                 solicitudes: action.solicitudesUsuario
             });
+        case LOGIN_USUARIO:
+                return Object.assign({}, state, {
+                    actionType: action.type,
+                    usuarioid: action.usuarioid
+                });
         default:
             return state;
     }

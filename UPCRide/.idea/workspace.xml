@@ -2,25 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="018e3b0d-f941-490f-ba42-1a6e2c83bc48" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/com/myorg/upcride/controller/ReseñaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/myorg/upcride/controller/ReseñaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/com/myorg/upcride/model/Viaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/myorg/upcride/model/Viaje.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/com/myorg/upcride/repository/ViajeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/myorg/upcride/repository/ViajeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/com/myorg/upcride/service/ReseñaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/myorg/upcride/service/ReseñaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/ReseñaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/ReseñaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/model/Viaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/model/Viaje.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/ViajeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/ViajeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/ReseñaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/ReseñaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Viaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Viaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ViajeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ViajeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/ReseñaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/ReseñaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Review/Review.css" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Review/Review.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Review/Review.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Review/Review.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Home/HomeSearch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Login/logear.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Register/SelectRol.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Register/SelectRol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/tripsActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/tripsActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/userActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Home/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Register/Success.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Register/Success.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/SearchBar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/SearchBar/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Text/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Text/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/usuario.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/viaje.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/viaje.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/routes/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -68,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Reseña.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
@@ -113,7 +114,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -256,7 +257,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562014319812" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562016150347" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -292,12 +293,12 @@
       <option name="presentableId" value="Default" />
       <updated>1561912972592</updated>
       <workItem from="1561912976718" duration="3144000" />
-      <workItem from="1561999692976" duration="4675000" />
+      <workItem from="1561999692976" duration="4686000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13505000" />
+    <option name="totallyTimeSpent" value="13516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -413,31 +414,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ViajeRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="51" column="66" lean-forward="true" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ViajeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="503">
           <caret line="102" column="5" lean-forward="true" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Viaje.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -452,6 +432,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ViajeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="51" column="66" lean-forward="true" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Viaje.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>

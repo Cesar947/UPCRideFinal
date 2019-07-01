@@ -5,14 +5,14 @@ import NavBar from '../NavBar';
 import {PostButton} from '../Buttons';
 import SearchBar from '../SearchBar';
 import {Redirect} from 'react-router-dom';
-import {fetchViajesList} from '../../actions/tripsActions';
-import {LISTAR_VIAJES} from '../../actions/actionTypes';
+import {filtrarViajes} from '../../actions/tripsActions';
+import {FILTRAR_VIAJES} from '../../actions/actionTypes';
 import {connect} from "react-redux";
 
 
 
 
-class Home extends React.Component {
+class HomeSearch extends React.Component {
 
   constructor(props) {
     super(props);
@@ -20,6 +20,11 @@ class Home extends React.Component {
     this.state = {
       listaviajes: [],
       quierepost,
+      puntoPartida: this.props.match.params.puntoPartida,
+      puntoDestino: this.props.match.params.puntoDestino, 
+      horaPartida: this.props.match.params.horaPartida,
+      horaLlegada: this.props.match.params.horaLlegada,
+      fecha: this.props.match.params.fecha,
       id: this.props.match.params.userid
     }
     this.postear = this.postear.bind(this)
@@ -32,11 +37,11 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchViajesList();
+    this.props.filtrarViajes(this.state.puntoPartida, this.state.puntoDestino, this.state.horaPartida, this.state.horaLlegada, this.state.fecha);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.actionType === LISTAR_VIAJES) {
+    if (nextProps.actionType === FILTRAR_VIAJES) {
       this.setState({ listaviajes: nextProps.listaviajes });
     }
   }
@@ -66,14 +71,14 @@ class Home extends React.Component {
 
 const mapState = state => {
   return {
-      listaviajes: state.viaje.viajes,
+      listaviajes: state.viaje.filtros,
       actionType: state.viaje.actionType
   }
 };
 
 const mapDispatch = {
-    fetchViajesList
+    filtrarViajes
 };
 
 
-export default connect(mapState, mapDispatch)(Home);
+export default connect(mapState, mapDispatch)(HomeSearch);

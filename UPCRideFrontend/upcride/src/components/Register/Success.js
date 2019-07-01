@@ -48,7 +48,7 @@ export class Success extends Component {
 
   render() {
     if(this.state.ready){
-      return <Redirect to = "/home"/>
+      return <Redirect to = "/"/>
     }
     return (
       <div>
