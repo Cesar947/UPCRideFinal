@@ -22,7 +22,7 @@ const Routes = () => (
                 <Route path = "/user/:userid/request/trips/:tripid" component={Request}/>
                 <Route path = "/user/:userid/:tripid" component={TripState}/>
                 <Route path = "/post/user/:userid/new/trip" component={Posteo}/>
-                <Route path="/review" component={Review}/>
+                <Route path="/user/:userid/review" component={Review}/>
             </Switch>
         </Router>
 );

@@ -38,7 +38,7 @@ public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
     @Query("SELECT v FROM Viaje v WHERE v.entradaSalida= ?1")
     List<Viaje> listarPorEntradaOSalida(int entradaSalida) throws Exception;
 
-    @Query("SELECT v FROM Viaje v WHERE v.fecha = ?6")
+    @Query("SELECT v FROM Viaje v WHERE v.fecha = ?1")
     List<Viaje> listarPorFecha(Date fecha) throws Exception;
 
     @Modifying

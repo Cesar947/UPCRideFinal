@@ -10,7 +10,7 @@ import './Review.css';
 
 class Review extends React.Component{
     static propTypes = {
-        viajes: PropTypes.array.isRequired
+        reseñas: PropTypes.array.isRequired
     };
 
     constructor(props){

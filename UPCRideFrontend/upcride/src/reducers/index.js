@@ -4,5 +4,5 @@ import usuario from './usuario'
 
 
 export default combineReducers({
-    viaje, usuario
+    viaje, usuario, reseña
 });
