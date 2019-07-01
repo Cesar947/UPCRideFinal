@@ -23,7 +23,7 @@ class Login extends React.Component {
     this.state = {
       username: '',
       password: '',
-      usuarioid: '',
+      usuarioid: 0,
       loggedIn,
       registerIn
     }
@@ -60,15 +60,14 @@ class Login extends React.Component {
   }
 
   render() {
-    if (this.state.loggedIn) {
-      return <Redirect to={"/prueba/" + this.state.usuarioid} />
+    if (this.props.usuarioid > 0) {
+      return <Redirect to={"/home/user/" + this.props.usuarioid} />
     }
     if (this.state.registerIn) {
       return <Redirect to="/register/select/" />
     }
     return (
       <div >
-        <Logear usuarioid={this.state.usuarioid}/>
         <img src={process.env.PUBLIC_URL + 'resources/fondo.jpg'} className="Fondo" alt="logo" />
         <form className="login" onSubmit={this.submitForm}>
           <LoginTextField
