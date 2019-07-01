@@ -2,27 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="018e3b0d-f941-490f-ba42-1a6e2c83bc48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Home/HomeSearch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Login/logear.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Register/SelectRol.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Register/SelectRol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/AutoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/ItinerarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/ReseñaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/SolicitudController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/UsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/ViajeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/model/Auto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/model/Itinerario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/model/Reseña.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/model/Solicitud.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/model/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/model/Viaje.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/AutoRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/ItinerarioRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/ReseñaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/SolicitudRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/UsuarioRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/ViajeRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/AutoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/AutoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/ItinerarioServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/SolicitudServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/UsuarioServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/ViajeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/ItinerarioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/ReseñaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/SolicitudService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/UsuarioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/ViajeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/util/Distrito.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/tripsActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/tripsActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/actions/userActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Home/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Register/Success.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Register/Success.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/SearchBar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/SearchBar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Text/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/components/Text/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/usuario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/viaje.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/reducers/viaje.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UPCRideFrontend/upcride/src/routes/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -118,7 +131,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -153,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/UsuarioService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/UsuarioServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/UsuarioController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/SolicitudController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/ViajeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/Implementacion/ViajeServiceImpl.java" />
@@ -163,6 +175,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Viaje.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/ViajeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -257,7 +270,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562016150347" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562017698132" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -293,18 +306,18 @@
       <option name="presentableId" value="Default" />
       <updated>1561912972592</updated>
       <workItem from="1561912976718" duration="3144000" />
-      <workItem from="1561999692976" duration="4686000" />
+      <workItem from="1561999692976" duration="5226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13516000" />
+    <option name="totallyTimeSpent" value="14056000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -321,7 +334,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
@@ -452,7 +465,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>

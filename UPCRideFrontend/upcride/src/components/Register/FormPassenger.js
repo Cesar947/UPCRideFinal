@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import { LoginTextField } from '../Text';
 import Grid from '@material-ui/core/Grid';
 import { REGISTRAR_PASAJERO } from '../../actions/actionTypes';
-import { registrarPasajero } from '../../actions/usuariosActions';
+import { registrarPasajero } from '../../actions/userActions';
 import {connect} from "react-redux";
 
 export class FormPassenger extends Component {

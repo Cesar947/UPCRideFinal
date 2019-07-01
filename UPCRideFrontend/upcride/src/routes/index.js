@@ -12,7 +12,7 @@ import Posteo from '../components/PostTrip/Posteo';
 import HomeSearch from '../components/Home/HomeSearch';
 import SelectRol from '../components/Register/SelectRol';
 import Logear from '../components/Login/logear';
-
+import UserRegister from '../components/Register/UserRegister';
 
 const Routes = () => (
         <Router>
@@ -27,7 +27,7 @@ const Routes = () => (
                 <Route path = "/user/:userid/request/trips/:tripid" component={Request}/>
                 <Route path = "/user/:userid/:tripid" component={TripState}/>
                 <Route path = "/post/user/:userid/new/trip" component={Posteo}/>
-
+                <Route path="/passenger/register/" component={UserRegister} />
                 <Route path = "/home/:userid/search/from/:puntoPartida/to/:puntoDestino/at/:horaPartida/and/:horaLlegada/on/:fecha" component={HomeSearch}/>
                 <Route path="/review" component={Review}/>
 

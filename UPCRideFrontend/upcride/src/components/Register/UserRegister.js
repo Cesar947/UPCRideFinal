@@ -39,7 +39,7 @@ export class UserForm extends Component {
       case 1:
         return (
           <div>
-            <img src={process.env.PUBLIC_URL + '../images/card.jpg'} className="Fondo" alt="logo" />
+            <img src={process.env.PUBLIC_URL + '/resources/card.jpg'} className="Fondo" alt="logo" />
             <div className="Form">
               <FormPassenger
                 nextStep={this.nextStep}
@@ -49,7 +49,10 @@ export class UserForm extends Component {
         );
       case 2:
         return (
-          <Redirect to ="/register/success"/>
+          <div>
+            <img src={process.env.PUBLIC_URL + '/resources/card.jpg'} className="Fondo" alt="logo" />
+            <Success/>
+          </div>
         );
     }
   }
