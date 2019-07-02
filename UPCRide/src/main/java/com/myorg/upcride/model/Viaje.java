@@ -47,7 +47,7 @@ public class Viaje implements Serializable {
     private double destinoLatitud;
 
     @Column(name = "destino_longitud", length = 60, nullable = false)
-    private double destinoLongitud;
+    private double destintoLongitud;
 
     @Column(name = "partida_latitud", length = 60, nullable = false)
     private double partidaLatitud;
