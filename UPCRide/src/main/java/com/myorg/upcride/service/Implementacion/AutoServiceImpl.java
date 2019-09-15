@@ -22,4 +22,9 @@ public class AutoServiceImpl implements AutoService {
         return autoRepository.save(auto);
     }
 
+    @Override
+    public Auto buscarAutoPorConductor(Integer conductorId) throws Exception{
+        return autoRepository.buscarAutoPorConductor(conductorId);
+    }
+
 }

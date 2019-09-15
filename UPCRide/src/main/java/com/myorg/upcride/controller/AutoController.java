@@ -26,7 +26,10 @@ public class AutoController {
     public Auto guardarAuto(@RequestBody Auto a) throws Exception{
         return autoService.guardarAuto(a);
         }
-
+    @RequestMapping(method = RequestMethod.GET)
+    public Auto buscarAutoPorConductor(Integer conductorId) throws Exception{
+        return autoService.buscarAutoPorConductor(conductorId);
+    }
 
 }
 

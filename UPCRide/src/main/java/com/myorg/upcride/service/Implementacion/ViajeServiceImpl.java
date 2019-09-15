@@ -1,6 +1,6 @@
 package com.myorg.upcride.service.Implementacion;
 
-import com.myorg.upcride.model.Auto;
+
 import com.myorg.upcride.model.Solicitud;
 import com.myorg.upcride.model.Usuario;
 import com.myorg.upcride.model.Viaje;
@@ -40,8 +40,6 @@ public class ViajeServiceImpl implements ViajeService {
         v.setEstado("Publicado");
         v.setVisualizacionHabilitada(1);
         v.setConductor(usuarioRepository.findById(conductorId).get());
-        /*Auto auto = autoRepository.buscarAutoPorConductor(v.getConductor().getId());
-        v.setLimitePasajeros(auto.getLimitePersonas());*/
         v.setNumeroPasajeros(0);
         return viajeRepository.save(v);
     }
@@ -122,17 +120,13 @@ public class ViajeServiceImpl implements ViajeService {
         Solicitud resultado = new Solicitud();
         if (pasajerosRegistrados <= objViaje.getLimitePasajeros()) {
         try {
-
                resultado = solicitudRepository.save(s);
-
-                viajeRepository.actualizarNumeroDePasajeros(pasajerosRegistrados, objViaje.getId());
-
+               viajeRepository.actualizarNumeroDePasajeros(pasajerosRegistrados, objViaje.getId());
         }
         catch (Exception ex)
         {
             throw ex;
         }
-
         }
         return resultado;
     }
