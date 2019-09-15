@@ -1,9 +1,9 @@
 package com.myorg.upcride.service.Implementacion;
 
 import com.myorg.upcride.model.Reseña;
-import com.myorg.upcride.model.Usuario;
+import com.myorg.upcride.model.Viaje;
 import com.myorg.upcride.repository.ReseñaRepository;
-import com.myorg.upcride.repository.UsuarioRepository;
+import com.myorg.upcride.repository.ViajeRepository;
 import com.myorg.upcride.service.ReseñaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,11 +13,11 @@ import java.util.List;
 public class ReseñaServiceImpl implements ReseñaService {
 
     ReseñaRepository reseñaRepository;
-    UsuarioRepository conductorRepository;
+    ViajeRepository viajeRepository;
     @Autowired
-    public ReseñaServiceImpl(ReseñaRepository reseñaRepository, UsuarioRepository conductorRepository){
+    public ReseñaServiceImpl(ReseñaRepository reseñaRepository, ViajeRepository viajeRepository){
         this.reseñaRepository = reseñaRepository;
-        this.conductorRepository = conductorRepository;
+        this.viajeRepository = viajeRepository;
     }
 
     @Override
@@ -32,9 +32,9 @@ public class ReseñaServiceImpl implements ReseñaService {
     }
 
     @Override
-    public Reseña publicarReseñaPorConductor(Reseña r, Integer conductorId ) throws Exception{
-        Usuario conductor = conductorRepository.findById(conductorId).get();
-        r.setConductor(conductor);
+    public Reseña publicarReseñaPorViaje(Reseña r, Integer viajeId ) throws Exception{
+        Viaje v = viajeRepository.findById(viajeId).get();
+        r.setViaje(v);
         return reseñaRepository.save(r);
 
     }

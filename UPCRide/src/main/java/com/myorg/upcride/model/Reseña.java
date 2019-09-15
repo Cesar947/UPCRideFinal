@@ -38,8 +38,8 @@ public class Reseña implements Serializable{
     private Usuario cliente;
 
     @ManyToOne
-    @JoinColumn (name = "conductor_id")
-    private Usuario conductor;
+    @JoinColumn (name = "viaje_id")
+    private Viaje viaje;
 
 
 

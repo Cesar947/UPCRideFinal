@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ReseñaRepository extends JpaRepository<Reseña, Integer> {
-    @Query("SELECT r FROM Reseña r WHERE r.conductor =?1")
+    @Query("SELECT r FROM Reseña r JOIN Viaje v ON r.viaje.id = v.id JOIN Usuario u ON v.conductor.id = u.id WHERE u.id = ?1")
     List<Reseña> listarReseñasPorConductor (Integer conductorId);
+
 }
