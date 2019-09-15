@@ -4,7 +4,7 @@
     {
 
         "codigo": "u201711033",
-        "email": "u201711033@upc.edu.pe",
+        "correoUPC": "u201711033@upc.edu.pe",
         "contraseña": "adgasdqwerqwetdg",
         "nombres": "José Sebastián",
         "apellidos": "Pinillos Zentento",
@@ -21,7 +21,7 @@
    {
 
               "codigo": "u201710947",
-              "email": "u201710947@upc.edu.pe",
+              "correoUPC": "u201710947@upc.edu.pe",
               "contraseña": "adgasdgasdg",
               "nombres": "César Alejandro",
               "apellidos": "Pizarro Llanos",
