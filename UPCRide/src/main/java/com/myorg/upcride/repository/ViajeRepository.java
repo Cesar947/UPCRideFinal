@@ -17,6 +17,7 @@ import java.util.List;
 @Repository
 public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
 
+    //////////////////////Todos los filtros de viaje (al menos por ahora)////////////////////////////////////////////////////////////////////////////////////////////
     @Query("SELECT v FROM Viaje v WHERE v.horaPartida = ?1 and v.horaLlegada = ?2 AND v.puntoPartida = ?3 AND v.puntoDestino = ?4 AND v.entradaSalida= ?5 AND v.fecha = ?6")
     List<Viaje> listarPorTodosLosFiltros(Time horaPartida, Time horaLlegada, String puntoPartida, String puntoDestino, int entradaSalida, Date fecha) throws Exception;
 
@@ -40,32 +41,48 @@ public interface ViajeRepository extends JpaRepository<Viaje, Integer> {
 
     @Query("SELECT v FROM Viaje v WHERE v.fecha = ?1")
     List<Viaje> listarPorFecha(Date fecha) throws Exception;
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    @Modifying
-    @Query("UPDATE Viaje v SET v.estado = :estado WHERE v.id = :id")
-    @Transactional
-    int actualizarEstado(@Param("estado") String estado, @Param("id") Integer id) throws Exception;
 
+
+    /// Visualizar viajes por solicitud y pasajero
     @Query("SELECT v FROM Viaje v JOIN Solicitud s JOIN Usuario u WHERE s.id = ?1 AND u.id = ?2")
     List<Viaje> listarPorSolicitudyPorPasajero(int solicitudId, int pasajeroId) throws Exception;
 
+
+    //Calcular cuantos pasajeros hay ya registrados en un viaje
     @Query("SELECT COUNT(s.pasajero.id) FROM Viaje v JOIN Solicitud s where v.id = ?1 group by v.id")
     int calcularNumerodePasajerosDelViaje(Integer viajeId) throws Exception;
 
+    //Aumentar el numero de pasajeros de un viaje
     @Modifying
     @Query("UPDATE Viaje v SET v.numeroPasajeros = :numero WHERE v.id = :id")
     @Transactional
     int actualizarNumeroDePasajeros(@Param("numero") int numPasajeros, @Param("id") Integer id) throws Exception;
 
+
+    //Visualizar la lista de los pasajeros cuyas solicitudes fueron aceptadas
     @Query("SELECT u FROM Usuario u JOIN Solicitud s ON u.id = s.pasajero.id JOIN Viaje v ON v.id = s.viaje.id WHERE v.id = ?1 AND s.confirmacionConductor = 'Aceptada'")
     List<Usuario> listarPasajerosDelViaje(Integer viajeId) throws Exception;
 
+
+    //Visualizar todos los viajes que el conductor ha publicado
     @Query("SELECT v FROM Viaje v JOIN Usuario u ON u.id = v.conductor.id WHERE u.id = ?1")
     List<Viaje> listarViajesPorConductor(Integer conductorId) throws Exception;
 
+
+    //Mostrar los viajes que esten pendientes
     @Query("SELECT s FROM Solicitud s WHERE s.viaje.id = ?1 AND s.confirmacionConductor = 'Pendiente' ")
     List<Solicitud> listarSolicitudesPendientesDelViaje(Integer viajeId) throws Exception;
 
+    //Actualizar estado del viaje
+    @Modifying
+    @Query("UPDATE Viaje v SET v.estado = :estado WHERE v.id = :id")
+    @Transactional
+    int actualizarEstado(@Param("estado") String estado, @Param("id") Integer id) throws Exception;
+
+
+    //Mostrar las solicitudes confirmadas por el conductor
     @Query("SELECT s FROM Solicitud s WHERE s.viaje.id = ?1 AND s.confirmacionConductor = 'Aceptada' ")
     List<Solicitud> listarSolicitudesConfrimadasDelViaje(Integer viajeId) throws Exception;
 }
