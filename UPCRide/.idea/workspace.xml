@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="018e3b0d-f941-490f-ba42-1a6e2c83bc48" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/model/Transaccion.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/repository/TransaccionRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/TransaccionService.java" afterDir="false" />
@@ -10,6 +11,27 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/ReseñaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/ReseñaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myorg/upcride/service/ReseñaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../~$ABAJO_FINAL_-_APLICACIONES_OPEN_SOURCE.docx" beforeDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/AutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/AutoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/ReseñaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/controller/ReseñaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/model/Reseña.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/model/Reseña.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/ReseñaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/ReseñaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/ViajeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/repository/ViajeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/AutoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/AutoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/AutoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/AutoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/ReseñaServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/ViajeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/Implementacion/ViajeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/ReseñaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myorg/upcride/service/ReseñaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Json/Scripts Json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Json/Scripts Json" afterDir="false" />
+>>>>>>> 755d818df53ec1b08df898179ee0c5a1eeb4ed91
+>>>>>>> 23ce5b09a5ec66cfed866bdbd3a7aa698dd1bea6
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,14 +39,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
+<<<<<<< HEAD
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+=======
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -130,6 +157,7 @@
         </entry>
       </file>
     </leaf>
+>>>>>>> 755d818df53ec1b08df898179ee0c5a1eeb4ed91
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -149,6 +177,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+<<<<<<< HEAD
+  <component name="ProjectId" id="1QtVgY4SmUndGvxI3gkS7zIxOsy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+=======
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -245,6 +278,7 @@
         </subPane>
       </pane>
     </panes>
+>>>>>>> 755d818df53ec1b08df898179ee0c5a1eeb4ed91
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -299,6 +333,7 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="36615000" />
   </component>
+<<<<<<< HEAD
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
@@ -342,11 +377,18 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+=======
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+<<<<<<< HEAD
+>>>>>>> 23ce5b09a5ec66cfed866bdbd3a7aa698dd1bea6
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< HEAD
             <State>
               <option name="RECENTLY_FILTERED_USER_GROUPS">
                 <collection />
@@ -355,10 +397,14 @@
                 <collection />
               </option>
             </State>
+=======
+            <State />
+>>>>>>> 23ce5b09a5ec66cfed866bdbd3a7aa698dd1bea6
           </value>
         </entry>
       </map>
     </option>
+<<<<<<< HEAD
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -374,6 +420,9 @@
       </map>
     </option>
   </component>
+=======
+=======
+>>>>>>> 23ce5b09a5ec66cfed866bdbd3a7aa698dd1bea6
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/myorg/upcride/controller/SolicitudController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -554,6 +603,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> 755d818df53ec1b08df898179ee0c5a1eeb4ed91
   </component>
   <component name="masterDetails">
     <states>

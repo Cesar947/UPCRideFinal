@@ -4,5 +4,5 @@ import com.myorg.upcride.model.Transaccion;
 
 public interface TransaccionService {
     Transaccion registrarTransaccion(Transaccion t) throws Exception;
-    Transaccion visualizarTransaccionesPorViaje() throws Exception;
+    Transaccion visualizarTransaccionesPorViaje(Integer viajeId) throws Exception;
 }
