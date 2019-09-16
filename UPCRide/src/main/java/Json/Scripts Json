@@ -70,13 +70,27 @@
 
            }
            SOLICTIAR INCOMPLETO
-          {
-          "id":4 ,
-            "pasajero": null,
-            "mensaje": "Quiero solicitar el viaje y quisiera que el punto de encuentro sea en el Aeropuerto Jorge Chávez",
-          "confirmacion_conductor":"Pendiente" ,
-            "punto_encuentro":"Aeropuerto Jorge Chavez",
-            "encuentro_latitud": -12.0240474,
-            "encuentro_longitud": -77.1142247,
-            "fecha": "2019-06-22"
-          }
+        {
+
+              "pasajero":  {
+                 "id": 8,
+                "codigo": "u201711033",
+                "correoUPC": "u201711033@upc.edu.pe",
+                "contraseña": "adgasdqwerqwetdg",
+                "nombres": "José Sebastián",
+                "apellidos": "Pinillos Zentento",
+                "ubicacion": "asdgsdgsdgsdvsdsdg",
+                "telefono": "999123512",
+                "distrito": "Carabayllo",
+                "sede": "UPC San Miguel",
+                "ubicacionLongitud": "2.0",
+                "ubicacionLatitud":"6.0"
+            },
+
+             "mensaje": "Quiero solicitar el viaje y quisiera que el punto de encuentro sea en el Aeropuerto Jorge Chávez",
+                  "confirmacion_conductor":"Pendiente" ,
+                    "punto_encuentro":"Aeropuerto Jorge Chavez",
+                    "encuentro_latitud": -12.0240474,
+                    "encuentro_longitud": -77.1142247,
+                    "fecha": "2019-06-22"
+         }

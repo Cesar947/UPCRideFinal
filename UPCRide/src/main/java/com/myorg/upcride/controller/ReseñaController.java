@@ -24,7 +24,7 @@ public class ReseñaController {
     public Reseña publicarReseñas(Reseña r) throws Exception {
         return reseñaService.publicarReseña(r);
     }
-    @RequestMapping(path="/{conductorId}", method = RequestMethod.POST)
+    @RequestMapping(path="/{viajeId}", method = RequestMethod.POST)
     public Reseña publicarReseñaPorViaje(@RequestBody Reseña r, @PathVariable Integer viajeId) throws Exception{
         return reseñaService.publicarReseñaPorViaje(r,viajeId);
     }

@@ -7,5 +7,5 @@ import java.util.List;
 public interface ReseñaService{
     Reseña publicarReseña(Reseña r) throws Exception;
     List<Reseña> listarReseñasPorConductor (Integer conductorId);
-    Reseña publicarReseñaPorViaje(Reseña r, Integer viajeId ) throws Exception;
+    Reseña publicarReseñaPorViaje(Reseña r, Integer viajeId) throws Exception;
 }
